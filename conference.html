@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spring Educators EdTech Conference 2027 — Tech My School</title>
+<link rel="icon" type="image/png" href="assets/logo-circle.png">
+<meta name="description" content="The 4th Annual Spring Educators EdTech Conference — April 12–13, 2027 in Río Grande, Puerto Rico. Bilingual, 40+ speakers. Hosted by Tech My School.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#3a3a3a;
+    --navy-deep:#0e3320;
+    --teal:#00b050;
+    --teal-dark:#00913f;
+    --green:#029ec5;
+    --green-soft:#e2f4f9;
+    --teal-soft:#e4f7eb;
+    --paper:#f8fafb;
+    --ink:#1c2b39;
+    --ink-soft:#54697c;
+    --card:#ffffff;
+    --radius:18px;
+    --radius-lg:26px;
+    --maxw:1200px;
+    --shadow:0 2px 20px rgba(40,40,40,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Roboto Slab',serif;line-height:1.18;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+  .eyebrow::before{content:"";width:24px;height:3px;background:var(--green);border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;transition:transform .2s, box-shadow .2s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-teal{background:var(--teal);color:#fff}
+  .btn-teal:hover{box-shadow:0 8px 24px rgba(0,176,80,.4)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{box-shadow:0 8px 24px rgba(2,158,197,.4)}
+  .btn-white{background:#fff;color:var(--navy)}
+  .btn-white:hover{box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .section-head{max-width:720px;margin-bottom:48px}
+  .section-head h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .section-head p{font-size:17px;color:var(--ink-soft)}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(40,40,40,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .logo img{height:52px;width:auto}
+  .logo .white-bg{background:transparent;border-radius:12px;padding:6px 12px;transition:.3s;display:inline-block}
+  header:not(.scrolled) .logo .white-bg{background:rgba(255,255,255,.92)}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav-links a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);position:relative;padding:4px 0}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2.5px;background:var(--teal);transition:width .25s}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links .btn{padding:11px 24px;font-size:14.5px}
+  header:not(.scrolled) .nav-links a:not(.btn){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110}
+  .hamburger span{display:block;width:24px;height:2.5px;background:var(--navy);margin:5px 0;border-radius:2px}
+  header:not(.scrolled) .hamburger span{background:#fff}
+
+  /* HERO */
+  .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:url('https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg') center 40%/cover no-repeat}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,40,24,.92) 0%,rgba(10,40,24,.6) 55%,rgba(0,176,80,.3) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:70px}
+  .conf-logo{width:150px;height:150px;border-radius:50%;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.35);margin-bottom:22px;display:block}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 18px;font-size:13.5px;font-weight:600;margin-bottom:24px;backdrop-filter:blur(6px)}
+  .hero h1{font-size:clamp(36px,5.8vw,66px);font-weight:800;max-width:18ch;margin-bottom:18px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+  .hero h1 .accent{color:#8ce8ac}
+  .hero p.lede{font-size:clamp(16.5px,2vw,19px);max-width:56ch;color:rgba(255,255,255,.92);margin-bottom:30px;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+  .hero-meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:34px}
+  .hero-meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(6px);border-radius:100px;padding:9px 20px;font-size:14px;font-weight:600}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* COUNTDOWN */
+  .countdown-band{margin-top:-70px;position:relative;z-index:5;padding:0}
+  .countdown{background:var(--navy-deep);border-radius:var(--radius-lg);box-shadow:0 14px 44px rgba(10,40,24,.3);padding:36px 44px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;color:#fff}
+  .countdown .label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px}
+  .countdown .label small{display:block;font-size:13px;font-weight:600;color:#8ce8ac;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  .cd-units{display:flex;gap:14px}
+  .cd-unit{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:16px 10px;min-width:86px;text-align:center}
+  .cd-unit .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,3.5vw,40px);color:#8ce8ac;font-variant-numeric:tabular-nums}
+  .cd-unit .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:4px}
+
+  /* PRESENTERS CTA */
+  .present{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
+  .present h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .present p{font-size:16.5px;color:var(--ink-soft);margin-bottom:26px}
+  .present img{border-radius:var(--radius-lg);width:100%;height:400px;object-fit:cover;box-shadow:var(--shadow)}
+
+  /* SCHEDULE */
+  .schedule-note{display:inline-flex;align-items:center;gap:10px;background:#fff7e6;border:1.5px solid #f2b632;color:#7a5b12;border-radius:14px;padding:12px 20px;font-size:14.5px;font-weight:600;margin-bottom:36px}
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  .day{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+  .day .day-head{background:var(--navy);color:#fff;padding:24px 30px}
+  .day .day-head h3{font-size:21px}
+  .day .day-head .date{color:#8ce8ac;font-size:14px;font-weight:600;margin-top:2px}
+  .day ul{list-style:none;padding:12px 0}
+  .day li{display:flex;gap:18px;padding:13px 30px;font-size:14.8px;border-bottom:1px solid #eef3f6}
+  .day li:last-child{border-bottom:none}
+  .day li .time{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--teal);white-space:nowrap;min-width:96px;font-size:13.5px;padding-top:1px}
+  .day li .what strong{color:var(--navy)}
+  .day li.hl{background:var(--teal-soft)}
+  .agenda-dl{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px;align-items:center}
+  .agenda-dl .note{font-size:14px;color:var(--ink-soft)}
+
+  /* PRICING */
+  .pricing{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .pricing .section-head h2{color:#fff}
+  .pricing .section-head p{color:rgba(255,255,255,.72)}
+  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px}
+  .price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:40px;display:flex;flex-direction:column}
+  .price-card.best{background:rgba(0,176,80,.14);border-color:var(--teal);position:relative}
+  .price-card.best::after{content:"Best value";position:absolute;top:-14px;right:22px;background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;font-family:'Montserrat',sans-serif}
+  .price-card h3{font-size:19px;color:#8ce8ac;margin-bottom:10px}
+  .price-card .price{font-family:'Montserrat',sans-serif;font-weight:800;font-size:52px;margin-bottom:6px}
+  .price-card .per{font-size:14px;color:rgba(255,255,255,.65);margin-bottom:22px}
+  .price-card ul{list-style:none;display:flex;flex-direction:column;gap:10px;font-size:14.5px;color:rgba(255,255,255,.85);flex:1;margin-bottom:28px}
+  .price-card li::before{content:"✓";color:var(--teal);font-weight:800;margin-right:10px}
+
+  /* SPONSORS */
+  .sponsor-cta{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff}
+  .sponsor-cta .bg{position:absolute;inset:0;background:url('assets/photo-tech-disruptor.jpg') center 25%/cover}
+  .sponsor-cta .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(0,145,63,.94),rgba(10,40,24,.75))}
+  .sponsor-cta .body{position:relative;z-index:2;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .sponsor-cta h3{font-size:26px;font-weight:800;margin-bottom:8px}
+  .sponsor-cta p{color:rgba(255,255,255,.85);font-size:15.5px;max-width:56ch}
+
+  /* KEYNOTE */
+  .keynote{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .keynote .kn{display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+  .keynote .kn-photo{width:min(300px,60vw);height:min(300px,60vw);border-radius:50%;object-fit:cover;border:6px solid var(--teal);box-shadow:0 18px 50px rgba(0,0,0,.35)}
+  .keynote .eyebrow{color:#8ce8ac}
+  .keynote h2{font-size:clamp(30px,4.5vw,48px);font-weight:800;margin-bottom:12px}
+  .keynote .kn-role{display:inline-block;background:var(--green);color:#fff;border-radius:100px;padding:7px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
+  .keynote p{color:rgba(255,255,255,.85);font-size:17px;max-width:60ch}
+  @media(max-width:820px){.keynote .kn{grid-template-columns:1fr;text-align:center;justify-items:center}}
+  /* VENUE */
+  .venue{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
+  .venue iframe{width:100%;height:380px;border:0;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
+  .venue h2{font-size:clamp(26px,3.5vw,38px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .venue p{color:var(--ink-soft);font-size:16px;margin-bottom:10px}
+
+  /* FOOTER */
+  footer{background:var(--navy-deep);color:#fff;padding:64px 0 32px;border-radius:44px 44px 0 0;margin-top:88px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .foot-grid h4{font-size:14px;color:#8ce8ac;margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .foot-grid a{color:rgba(255,255,255,.75);font-size:14.5px}
+  .foot-grid a:hover{color:#8ce8ac}
+  .foot-brand img{height:56px;width:auto;background:#fff;border-radius:14px;padding:8px 14px}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:36ch;margin-top:16px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s, transform .6s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .present{grid-template-columns:1fr}
+    .days{grid-template-columns:1fr}
+    .price-grid{grid-template-columns:1fr}
+    .venue{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .countdown{justify-content:center;text-align:center}
+  }
+  @media(max-width:720px){
+    section{padding:60px 0}
+    .nav-links{position:fixed;inset:0;top:0;background:var(--navy-deep);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .nav-links a:not(.btn){color:#fff!important;font-size:18px}
+    .hamburger{display:block}
+    .cd-unit{min-width:70px;padding:12px 8px}
+    .cd-units{gap:10px}
+    .sponsor-cta .body{padding:32px 28px}
+  }
+</style>
+<style>
+/* ===== Mega menu ===== */
+.nav-links .caret{font-size:10px;margin-left:6px;opacity:.75}
+.has-menu{position:relative}
+.mega{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(10px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(10,40,24,.25);padding:14px;min-width:330px;display:flex;flex-direction:column;gap:2px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:120}
+.mega::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.mega a{display:block;padding:12px 16px;border-radius:12px;color:var(--navy)!important;text-shadow:none!important;transition:background .15s}
+.mega a:hover{background:var(--teal-soft)}
+.mega a::after{display:none!important}
+.mega strong{display:block;font-family:'Montserrat',sans-serif;font-size:14.5px}
+.mega span:not(.caret){display:block;font-size:12.5px;color:var(--ink-soft);font-weight:400;margin-top:1px}
+@media(hover:hover) and (min-width:721px){.has-menu:hover .mega,.has-menu:focus-within .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}}
+.has-menu.open .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+@media(max-width:720px){
+  .nav-links{overflow-y:auto;padding:90px 30px 40px;justify-content:flex-start!important;align-items:flex-start!important;gap:22px!important}
+  .has-menu{width:100%}
+  .mega{position:static;transform:none;opacity:1;pointer-events:auto;box-shadow:none;background:transparent;padding:6px 0 8px 14px;min-width:0}
+  .mega a{color:#fff!important;padding:8px 0}
+  .mega a:hover{background:transparent}
+  .mega strong{font-size:15px;color:#8ce8ac}
+  .mega span:not(.caret){color:rgba(255,255,255,.6)}
+}
+/* subpage hero entrance */
+@keyframes pageRise{to{opacity:1;transform:none}}
+.page-hero .wrap>*{opacity:0;transform:translateY(26px);animation:pageRise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.page-hero .wrap>*:nth-child(2){animation-delay:.15s}
+.page-hero .wrap>*:nth-child(3){animation-delay:.3s}
+.page-hero .wrap>*:nth-child(4){animation-delay:.45s}
+.page-hero .wrap>*:nth-child(5){animation-delay:.6s}
+.page-hero .bg{animation:pageKen 14s ease-out both}
+@keyframes pageKen{from{transform:scale(1.1)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.page-hero .wrap>*,.page-hero .bg,.hero .bg,.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.hero-stats{animation:none!important;opacity:1!important;transform:none!important}}
+</style>
+<style>
+/* ===== Brand bubbles (playful shapes) ===== */
+.how,.values,.stages,.act60,.grants,.how-band,.pricing,.keynote{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap,.keynote>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before,.keynote::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after,.keynote::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="white-bg"><img src="assets/logo.png" alt="Tech My School"></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-menu">
+        <a href="about.html">About<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="about.html#story"><strong>Our Story</strong><span>Founded by educators, built for Puerto Rico</span></a>
+          <a href="about.html#mission"><strong>Mission &amp; Values</strong><span>Why we do this — the PARROT values</span></a>
+          <a href="about.html#schools"><strong>Schools Served</strong><span>50+ around the island &amp; the world</span></a>
+          <a href="team.html"><strong>Our Team</strong><span>Board, leadership &amp; flock leaders</span></a>
+          <a href="about.html#faqs"><strong>FAQs</strong><span>Common questions, answered</span></a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <a href="services.html">Services<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="services.html#itp"><strong>Tech Plans</strong><span>Our flagship — hundreds of plans, built with Tech Plan Genie</span></a>
+          <a href="services.html#products"><strong>Tech Bros!</strong><span>Incognito thought partners for tech leaders</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Online Courses</strong><span>Free &amp; paid EdTech courses on LearnWorlds</span></a>
+          <a href="services.html#products"><strong>Discounted Software</strong><span>Deep discounts passed straight to schools</span></a>
+          <a href="conference.html"><strong>Spring Educators Conference</strong><span>Puerto Rico's biggest EdTech event</span></a>
+          <a href="stem-lab.html"><strong>Mobile STEM Lab</strong><span>Hands-on classes — we come to you</span></a>
+        </div>
+      </li>
+      <li><a href="conference.html">Conference</a></li>
+      <li class="has-menu">
+        <a href="resources.html">Resources<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="resources.html#guides"><strong>Parent Guidebooks</strong><span>Free digital guides for PR families</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Teacher Login &amp; Courses</strong><span>Your LMS home on LearnWorlds</span></a>
+          <a href="resources.html#grants"><strong>Grants</strong><span>Classroom headsets — PR &amp; US</span></a>
+          <a href="resources.html#esports"><strong>Esports League</strong><span>8 schools, every Friday at 3pm</span></a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-teal">Donate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <img class="conf-logo" src="assets/conference-logo.jpg" alt="Tech My School Spring Educators Conference">
+    <div class="hero-badge">🦜 4th Annual · Hosted by Tech My School</div>
+    <h1>Spring Educators <span class="accent">EdTech</span> Conference 2027</h1>
+    <p class="lede">Two days of the latest in EdTech, instructional practice, and 21st-century learning — with educators from Puerto Rico and beyond. Bilingual, hands-on, and unforgettable.</p>
+    <div class="hero-meta">
+      <span>📅 April 12–13, 2027</span>
+      <span>📍 Wyndham Rio Mar, Río Grande, PR</span>
+      <span>🌎 English &amp; Español</span>
+      <span>🎤 40+ speakers &amp; events</span>
+    </div>
+    <div class="hero-ctas">
+      <a class="btn btn-teal" href="#register">Register <span class="arrow">→</span></a>
+      <a class="btn btn-white" href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener">Apply to present</a>
+    </div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<section class="countdown-band">
+  <div class="wrap">
+    <div class="countdown">
+      <div class="label"><small>Clock to kickoff</small>April 12, 2027</div>
+      <div class="cd-units" id="cd">
+        <div class="cd-unit"><div class="num" id="cd-d">—</div><div class="lbl">Days</div></div>
+        <div class="cd-unit"><div class="num" id="cd-h">—</div><div class="lbl">Hours</div></div>
+        <div class="cd-unit"><div class="num" id="cd-m">—</div><div class="lbl">Minutes</div></div>
+        <div class="cd-unit"><div class="num" id="cd-s">—</div><div class="lbl">Seconds</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEYNOTE -->
+<section class="keynote">
+  <div class="wrap">
+    <div class="kn reveal">
+      <img class="kn-photo" src="assets/maya-israel.jpg" alt="Maya Israel, 2027 keynote speaker" loading="lazy">
+      <div>
+        <div class="eyebrow">Announcing our 2027 keynote</div>
+        <h2>Maya Israel</h2>
+        <div class="kn-role">Keynote Speaker</div>
+        <p>We're thrilled to announce that Maya Israel will keynote the 4th Annual Spring Educators Conference — kicking off the event with an innovative look into education.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESENT -->
+<section>
+  <div class="wrap present">
+    <div class="reveal">
+      <div class="eyebrow">Call for presenters</div>
+      <h2>Want to present at the 2027 conference?</h2>
+      <p>Share your expertise with hundreds of educators from Puerto Rico and beyond. We're looking for engaging, practical sessions in English or Spanish across EdTech, instructional practice, and 21st-century learning.</p>
+      <a class="btn btn-green" href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener">Submit your proposal <span class="arrow">→</span></a>
+    </div>
+    <img class="reveal" src="assets/photo-conference-stage.jpg" alt="Speakers on stage at the Spring Educators Conference" loading="lazy">
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Two full days</div>
+      <h2>Conference schedule</h2>
+    </div>
+    <div class="schedule-note reveal">⚠️ This is last year's (2026) agenda, shown for reference — the final 2027 agenda and speaker lineup will be announced soon.</div>
+    <div class="days">
+      <div class="day reveal">
+        <div class="day-head"><h3>Day 1</h3><div class="date">Monday, April 12, 2027</div></div>
+        <ul>
+          <li><span class="time">7:00–8:00</span><span class="what">Registration &amp; Breakfast</span></li>
+          <li><span class="time">8:00–8:20</span><span class="what">Welcome &amp; Opening</span></li>
+          <li class="hl"><span class="time">8:20–9:20</span><span class="what"><strong>Keynote</strong></span></li>
+          <li class="hl"><span class="time">9:20–10:00</span><span class="what"><strong>EdTech Leadership Panel</strong></span></li>
+          <li><span class="time">10:00–10:30</span><span class="what">Coffee Break</span></li>
+          <li><span class="time">10:30–11:20</span><span class="what">Breakout Session 1</span></li>
+          <li><span class="time">11:30–12:20</span><span class="what">Breakout Session 2</span></li>
+          <li><span class="time">12:20–1:30</span><span class="what">Lunch &amp; Live Performances</span></li>
+          <li><span class="time">1:30–2:20</span><span class="what">Breakout Session 3</span></li>
+          <li><span class="time">2:30–3:20</span><span class="what">Breakout Session 4</span></li>
+          <li><span class="time">3:30–4:00</span><span class="what">Coffee Break 2</span></li>
+          <li><span class="time">4:00–4:30</span><span class="what">Day 1 Closing</span></li>
+        </ul>
+      </div>
+      <div class="day reveal">
+        <div class="day-head"><h3>Day 2</h3><div class="date">Tuesday, April 13, 2027</div></div>
+        <ul>
+          <li><span class="time">7:00–8:00</span><span class="what">Registration &amp; Breakfast</span></li>
+          <li><span class="time">8:00–8:20</span><span class="what">Welcome Message</span></li>
+          <li class="hl"><span class="time">8:20–9:20</span><span class="what"><strong>Keynote</strong></span></li>
+          <li class="hl"><span class="time">9:20–10:00</span><span class="what"><strong>Panel Discussion</strong></span></li>
+          <li><span class="time">10:00–10:30</span><span class="what">Coffee Break 1</span></li>
+          <li><span class="time">10:30–11:20</span><span class="what">Breakout Session 5</span></li>
+          <li><span class="time">11:30–12:20</span><span class="what">Breakout Session 6</span></li>
+          <li><span class="time">12:30–1:20</span><span class="what">Lunch &amp; Live Performances</span></li>
+          <li><span class="time">1:30–2:20</span><span class="what">Breakout Session 7</span></li>
+          <li><span class="time">2:30–3:20</span><span class="what">Breakout Session 8</span></li>
+          <li><span class="time">3:30–4:00</span><span class="what">Coffee Break 2</span></li>
+          <li><span class="time">4:00–5:00</span><span class="what">Awards, Raffle &amp; Closing</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="agenda-dl reveal">
+      <span class="note">📄 Last year's full agendas (2026, for reference):</span>
+      <a class="btn btn-teal" style="padding:10px 22px;font-size:14px" href="https://drive.google.com/file/d/104MkgzLanC1nxGMBHqnHYDcfr8_H_wdq" target="_blank" rel="noopener">English version</a>
+      <a class="btn btn-teal" style="padding:10px 22px;font-size:14px" href="https://drive.google.com/file/d/1J4N41I_-5a2uD-zhqh7w_lRrW8HSQwkL" target="_blank" rel="noopener">Versión en español</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap" id="register">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:#8ce8ac">Sign up &amp; pricing</div>
+      <h2>Simple, standard pricing for everyone.</h2>
+      <p>Two full days of learning, networking, and world-class cuisine at a premiere resort.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card reveal">
+        <h3>One day</h3>
+        <div class="price">$300</div>
+        <div class="per">per person · pick your day</div>
+        <ul>
+          <li>Full day of sessions &amp; keynote</li>
+          <li>Breakfast, lunch &amp; coffee breaks</li>
+          <li>Bilingual sessions (EN/ES)</li>
+        </ul>
+        <a class="btn btn-teal" href="#" data-reg>Register here <span class="arrow">→</span></a>
+      </div>
+      <div class="price-card best reveal">
+        <h3>Both days</h3>
+        <div class="price">$500</div>
+        <div class="per">per person · full conference</div>
+        <ul>
+          <li>All sessions, keynotes &amp; panels</li>
+          <li>Breakfast, lunch &amp; coffee breaks both days</li>
+          <li>Awards, raffle &amp; closing celebration</li>
+        </ul>
+        <a class="btn btn-green" href="#" data-reg>Register here <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH DISRUPTORS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="reveal" style="background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
+      <div style="max-width:62ch">
+        <div class="eyebrow">Tech Disruptors competition</div>
+        <h2 style="font-size:clamp(24px,3.5vw,34px);font-weight:800;color:var(--navy);margin-bottom:10px">Disrupt your classroom. Win on stage.</h2>
+        <p style="color:var(--ink-soft);font-size:15.5px">Educators showcase how they creatively disrupt traditional classroom models with cutting-edge technology — a problem-based project, a short video, and a shot at presenting live at the conference with prizes across five categories.</p>
+      </div>
+      <a class="btn btn-green" href="mailto:darlenecolon@techmyschool.org?subject=Tech%20Disruptors">Ask about the next edition <span class="arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SPONSOR -->
+<section>
+  <div class="wrap">
+    <div class="sponsor-cta reveal">
+      <div class="bg"></div>
+      <div class="scrim"></div>
+      <div class="body">
+        <div>
+          <h3>Sponsor, host a booth, or add value</h3>
+          <p>Put your company in front of hundreds of educators and decision-makers from schools across Puerto Rico and beyond.</p>
+        </div>
+        <a class="btn btn-white" href="https://forms.gle/CNJDzcXDNvoSFM218" target="_blank" rel="noopener">Become a sponsor <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section id="venue" style="padding-top:0">
+  <div class="wrap venue">
+    <div class="reveal">
+      <div class="eyebrow">The venue</div>
+      <h2>Wyndham Grand Rio Mar</h2>
+      <p>6000 Boulevard Río Mar<br>Río Grande, Puerto Rico 00745</p>
+      <p>A premiere beachfront resort at the foot of El Yunque — the perfect backdrop for two days of learning and connection.</p>
+    </div>
+    <iframe class="reveal" src="https://www.google.com/maps?q=Wyndham+Grand+Rio+Mar+6000+Boulevard+Rio+Mar+Rio+Grande+Puerto+Rico&output=embed" loading="lazy" title="Venue map" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Tech My School">
+        <p>Empowering schools through technology. A 501(c)(3) nonprofit · EIN: 66-0996264.</p>
+      </div>
+      <div>
+        <h4>Conference</h4>
+        <ul>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener">Apply to present</a></li>
+          <li><a href="https://forms.gle/CNJDzcXDNvoSFM218" target="_blank" rel="noopener">Sponsor / Exhibit</a></li>
+          <li><a href="stem-lab.html">Mobile STEM Lab</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:info@techmyschool.org">info@techmyschool.org</a></li>
+          <li><a href="tel:+18588997787">(858) 899-7787</a></li>
+          <li><a href="index.html">techmyschool.org</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Tech My School · P.O. Box 1986, Luquillo, PR 00773</span>
+      <span><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#cookies">Cookies</a> · <a href="legal.html#trademark">Trademark</a> · <a href="legal.html#accessibility">Accessibility</a></span>
+      <span>Spring Educators EdTech Conference · April 12–13, 2027</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+  const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Countdown to kickoff: April 12, 2027, 7:00 AM AST (UTC-4)
+  const target=new Date('2027-04-12T07:00:00-04:00').getTime();
+  const pad=n=>String(n).padStart(2,'0');
+  function tick(){
+    let ms=target-Date.now();
+    if(ms<0)ms=0;
+    const d=Math.floor(ms/864e5), h=Math.floor(ms%864e5/36e5), m=Math.floor(ms%36e5/6e4), s=Math.floor(ms%6e4/1e3);
+    document.getElementById('cd-d').textContent=d;
+    document.getElementById('cd-h').textContent=pad(h);
+    document.getElementById('cd-m').textContent=pad(m);
+    document.getElementById('cd-s').textContent=pad(s);
+  }
+  tick();setInterval(tick,1000);
+
+  // Attendee registration link not yet provided — buttons alert until the 2027 link exists
+  document.querySelectorAll('[data-reg]').forEach(a=>a.addEventListener('click',e=>{
+    e.preventDefault();
+    a.innerHTML='Registration opens soon';
+  }));
+</script>
+<script>
+document.querySelectorAll('.has-menu > a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    if(matchMedia('(hover: none)').matches && innerWidth>720){
+      const li=a.parentElement;
+      if(!li.classList.contains('open')){e.preventDefault();document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'));li.classList.add('open');}
+    }
+  });
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.has-menu'))document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'))});
+</script>
+</body>
+</html>

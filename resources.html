@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Resources — Tech My School</title>
+<link rel="icon" type="image/png" href="assets/logo-circle.png">
+<meta name="description" content="Free guidebooks, courses, classroom grants, and our esports league — resources from Tech My School for educators and families.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#3a3a3a;--navy-deep:#0e3320;--teal:#00b050;--teal-dark:#00913f;--green:#029ec5;--green-soft:#e2f4f9;--teal-soft:#e4f7eb;--paper:#f8fafb;--ink:#1c2b39;--ink-soft:#54697c;--card:#fff;--radius:18px;--radius-lg:26px;--maxw:1200px;--shadow:0 2px 20px rgba(40,40,40,.09)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Roboto Slab',serif;line-height:1.18;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:88px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+  .eyebrow::before{content:"";width:24px;height:3px;background:var(--green);border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-teal{background:var(--teal);color:#fff}
+  .btn-teal:hover{box-shadow:0 8px 24px rgba(0,176,80,.4)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{box-shadow:0 8px 24px rgba(2,158,197,.4)}
+  .btn-white{background:#fff;color:var(--navy)}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(4px)}
+  .section-head{max-width:720px;margin-bottom:48px}
+  .section-head h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .section-head p{font-size:17px;color:var(--ink-soft)}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(40,40,40,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .logo img{height:52px;width:auto}
+  .logo .white-bg{background:transparent;border-radius:12px;padding:6px 12px;transition:.3s;display:inline-block}
+  header:not(.scrolled) .logo .white-bg{background:rgba(255,255,255,.92)}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav-links a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);position:relative;padding:4px 0}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2.5px;background:var(--teal);transition:width .25s}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links .btn{padding:11px 24px;font-size:14.5px}
+  header:not(.scrolled) .nav-links a:not(.btn){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110}
+  .hamburger span{display:block;width:24px;height:2.5px;background:var(--navy);margin:5px 0;border-radius:2px}
+  header:not(.scrolled) .hamburger span{background:#fff}
+  .page-hero{position:relative;min-height:52vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+  .page-hero .bg{position:absolute;inset:0;background:url('https://techmyschool.org/wp-content/uploads/2024/11/yeidy.jpeg') center 30%/cover no-repeat}
+  .page-hero .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,40,24,.92) 0%,rgba(10,40,24,.5) 60%,rgba(10,40,24,.3) 100%)}
+  .page-hero .wrap{position:relative;z-index:2;padding-top:140px;padding-bottom:56px}
+  .page-hero h1{font-size:clamp(36px,5.5vw,60px);font-weight:800;margin-bottom:10px}
+  .page-hero p{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.9);max-width:56ch}
+  .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .res{background:var(--card);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .res .tag{align-self:flex-start;background:var(--teal-soft);color:#00913f;border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+  .res h3{font-size:21px;color:var(--navy);margin-bottom:10px}
+  .res p{color:var(--ink-soft);font-size:15px;flex:1;margin-bottom:22px}
+  .courses-band{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff;margin-top:20px}
+  .courses-band .bg{position:absolute;inset:0;background:url('assets/photo-pd-coaching.jpg') center 30%/cover}
+  .courses-band .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(0,145,63,.94),rgba(10,40,24,.75))}
+  .courses-band .body{position:relative;z-index:2;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .courses-band h3{font-size:24px;font-weight:800;margin-bottom:6px}
+  .courses-band p{color:rgba(255,255,255,.85);font-size:15px;max-width:56ch}
+  .grants{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .grants .section-head h2{color:#fff}
+  .grants .section-head p{color:rgba(255,255,255,.72)}
+  .grant-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  .grant{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column}
+  .grant h3{color:#8ce8ac;font-size:19px;margin-bottom:10px}
+  .grant p{font-size:14.5px;color:rgba(255,255,255,.8);flex:1;margin-bottom:22px}
+  .esports-split{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+  .esports-split h2{font-size:clamp(28px,4vw,42px);font-weight:800;color:var(--navy);margin-bottom:16px}
+  .esports-split p{font-size:16px;color:var(--ink-soft);margin-bottom:14px}
+  .esports-split img{border-radius:var(--radius-lg);width:100%;height:420px;object-fit:cover;box-shadow:var(--shadow)}
+  .es-feats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
+  .es-feats span{background:var(--teal-soft);color:var(--teal-dark);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:700;font-family:'Montserrat',sans-serif}
+  .es-schools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
+  .es-schools span{background:var(--card);border-radius:100px;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)}
+  footer{background:var(--navy-deep);color:#fff;padding:64px 0 32px;border-radius:44px 44px 0 0;margin-top:88px}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px}
+  .foot-grid h4{font-size:14px;color:#8ce8ac;margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .foot-grid a{color:rgba(255,255,255,.75);font-size:14.5px}
+  .foot-grid a:hover{color:#8ce8ac}
+  .foot-brand img{height:56px;width:auto;background:#fff;border-radius:14px;padding:8px 14px}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:36ch;margin-top:16px}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:980px){
+    .res-grid,.grant-grid{grid-template-columns:1fr}
+    .esports-split{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:720px){
+    section{padding:60px 0}
+    .nav-links{position:fixed;inset:0;top:0;background:var(--navy-deep);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .nav-links a:not(.btn){color:#fff!important;font-size:18px}
+    .hamburger{display:block}
+    .courses-band .body{padding:32px 28px}
+  }
+</style>
+<style>
+/* ===== Mega menu ===== */
+.nav-links .caret{font-size:10px;margin-left:6px;opacity:.75}
+.has-menu{position:relative}
+.mega{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(10px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(10,40,24,.25);padding:14px;min-width:330px;display:flex;flex-direction:column;gap:2px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:120}
+.mega::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.mega a{display:block;padding:12px 16px;border-radius:12px;color:var(--navy)!important;text-shadow:none!important;transition:background .15s}
+.mega a:hover{background:var(--teal-soft)}
+.mega a::after{display:none!important}
+.mega strong{display:block;font-family:'Montserrat',sans-serif;font-size:14.5px}
+.mega span:not(.caret){display:block;font-size:12.5px;color:var(--ink-soft);font-weight:400;margin-top:1px}
+@media(hover:hover) and (min-width:721px){.has-menu:hover .mega,.has-menu:focus-within .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}}
+.has-menu.open .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+@media(max-width:720px){
+  .nav-links{overflow-y:auto;padding:90px 30px 40px;justify-content:flex-start!important;align-items:flex-start!important;gap:22px!important}
+  .has-menu{width:100%}
+  .mega{position:static;transform:none;opacity:1;pointer-events:auto;box-shadow:none;background:transparent;padding:6px 0 8px 14px;min-width:0}
+  .mega a{color:#fff!important;padding:8px 0}
+  .mega a:hover{background:transparent}
+  .mega strong{font-size:15px;color:#8ce8ac}
+  .mega span:not(.caret){color:rgba(255,255,255,.6)}
+}
+/* subpage hero entrance */
+@keyframes pageRise{to{opacity:1;transform:none}}
+.page-hero .wrap>*{opacity:0;transform:translateY(26px);animation:pageRise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.page-hero .wrap>*:nth-child(2){animation-delay:.15s}
+.page-hero .wrap>*:nth-child(3){animation-delay:.3s}
+.page-hero .wrap>*:nth-child(4){animation-delay:.45s}
+.page-hero .wrap>*:nth-child(5){animation-delay:.6s}
+.page-hero .bg{animation:pageKen 14s ease-out both}
+@keyframes pageKen{from{transform:scale(1.1)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.page-hero .wrap>*,.page-hero .bg,.hero .bg,.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.hero-stats{animation:none!important;opacity:1!important;transform:none!important}}
+</style>
+<style>
+/* ===== Brand bubbles (playful shapes) ===== */
+.how,.values,.stages,.act60,.grants,.how-band,.pricing{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+</style>
+</head>
+<body>
+
+<header id="header">
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="white-bg"><img src="assets/logo.png" alt="Tech My School"></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-menu">
+        <a href="about.html">About<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="about.html#story"><strong>Our Story</strong><span>Founded by educators, built for Puerto Rico</span></a>
+          <a href="about.html#mission"><strong>Mission &amp; Values</strong><span>Why we do this — the PARROT values</span></a>
+          <a href="about.html#schools"><strong>Schools Served</strong><span>50+ around the island &amp; the world</span></a>
+          <a href="team.html"><strong>Our Team</strong><span>Board, leadership &amp; flock leaders</span></a>
+          <a href="about.html#faqs"><strong>FAQs</strong><span>Common questions, answered</span></a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <a href="services.html">Services<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="services.html#itp"><strong>Tech Plans</strong><span>Our flagship — hundreds of plans, built with Tech Plan Genie</span></a>
+          <a href="services.html#products"><strong>Tech Bros!</strong><span>Incognito thought partners for tech leaders</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Online Courses</strong><span>Free &amp; paid EdTech courses on LearnWorlds</span></a>
+          <a href="services.html#products"><strong>Discounted Software</strong><span>Deep discounts passed straight to schools</span></a>
+          <a href="conference.html"><strong>Spring Educators Conference</strong><span>Puerto Rico's biggest EdTech event</span></a>
+          <a href="stem-lab.html"><strong>Mobile STEM Lab</strong><span>Hands-on classes — we come to you</span></a>
+        </div>
+      </li>
+      <li><a href="conference.html">Conference</a></li>
+      <li class="has-menu">
+        <a href="resources.html">Resources<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="resources.html#guides"><strong>Parent Guidebooks</strong><span>Free digital guides for PR families</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Teacher Login &amp; Courses</strong><span>Your LMS home on LearnWorlds</span></a>
+          <a href="resources.html#grants"><strong>Grants</strong><span>Classroom headsets — PR &amp; US</span></a>
+          <a href="resources.html#esports"><strong>Esports League</strong><span>8 schools, every Friday at 3pm</span></a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-teal">Donate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="page-hero">
+  <div class="bg"></div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="eyebrow" style="color:#8ce8ac">Resources</div>
+    <h1>Free tools for educators &amp; families.</h1>
+    <p>Guidebooks, courses, classroom grants, and an esports league — most of it completely free.</p>
+  </div>
+</div>
+
+<!-- GUIDES -->
+<section id="guides">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Guidebooks</div>
+      <h2>Comprehensive digital guides, free for families.</h2>
+    </div>
+    <div class="res-grid">
+      <div class="res reveal">
+        <span class="tag">Free</span>
+        <h3>The Parent's Guidebook to Puerto Rican Schools</h3>
+        <p>Covers the entire island in six distinct sections — the top schools by region, cultural places to visit, top activities for kids, educational apps, and more.</p>
+        <a class="btn btn-teal" href="https://publuu.com/flip-book/934439/2049088" target="_blank" rel="noopener">Read the guide <span class="arrow">→</span></a>
+      </div>
+      <div class="res reveal">
+        <span class="tag">Free</span>
+        <h3>The Parent's Guidebook to Homeschooling in Puerto Rico</h3>
+        <p>Everything to start your educational adventure — legal information about homeschooling, essential educational materials, and the top applications broken down by subject.</p>
+        <a class="btn btn-teal" href="https://publuu.com/flip-book/934439/2049078" target="_blank" rel="noopener">Read the guide <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <div class="courses-band reveal">
+      <div class="bg"></div>
+      <div class="scrim"></div>
+      <div class="body">
+        <div>
+          <h3>Free &amp; paid online courses</h3>
+          <p>Self-paced asynchronous courses to build technology readiness for educators — learn on your schedule.</p>
+        </div>
+        <a class="btn btn-white" href="https://connect.techmyschool.org" target="_blank" rel="noopener">Explore courses <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GRANTS -->
+<section class="grants" id="grants" style="padding:80px 0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:#8ce8ac">Grants</div>
+      <h2>Classroom headsets for educators.</h2>
+      <p>In partnership with Eduvy, we're covering the cost of thousands of high-quality headsets for classrooms in Puerto Rico and throughout the United States.</p>
+    </div>
+    <div class="grant-grid reveal">
+      <div class="grant">
+        <h3>🇵🇷 Puerto Rican classrooms</h3>
+        <p>Tell us why your classroom deserves funding, and we'll get quality headsets into your students' hands.</p>
+        <a class="btn btn-green" href="https://tadacards.typeform.com/to/jwcjtF17" target="_blank" rel="noopener">Apply — PR grant <span class="arrow">→</span></a>
+      </div>
+      <div class="grant">
+        <h3>🇺🇸 US classrooms</h3>
+        <p>Educators across the United States can apply for the same headset grant program.</p>
+        <a class="btn btn-green" href="https://tadacards.typeform.com/Techmyschool" target="_blank" rel="noopener">Apply — US grant <span class="arrow">→</span></a>
+      </div>
+    </div>
+    <p style="margin-top:28px;font-size:14.5px;color:rgba(255,255,255,.7)">Questions? Reach out to <a href="mailto:grants@techmyschool.org" style="color:#8ce8ac;font-weight:600">grants@techmyschool.org</a></p>
+  </div>
+</section>
+
+<!-- ESPORTS -->
+<section id="esports">
+  <div class="wrap esports-split">
+    <div class="reveal">
+      <div class="eyebrow">Esports</div>
+      <h2>An esports league that builds bridges.</h2>
+      <p>At Tech My School we find it very important to build bridges and community through sport. Our annual esports league and World Cup Tournament brings schools together no matter their location — they play every Friday at 3pm.</p>
+      <div class="es-feats">
+        <span>High-speed internet</span>
+        <span>TV &amp; Xbox equipment</span>
+        <span>Game subscriptions</span>
+        <span>League management</span>
+      </div>
+      <p style="font-weight:600;color:var(--navy);margin-bottom:10px">Competing schools:</p>
+      <div class="es-schools">
+        <span>Emanuel Centro Educativo</span>
+        <span>Robertson's Private School</span>
+        <span>Little Brains Academy</span>
+        <span>Paradiso Prep Arecibo</span>
+        <span>East Point Academy</span>
+        <span>Paradiso Prep Río Piedras</span>
+        <span>Athena Bilingual Academy</span>
+        <span>Christian Day School</span>
+      </div>
+      <a class="btn btn-teal" href="mailto:info@techmyschool.org?subject=Esports%20League">Get your school in the league <span class="arrow">→</span></a>
+    </div>
+    <img class="reveal" src="assets/photo-esports-awards.jpg" alt="TMS Esports League championship awards" loading="lazy">
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Tech My School">
+        <p>Empowering schools through technology. A 501(c)(3) nonprofit · EIN: 66-0996264. Donations are fully tax-deductible.</p>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul><li><a href="about.html#story">Our Story</a></li><li><a href="about.html#mission">Mission &amp; Values</a></li><li><a href="team.html">Our Team</a></li><li><a href="about.html#schools">Schools Served</a></li><li><a href="about.html#faqs">FAQs</a></li></ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul><li><a href="services.html#itp">The ITP</a></li><li><a href="services.html#pd">Professional Development</a></li><li><a href="stem-lab.html">Mobile STEM Lab</a></li><li><a href="services.html#products">Products</a></li><li><a href="services.html#partners">Partners</a></li><li><a href="conference.html">Conference</a></li></ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul><li><a href="resources.html">Resources</a></li><li><a href="donate.html">Donate</a></li><li><a href="donate.html#act60">Act 60</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://connect.techmyschool.org" target="_blank" rel="noopener">Teacher Login ↗</a></li><li><a href="https://www.techplangenie.com" target="_blank" rel="noopener">Tech Plan Genie ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Tech My School · P.O. Box 1986, Luquillo, PR 00773</span>
+      <span><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#cookies">Cookies</a> · <a href="legal.html#trademark">Trademark</a> · <a href="legal.html#accessibility">Accessibility</a></span>
+      <span>(858) 899-7787 · info@techmyschool.org</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+  const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+document.querySelectorAll('.has-menu > a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    if(matchMedia('(hover: none)').matches && innerWidth>720){
+      const li=a.parentElement;
+      if(!li.classList.contains('open')){e.preventDefault();document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'));li.classList.add('open');}
+    }
+  });
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.has-menu'))document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'))});
+</script>
+</body>
+</html>

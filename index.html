@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech My School — Empowering Schools Through Technology</title>
+<link rel="icon" type="image/png" href="assets/logo-circle.png">
+<meta name="description" content="Tech My School is a Puerto Rico-based 501(c)(3) nonprofit creating a more equitable learning experience for all students by better leveraging technology in schools.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#3a3a3a;
+    --navy-deep:#0e3320;
+    --teal:#00b050;
+    --teal-dark:#00913f;
+    --green:#029ec5;
+    --green-soft:#e2f4f9;
+    --teal-soft:#e4f7eb;
+    --paper:#f8fafb;
+    --ink:#1c2b39;
+    --ink-soft:#54697c;
+    --card:#ffffff;
+    --radius:18px;
+    --radius-lg:26px;
+    --maxw:1200px;
+    --shadow:0 2px 20px rgba(40,40,40,.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Roboto Slab',serif;line-height:1.18;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  section{padding:96px 0}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+  .eyebrow::before{content:"";width:24px;height:3px;background:var(--green);border-radius:2px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;transition:transform .2s, box-shadow .2s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-teal{background:var(--teal);color:#fff}
+  .btn-teal:hover{box-shadow:0 8px 24px rgba(0,176,80,.4)}
+  .btn-green{background:var(--green);color:#fff}
+  .btn-green:hover{box-shadow:0 8px 24px rgba(2,158,197,.4)}
+  .btn-white{background:#fff;color:var(--navy)}
+  .btn-white:hover{box-shadow:0 8px 24px rgba(0,0,0,.2)}
+  .btn .arrow{transition:transform .2s}
+  .btn:hover .arrow{transform:translateX(4px)}
+
+  /* NAV */
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s}
+  header.scrolled{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(40,40,40,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .logo img{height:52px;width:auto}
+  .logo-fallback{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:var(--green)}
+  .logo-fallback span{color:var(--teal)}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav-links a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);position:relative;padding:4px 0}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2.5px;background:var(--teal);transition:width .25s}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links .btn{padding:11px 24px;font-size:14.5px}
+  header:not(.scrolled) .nav-links a:not(.btn){color:#fff;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+  header:not(.scrolled) .logo .white-bg{background:rgba(255,255,255,.92);border-radius:12px;padding:6px 12px}
+  .logo .white-bg{background:transparent;border-radius:12px;padding:6px 12px;transition:.3s;display:inline-block}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110}
+  .hamburger span{display:block;width:24px;height:2.5px;background:var(--navy);margin:5px 0;border-radius:2px}
+  header:not(.scrolled) .hamburger span{background:#fff}
+
+  /* HERO */
+  .hero{position:relative;min-height:92vh;display:flex;align-items:center;color:#fff;overflow:hidden}
+  .hero .bg{position:absolute;inset:0;background:url('https://techmyschool.org/wp-content/uploads/2024/11/d047b9_2a275c058ee949e6a1d5337b774c464cmv2.jpg') center 30%/cover no-repeat}
+  .hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,40,24,.88) 0%,rgba(10,40,24,.55) 50%,rgba(0,176,80,.25) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:120px;padding-bottom:80px}
+  .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 18px;font-size:13.5px;font-weight:600;margin-bottom:26px;backdrop-filter:blur(6px)}
+  .hero-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 2s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+  .hero h1{font-size:clamp(40px,6.5vw,76px);font-weight:800;max-width:15ch;margin-bottom:22px;text-shadow:0 2px 24px rgba(0,0,0,.3)}
+  .hero h1 .accent{color:#8ce8ac}
+  .hero p.lede{font-size:clamp(17px,2vw,20px);max-width:52ch;color:rgba(255,255,255,.92);margin-bottom:38px;text-shadow:0 1px 12px rgba(0,0,0,.4)}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .aud-nav{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:56px}
+  .aud-nav .lbl{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-right:4px}
+  .aud-nav a{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.28);backdrop-filter:blur(6px);border-radius:100px;padding:9px 19px;font-size:14px;font-weight:600;color:#fff;transition:background .2s,transform .2s}
+  .aud-nav a:hover{background:var(--teal);border-color:var(--teal);transform:translateY(-2px)}
+  .hero-stats{display:grid;grid-template-columns:repeat(4,auto);gap:44px;max-width:900px}
+  .hero-stat .num{font-family:'Montserrat',sans-serif;font-size:clamp(28px,3vw,40px);font-weight:800;color:#fff}
+  .hero-stat .num em{font-style:normal;color:#8ce8ac}
+  .hero-stat .lbl{font-size:13.5px;color:rgba(255,255,255,.8);margin-top:2px}
+
+  /* AUDIENCE PHOTO CARDS */
+  .audience{margin-top:-90px;position:relative;z-index:5;padding-bottom:0}
+  .aud-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .aud-card{background:var(--card);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 10px 40px rgba(40,40,40,.16);display:flex;flex-direction:column;transition:transform .25s}
+  .aud-card:hover{transform:translateY(-6px)}
+  .aud-card .ph{height:210px;overflow:hidden;position:relative}
+  .aud-card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .aud-card:hover .ph img{transform:scale(1.05)}
+  .aud-card .tag{position:absolute;top:14px;left:14px;background:rgba(255,255,255,.92);color:var(--navy);font-family:'Montserrat',sans-serif;font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px}
+  .aud-card .body{padding:26px 28px 30px;display:flex;flex-direction:column;flex:1}
+  .aud-card h3{font-size:21px;margin-bottom:8px;color:var(--navy)}
+  .aud-card p{color:var(--ink-soft);font-size:15px;flex:1}
+  .aud-card .more{margin-top:16px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14.5px;color:var(--teal)}
+
+  /* MISSION SPLIT */
+  .mission{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+  .mission h2{font-size:clamp(30px,4vw,46px);font-weight:800;color:var(--navy);margin-bottom:18px}
+  .mission p{font-size:17px;color:var(--ink-soft);margin-bottom:16px}
+  .mission .photo-stack{position:relative}
+  .mission .photo-stack .main{border-radius:var(--radius-lg);width:100%;height:460px;object-fit:cover;box-shadow:var(--shadow)}
+  .mission .photo-stack .float{position:absolute;bottom:-30px;left:-40px;width:46%;border-radius:var(--radius);box-shadow:0 16px 40px rgba(40,40,40,.25);border:6px solid #fff}
+  .mini-stats{display:flex;gap:32px;margin-top:28px}
+  .mini-stat .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:30px;color:var(--teal)}
+  .mini-stat .lbl{font-size:13.5px;color:var(--ink-soft)}
+
+  /* SERVICES */
+  .section-head{max-width:680px;margin-bottom:52px}
+  .section-head h2{font-size:clamp(30px,4.5vw,48px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .section-head p{font-size:17.5px;color:var(--ink-soft)}
+  .svc-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+  .svc{border-radius:var(--radius-lg);overflow:hidden;position:relative;min-height:340px;display:flex;align-items:flex-end;color:#fff;transition:transform .25s}
+  .svc:hover{transform:translateY(-5px)}
+  .svc .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}
+  .svc:hover .bg{transform:scale(1.05)}
+  .svc .scrim{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,40,24,.92) 0%,rgba(10,40,24,.35) 55%,rgba(10,40,24,.05) 100%)}
+  .svc .body{position:relative;z-index:2;padding:30px}
+  .svc h3{font-size:23px;font-weight:800;margin-bottom:8px}
+  .svc p{font-size:14.5px;color:rgba(255,255,255,.88);max-width:46ch}
+  .svc .more{display:inline-block;margin-top:14px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#8ce8ac}
+  .s1{grid-column:span 7}
+  .s2{grid-column:span 5}
+  .s3,.s4,.s5,.s6{grid-column:span 3}
+
+  /* HOW */
+  .how{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .how .section-head h2{color:#fff}
+  .how .section-head p{color:rgba(255,255,255,.7)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:step}
+  .step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:30px 26px;counter-increment:step}
+  .step::before{content:"0" counter(step);font-family:'Montserrat',sans-serif;font-size:14px;font-weight:800;color:var(--navy-deep);background:#8ce8ac;display:inline-grid;place-items:center;padding:6px 14px;border-radius:100px;margin-bottom:18px}
+  .step .ico{float:right;font-size:32px;line-height:1;margin-top:2px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.25))}
+  .step h3{font-size:18.5px;margin-bottom:10px;clear:none}
+  .step p{font-size:14.5px;color:rgba(255,255,255,.72)}
+
+  /* PARTNERS MARQUEE */
+  .pm{padding-top:0}
+  .pm .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:10px 0}
+  .pm .track{display:flex;gap:14px;width:max-content;animation:pmScroll 70s linear infinite}
+  .pm .rev .track{animation-direction:reverse;animation-duration:78s}
+  .pm .marquee:hover .track{animation-play-state:paused}
+  @keyframes pmScroll{to{transform:translateX(-50%)}}
+  .p-item{display:inline-flex;align-items:center;gap:10px;background:var(--card);border-radius:14px;padding:14px 24px;box-shadow:var(--shadow);white-space:nowrap;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+  .p-item img{height:34px;width:auto;display:block}
+  .p-item.logo{padding:10px 20px}
+  .p-item.logo img{border-radius:6px}
+  .p-item.logo img.tall{height:52px}
+  @media (prefers-reduced-motion: reduce){.pm .track{animation:none;flex-wrap:wrap;width:auto}}
+  /* PARTNER */
+  .partner-band{display:grid;grid-template-columns:1.1fr 1fr;gap:0;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);overflow:hidden}
+  .partner-copy{padding:52px 56px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
+  .partner-copy h2{font-size:clamp(26px,3.8vw,40px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .partner-copy p{font-size:16.5px;color:var(--ink-soft);margin-bottom:24px;max-width:52ch}
+  .partner-visual{background:linear-gradient(150deg,#f6f1fd 0%,#fdeade 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 36px;text-align:center}
+  .partner-visual img{max-height:320px;width:auto;mix-blend-mode:multiply}
+  .partner-visual .chips{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+  .partner-visual .chips span{background:#fff;border:1.5px solid #e3d9f5;border-radius:100px;padding:7px 16px;font-size:12.5px;font-weight:700;color:#4b2ea8;font-family:'Montserrat',sans-serif}
+
+  /* GALLERY */
+  .gallery-band{padding:0 0 96px}
+  /* LIVE INSTAGRAM FEED (Behold) */
+  .ig-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .ig-grid a{position:relative;display:block;border-radius:var(--radius);overflow:hidden;aspect-ratio:1/1;background:var(--teal-soft)}
+  .ig-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .ig-grid a:hover img{transform:scale(1.07)}
+  .ig-grid a::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(10,40,24,.55),transparent 55%);opacity:0;transition:opacity .25s}
+  .ig-grid a:hover::after{opacity:1}
+  .ig-grid .vid{position:absolute;top:10px;right:12px;color:#fff;font-size:15px;text-shadow:0 1px 6px rgba(0,0,0,.6);z-index:2}
+  .ig-follow{display:flex;justify-content:center;margin-top:26px}
+  @media(max-width:980px){.ig-grid{grid-template-columns:repeat(3,1fr)}}
+  .gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:16px}
+  .gal a{border-radius:var(--radius);overflow:hidden;position:relative;display:block}
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .gal a:hover img{transform:scale(1.06)}
+  .gal .tall{grid-row:span 2}
+  .gal .wide{grid-column:span 2}
+  .gal .ig-cta{background:linear-gradient(135deg,var(--teal),var(--green));display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;text-align:center;padding:20px}
+  .gal .ig-cta .big{font-size:26px}
+
+  /* CONFERENCE */
+  .conf{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff;min-height:440px;display:flex;align-items:center}
+  .conf .bg{position:absolute;inset:0;background:url('https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg') center/cover}
+  .conf .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(10,40,24,.92) 0%,rgba(10,40,24,.65) 55%,rgba(10,40,24,.2) 100%)}
+  .conf .body{position:relative;z-index:2;padding:64px;max-width:620px}
+  .conf h2{font-size:clamp(28px,4vw,44px);font-weight:800;margin-bottom:14px}
+  .conf p{color:rgba(255,255,255,.9);font-size:16.5px;margin-bottom:26px}
+  .conf .meta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+  .conf .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.2);backdrop-filter:blur(6px);border-radius:100px;padding:8px 18px;font-size:13.5px;font-weight:600}
+
+  /* DONATE */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:36px}
+  .tier{background:var(--card);border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .tier .band{height:6px;border-radius:6px;margin-bottom:22px}
+  .tier.blue .band{background:var(--green)}
+  .tier.gold .band{background:#f2b632}
+  .tier.plat .band{background:linear-gradient(90deg,#b8c4cc,#e8eef2,#b8c4cc)}
+  .tier h3{font-size:21px;color:var(--navy);margin-bottom:4px}
+  .tier .range{font-family:'Montserrat',sans-serif;font-weight:800;font-size:26px;color:var(--teal);margin-bottom:12px}
+  .tier p{color:var(--ink-soft);font-size:14.5px;flex:1}
+  .tier.featured{outline:3px solid var(--green);position:relative}
+  .tier.featured::after{content:"Most donations received";position:absolute;top:-14px;right:20px;background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;font-family:'Montserrat',sans-serif}
+  .donate-cta{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff}
+  .donate-cta .bg{position:absolute;inset:0;background:url('https://techmyschool.org/wp-content/uploads/2024/11/3-2-23-Fogo-De-Chao-2-1-1.jpg') center 35%/cover}
+  .donate-cta .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(0,145,63,.94),rgba(10,40,24,.72))}
+  .donate-cta .body{position:relative;z-index:2;padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+  .donate-cta h3{font-size:24px;font-weight:800;margin-bottom:6px}
+  .donate-cta p{color:rgba(255,255,255,.85);font-size:15px}
+
+  /* NEWSLETTER + FOOTER */
+  .newsletter{background:var(--navy);border-radius:var(--radius-lg);padding:52px 56px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-bottom:96px;color:#fff}
+  .newsletter h2{font-size:clamp(24px,3.5vw,34px);font-weight:800}
+  .newsletter p{color:rgba(255,255,255,.7);font-size:15px;margin-top:8px}
+  .newsletter form{display:flex;gap:12px}
+  .newsletter input{flex:1;padding:15px 22px;border-radius:100px;border:none;font-size:15.5px;font-family:'Inter',sans-serif}
+  .newsletter input:focus{outline:3px solid var(--teal)}
+  footer{background:var(--navy-deep);color:#fff;padding:72px 0 32px;border-radius:44px 44px 0 0}
+  .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:52px}
+  .foot-grid h4{font-size:14px;color:#8ce8ac;margin-bottom:18px;letter-spacing:.08em;text-transform:uppercase}
+  .foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .foot-grid a{color:rgba(255,255,255,.75);font-size:14.5px}
+  .foot-grid a:hover{color:#8ce8ac}
+  .foot-brand img{height:56px;width:auto;background:#fff;border-radius:14px;padding:8px 14px}
+  .foot-brand p{color:rgba(255,255,255,.6);font-size:14px;max-width:36ch;margin-top:16px}
+  .socials{display:flex;gap:12px;margin-top:22px}
+  .socials a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.1);font-size:15px;font-weight:700;font-family:'Montserrat',sans-serif;transition:.2s}
+  .socials a:hover{background:var(--teal)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.5)}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s, transform .6s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:980px){
+    .aud-grid{grid-template-columns:1fr 1fr}
+    .partner-band{grid-template-columns:1fr}
+    .mission{grid-template-columns:1fr;gap:72px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+    .s1,.s2,.s3,.s4,.s5,.s6{grid-column:span 2}
+    .steps{grid-template-columns:1fr 1fr}
+    .gal{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+    .tiers{grid-template-columns:1fr}
+    .newsletter{grid-template-columns:1fr;padding:40px 32px}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .hero-stats{grid-template-columns:1fr 1fr;gap:24px}
+    .conf .body{padding:44px 32px}
+  }
+  @media(max-width:720px){
+    section{padding:64px 0}
+    .nav-links{position:fixed;inset:0;top:0;background:var(--navy-deep);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .nav-links a:not(.btn){color:#fff!important;font-size:18px}
+    .hamburger{display:block}
+    .steps{grid-template-columns:1fr}
+    .donate-cta .body{padding:32px 28px}
+    .mission .photo-stack .float{left:0}
+  }
+</style>
+<style>
+/* ===== Mega menu ===== */
+.nav-links .caret{font-size:10px;margin-left:6px;opacity:.75}
+.has-menu{position:relative}
+.mega{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%) translateY(10px);background:#fff;border-radius:18px;box-shadow:0 20px 60px rgba(10,40,24,.25);padding:14px;min-width:330px;display:flex;flex-direction:column;gap:2px;opacity:0;pointer-events:none;transition:opacity .22s ease,transform .22s ease;z-index:120}
+.mega::before{content:"";position:absolute;top:-16px;left:0;right:0;height:16px}
+.mega a{display:block;padding:12px 16px;border-radius:12px;color:var(--navy)!important;text-shadow:none!important;transition:background .15s}
+.mega a:hover{background:var(--teal-soft)}
+.mega a::after{display:none!important}
+.mega strong{display:block;font-family:'Montserrat',sans-serif;font-size:14.5px}
+.mega span:not(.caret){display:block;font-size:12.5px;color:var(--ink-soft);font-weight:400;margin-top:1px}
+@media(hover:hover) and (min-width:721px){.has-menu:hover .mega,.has-menu:focus-within .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}}
+.has-menu.open .mega{opacity:1;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+@media(max-width:720px){
+  .nav-links{overflow-y:auto;padding:90px 30px 40px;justify-content:flex-start!important;align-items:flex-start!important;gap:22px!important}
+  .has-menu{width:100%}
+  .mega{position:static;transform:none;opacity:1;pointer-events:auto;box-shadow:none;background:transparent;padding:6px 0 8px 14px;min-width:0}
+  .mega a{color:#fff!important;padding:8px 0}
+  .mega a:hover{background:transparent}
+  .mega strong{font-size:15px;color:#8ce8ac}
+  .mega span:not(.caret){color:rgba(255,255,255,.6)}
+}
+/* subpage hero entrance */
+@keyframes pageRise{to{opacity:1;transform:none}}
+.page-hero .wrap>*{opacity:0;transform:translateY(26px);animation:pageRise .8s cubic-bezier(.2,.7,.2,1) forwards}
+.page-hero .wrap>*:nth-child(2){animation-delay:.15s}
+.page-hero .wrap>*:nth-child(3){animation-delay:.3s}
+.page-hero .wrap>*:nth-child(4){animation-delay:.45s}
+.page-hero .wrap>*:nth-child(5){animation-delay:.6s}
+.page-hero .bg{animation:pageKen 14s ease-out both}
+@keyframes pageKen{from{transform:scale(1.1)}to{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.page-hero .wrap>*,.page-hero .bg,.hero .bg,.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.hero-stats{animation:none!important;opacity:1!important;transform:none!important}}
+</style>
+<style>
+/* ===== Cinematic hero ===== */
+.hero .slides{position:absolute;inset:0}
+.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center 30%;opacity:0;transform:scale(1.02);transition:opacity 1.6s ease}
+.hero .slide.active{opacity:1;animation:kenburns 8s ease-out forwards}
+@keyframes kenburns{from{transform:scale(1.16)}to{transform:scale(1.02)}}
+.rotator{display:inline-grid;text-align:left;vertical-align:top}
+.rotator .word{grid-area:1/1;white-space:nowrap;transition:opacity .45s ease,transform .45s ease}
+.rotator .word.hide{opacity:0;transform:translateY(-24px);pointer-events:none}
+.rotator .word.enter{opacity:0;transform:translateY(24px)}
+.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.aud-nav,.hero-stats{opacity:0;transform:translateY(30px);animation:heroRise .95s cubic-bezier(.2,.7,.2,1) forwards}
+.hero-badge{animation-delay:3.95s}
+.hero h1{animation-delay:4.1s}
+.hero p.lede{animation-delay:4.3s}
+.hero-ctas{animation-delay:4.45s}
+.aud-nav{animation-delay:4.6s}
+.hero-stats{animation-delay:4.75s}
+@keyframes heroRise{to{opacity:1;transform:none}}
+.hero h1 .accent{background:linear-gradient(90deg,#8ce8ac 20%,#7ee2fb 40%,#8ce8ac 60%);background-size:200% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 5s linear infinite}
+@keyframes shine{to{background-position:200% center}}
+.hero-stat .num{font-variant-numeric:tabular-nums}
+.scroll-cue{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:3;width:26px;height:42px;border:2px solid rgba(255,255,255,.5);border-radius:14px;opacity:0;animation:heroRise .8s 1.4s forwards}
+.scroll-cue::after{content:"";position:absolute;top:8px;left:50%;width:4px;height:8px;margin-left:-2px;border-radius:4px;background:#8ce8ac;animation:cue 1.8s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:translateY(0);opacity:1}70%{transform:translateY(12px);opacity:0}}
+</style>
+<style>
+/* ===== Brand bubbles (playful shapes) ===== */
+.how,.values,.stages,.act60,.grants,.how-band,.pricing{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+</style>
+<style>
+/* ===== Opening reveal ===== */
+.intro{position:fixed;inset:0;z-index:999;background:var(--navy-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;transition:transform .9s cubic-bezier(.7,0,.2,1);overflow:hidden;cursor:pointer}
+.intro::before{content:"";position:absolute;top:-90px;right:12%;width:220px;height:220px;border-radius:50%;background:rgba(2,158,197,.35);animation:introDrift 5s ease-in-out infinite alternate}
+.intro::after{content:"";position:absolute;bottom:-160px;left:-80px;width:420px;height:420px;border-radius:50%;background:rgba(0,176,80,.3);animation:introDrift 6s ease-in-out infinite alternate-reverse}
+@keyframes introDrift{to{transform:translateY(26px)}}
+.intro.done{transform:translateY(-100%)}
+.intro-logo{width:112px;height:112px;border-radius:50%;box-shadow:0 12px 40px rgba(0,0,0,.35);opacity:0;transform:scale(.55);animation:introPop .7s .3s cubic-bezier(.2,.7,.3,1.25) forwards;position:relative;z-index:2}
+@keyframes introPop{to{opacity:1;transform:scale(1)}}
+.intro-line{margin-top:13vh;font-family:'Roboto Slab',serif;font-weight:700;font-size:clamp(30px,5.5vw,62px);color:#fff;display:flex;gap:.35em;flex-wrap:wrap;justify-content:center;padding:0 24px;text-align:center;position:relative;z-index:2}
+.intro-line span{opacity:0;transform:translateY(34px);animation:introWord .6s cubic-bezier(.2,.7,.2,1) forwards}
+.intro-line span:nth-child(1){animation-delay:1.1s}
+.intro-line span:nth-child(2){animation-delay:1.7s}
+.intro-line span:nth-child(3){animation-delay:2.3s;color:#8ce8ac}
+@keyframes introWord{to{opacity:1;transform:none}}
+.intro-skip{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.45);font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;opacity:0;animation:introWord .6s 2.8s forwards;z-index:2}
+.intro-parrot{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);height:min(34vh,320px);width:auto;opacity:0;animation:parrotFade 1.6s .6s ease forwards;pointer-events:none;z-index:0}
+@keyframes parrotFade{to{opacity:.14}}
+.intro-island{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);width:min(76vw,800px);height:auto;z-index:1;pointer-events:none;opacity:.6}
+.intro-island path,.intro-island polygon{fill:none;stroke:#8ce8ac;stroke-width:2;stroke-linejoin:round;stroke-linecap:round}
+.intro-island .main{stroke-dasharray:2600;stroke-dashoffset:2600;animation:islandDraw 2.8s .3s ease-out forwards}
+.intro-island .isle{opacity:0;animation:introWord .6s 2.6s forwards}
+@keyframes islandDraw{to{stroke-dashoffset:0}}
+body.intro-lock{overflow:hidden}
+@media (prefers-reduced-motion: reduce){.intro{display:none}}
+</style>
+</head>
+<body>
+
+<div class="intro" id="intro" aria-hidden="true">
+  <img class="intro-parrot" src="assets/parrot-line.png" alt="">
+  <svg class="intro-island" viewBox="0 0 420 95" aria-hidden="true">
+    <polygon class="main" points="105.0,24.0 109.4,33.5 117.0,36.7 120.2,46.8 123.3,50.6 118.3,56.9 119.5,58.2 118.3,61.4 118.9,65.8 116.4,68.3 116.4,70.8 118.3,72.7 115.8,74.0 115.1,77.2 119.5,79.1 120.2,81.6 113.2,86.0 116.4,91.7 115.8,89.8 117.0,88.6 127.8,91.7 136.6,87.3 143.6,88.6 146.1,87.3 148.6,87.9 149.9,91.1 154.3,94.2 158.8,94.9 156.9,93.6 160.7,91.7 157.5,89.8 158.1,87.9 160.0,87.9 161.9,91.7 167.6,91.1 168.3,92.3 169.5,90.5 172.7,91.7 180.3,87.3 176.5,87.9 175.8,86.7 177.7,86.0 177.7,84.1 184.1,82.9 186.0,84.8 184.7,86.7 186.6,84.8 190.4,84.8 193.6,87.3 199.2,88.6 204.3,86.0 206.8,89.2 214.4,89.2 223.3,85.4 230.9,84.8 235.3,89.2 241.0,91.7 251.7,86.7 256.8,89.8 258.1,92.3 260.6,91.7 263.1,94.2 271.4,89.8 275.8,92.3 274.5,93.6 278.3,94.9 289.1,89.2 295.4,91.1 299.8,86.7 305.5,88.6 307.4,87.3 315.6,87.3 323.2,82.2 328.3,81.0 327.7,74.6 333.3,74.0 336.5,62.6 344.7,53.1 350.4,53.8 351.1,51.2 355.5,49.3 359.9,50.6 358.0,48.1 360.5,44.9 363.7,48.1 364.3,46.2 366.2,46.2 364.3,44.9 363.7,41.1 362.4,42.4 359.9,41.1 360.5,29.1 359.3,27.2 361.8,20.9 358.6,24.0 357.4,22.8 355.5,24.7 349.8,24.0 346.0,20.9 342.8,22.1 337.8,16.4 334.6,17.7 334.6,15.2 332.1,17.1 328.3,13.3 322.0,12.7 318.2,10.1 313.7,11.4 304.2,8.9 302.3,11.4 297.9,11.4 283.4,7.0 289.7,10.8 285.9,13.9 285.3,11.4 282.7,11.4 280.8,9.5 280.8,7.6 276.4,10.1 273.3,7.6 273.9,6.3 272.6,7.6 265.0,7.6 261.9,5.7 257.4,7.0 237.2,3.8 230.2,7.6 215.7,3.8 211.9,5.1 204.3,3.2 188.5,7.0 181.5,3.8 159.4,5.1 141.1,0.0 127.8,0.0 120.8,5.1 122.7,14.5 116.4,19.6"/>
+    <polygon class="isle" points="415.6,61.4 413.7,60.1 412.4,60.7 409.2,60.7 403.6,58.8 402.3,59.5 401.0,58.2 395.3,57.6 394.7,58.2 389.6,58.2 389.0,60.1 384.6,60.7 382.0,62.0 378.9,62.0 374.5,64.5 371.9,64.5 371.3,65.2 368.8,64.5 369.4,65.8 368.8,66.4 370.7,68.9 376.4,70.2 381.4,67.7 387.1,67.7 387.7,68.9 389.0,68.3 389.0,67.7 387.7,67.0 389.6,65.8 390.3,66.4 390.3,68.3 392.2,67.7 391.5,67.0 392.2,65.2 392.8,66.4 394.7,65.2 399.8,65.2 399.8,63.9 402.3,62.0 406.1,63.9 407.3,62.6 409.9,62.6 410.5,61.4 412.4,62.0 413.7,61.4 415.6,62.0"/>
+    <polygon class="isle" points="0.0,70.2 0.6,70.2 1.9,72.1 7.0,74.6 8.9,74.6 13.3,71.5 15.2,68.3 14.5,66.4 12.7,64.5 11.4,64.5 10.1,65.8 7.6,65.8 5.7,64.5 4.4,64.5 1.3,65.8 1.3,68.9"/>
+    <polygon class="isle" points="406.1,27.8 407.3,29.1 407.3,30.4 413.7,37.3 413.7,35.4 411.1,33.5 411.8,32.9 414.9,33.5 415.6,34.8 417.5,34.8 418.1,35.4 418.1,33.5 418.7,32.9 420.0,33.5 418.7,31.6 415.6,29.7 411.1,29.7 410.5,29.1 408.6,30.4"/>
+  </svg>
+  <h2 class="intro-line"><span>Every child.</span><span>Every school.</span><span>Every future.</span></h2>
+  <div class="intro-skip">Click to skip</div>
+</div>
+
+
+<header id="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <span class="white-bg"><img src="assets/logo.png" alt="Tech My School" onerror="this.outerHTML='&lt;span class=&quot;logo-fallback&quot;&gt;techmyschool&lt;span&gt;.org&lt;/span&gt;&lt;/span&gt;'"></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li class="has-menu">
+        <a href="about.html">About<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="about.html#story"><strong>Our Story</strong><span>Founded by educators, built for Puerto Rico</span></a>
+          <a href="about.html#mission"><strong>Mission &amp; Values</strong><span>Why we do this — the PARROT values</span></a>
+          <a href="about.html#schools"><strong>Schools Served</strong><span>50+ around the island &amp; the world</span></a>
+          <a href="team.html"><strong>Our Team</strong><span>Board, leadership &amp; flock leaders</span></a>
+          <a href="about.html#faqs"><strong>FAQs</strong><span>Common questions, answered</span></a>
+        </div>
+      </li>
+      <li class="has-menu">
+        <a href="services.html">Services<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="services.html#itp"><strong>Tech Plans</strong><span>Our flagship — hundreds of plans, built with Tech Plan Genie</span></a>
+          <a href="services.html#products"><strong>Tech Bros!</strong><span>Incognito thought partners for tech leaders</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Online Courses</strong><span>Free &amp; paid EdTech courses on LearnWorlds</span></a>
+          <a href="services.html#products"><strong>Discounted Software</strong><span>Deep discounts passed straight to schools</span></a>
+          <a href="conference.html"><strong>Spring Educators Conference</strong><span>Puerto Rico's biggest EdTech event</span></a>
+          <a href="stem-lab.html"><strong>Mobile STEM Lab</strong><span>Hands-on classes — we come to you</span></a>
+        </div>
+      </li>
+      <li><a href="conference.html">Conference</a></li>
+      <li class="has-menu">
+        <a href="resources.html">Resources<span class="caret">▾</span></a>
+        <div class="mega">
+          <a href="resources.html#guides"><strong>Parent Guidebooks</strong><span>Free digital guides for PR families</span></a>
+          <a href="https://connect.techmyschool.org" target="_blank" rel="noopener"><strong>Teacher Login &amp; Courses</strong><span>Your LMS home on LearnWorlds</span></a>
+          <a href="resources.html#grants"><strong>Grants</strong><span>Classroom headsets — PR &amp; US</span></a>
+          <a href="resources.html#esports"><strong>Esports League</strong><span>8 schools, every Friday at 3pm</span></a>
+        </div>
+      </li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-teal">Donate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="slides" aria-hidden="true">
+    <div class="slide active" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/11/d047b9_2a275c058ee949e6a1d5337b774c464cmv2.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/photo-conference-stage.jpg')"></div>
+    <div class="slide" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/11/IMG_9897-1.jpg')"></div>
+    <div class="slide" style="background-image:url('assets/photo-kids-ipads.jpg')"></div>
+  </div>
+  <div class="scrim"></div>
+  <div class="wrap">
+    <div class="hero-badge"><span class="dot"></span>501(c)(3) nonprofit · Serving Puerto Rico &amp; beyond</div>
+    <h1>Empowering schools through <span class="rotator"><span class="accent word" id="rotWord">technology</span></span>.</h1>
+    <p class="lede">We partner with schools to build individualized technology plans, train teachers, and empower students — creating a more equitable learning experience for every child.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-teal" href="https://calendly.com/techmyschool/itpmeeting" target="_blank" rel="noopener">Book a meeting <span class="arrow">→</span></a>
+      <a class="btn btn-white" href="donate.html">Donate</a>
+    </div>
+    <div class="aud-nav">
+      <span class="lbl">I'm here as…</span>
+      <a href="services.html">🏫 A School</a>
+      <a href="https://calendly.com/techmyschool/itpmeeting" target="_blank" rel="noopener">✨ A Potential Client</a>
+      <a href="https://connect.techmyschool.org" target="_blank" rel="noopener">🍎 A Teacher</a>
+      <a href="donate.html">💚 A Donor</a>
+      <a href="contact.html">🤝 A Partner</a>
+      <a href="resources.html">📚 Here to Learn</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num" data-count="50" data-suffix="+">50<em>+</em></div><div class="lbl">Schools served</div></div>
+      <div class="hero-stat"><div class="num" data-count="5000" data-suffix="+">5,000<em>+</em></div><div class="lbl">Students impacted</div></div>
+      <div class="hero-stat"><div class="num" data-count="1" data-prefix="$" data-suffix="M+">$1M<em>+</em></div><div class="lbl">Donated in goods &amp; services</div></div>
+      <div class="hero-stat"><div class="num" data-count="500" data-suffix="+">500<em>+</em></div><div class="lbl">Teachers trained monthly</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AUDIENCE CARDS -->
+<section class="audience">
+  <div class="wrap">
+    <div class="aud-grid">
+      <div class="aud-card reveal">
+        <div class="ph"><img src="https://techmyschool.org/wp-content/uploads/2024/11/IMG_9897-1.jpg" alt="TMS presenting a technology plan" loading="lazy"><span class="tag">Client schools</span></div>
+        <div class="body">
+          <h3>World-class products for your school</h3>
+          <p>From the Individualized Technology Plan to ongoing PD, we help schools maximize their technology usage with vision and clarity.</p>
+          <a class="more" href="services.html">Explore services →</a>
+        </div>
+      </div>
+      <div class="aud-card reveal">
+        <div class="ph"><img src="assets/photo-pd-samr.jpg" alt="Teachers in a TMS professional development session" loading="lazy"><span class="tag">Teachers</span></div>
+        <div class="body">
+          <h3>Your courses, one login away</h3>
+          <p>LearnWorlds is your TMS learning home — free and paid EdTech courses, on your schedule.</p>
+          <a class="more" href="https://connect.techmyschool.org" target="_blank" rel="noopener">Log in to LearnWorlds →</a>
+        </div>
+      </div>
+      <div class="aud-card reveal">
+        <div class="ph"><img src="https://techmyschool.org/wp-content/uploads/2024/11/IMG_4541.jpg" alt="Students in a Puerto Rican classroom" loading="lazy"><span class="tag">Schools in need</span></div>
+        <div class="body">
+          <h3>Technology donated, and so much more</h3>
+          <p>Are you a Puerto Rican school in need? We donate technology and support — apply to become one of our served schools.</p>
+          <a class="more" href="contact.html">Apply now →</a>
+        </div>
+      </div>
+      <div class="aud-card reveal">
+        <div class="ph"><img src="https://techmyschool.org/wp-content/uploads/2024/11/3-2-23-Fogo-De-Chao-2-1-1.jpg" alt="TMS donors and team" loading="lazy"><span class="tag">Donors</span></div>
+        <div class="body">
+          <h3>Join Puerto Rico's most impactful educational nonprofit</h3>
+          <p>Your dollar goes further here — transparent, visible daily, and fully tax-deductible. Act 60 qualified.</p>
+          <a class="more" href="donate.html">Start giving →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="about">
+  <div class="wrap mission">
+    <div class="reveal">
+      <div class="eyebrow">Our mission</div>
+      <h2>A more equitable learning experience for all students.</h2>
+      <p>Founded in 2021 by educators with twenty years of experience across four continents, Tech My School is a true nonprofit: every dollar of revenue goes toward serving low-income schools at no cost to them.</p>
+      <p>We don't just donate devices — we build strategic plans, train staff, and make sure students gain standards-aligned 21st-century skills. We teach schools how to fish.</p>
+      <div class="mini-stats">
+        <div class="mini-stat"><div class="num">100+</div><div class="lbl">PD sessions a year</div></div>
+        <div class="mini-stat"><div class="num">2021</div><div class="lbl">Founded in Puerto Rico</div></div>
+        <div class="mini-stat"><div class="num">4</div><div class="lbl">Continents of experience</div></div>
+      </div>
+      <div style="margin-top:32px"><a class="btn btn-green" href="about.html#story">Read our story <span class="arrow">→</span></a></div>
+    </div>
+    <div class="photo-stack reveal">
+      <img class="main" src="assets/photo-team-robinson.jpg" alt="The Tech My School team on site at a partner school" loading="lazy">
+      <img class="float" src="assets/photo-teachers-chromebooks.jpg" alt="Teachers celebrating donated Chromebooks" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our 6 big services</div>
+      <h2>From audit to impact, we've got your school covered.</h2>
+    </div>
+    <div class="svc-grid">
+      <a href="services.html#itp" class="svc s1 reveal">
+        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/11/IMG_9897-1.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>Tech Plans</h3>
+          <p>Our flagship product: creating a Technology Plan for your school. We've created hundreds of strategic plans for schools across Puerto Rico and the world — and every one begins with our essential partner, Tech Plan Genie.</p>
+          <span class="more">Start your Tech Plan →</span>
+        </div>
+      </a>
+      <a href="https://connect.techmyschool.org" target="_blank" rel="noopener" class="svc s2 reveal">
+        <div class="bg" style="background-image:url('assets/photo-pd-coaching.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>Online Courses</h3>
+          <p>Free and paid EdTech courses for teachers and parents — self-paced, on your schedule, at connect.techmyschool.org.</p>
+          <span class="more">Start learning →</span>
+        </div>
+      </a>
+      <a href="services.html#products" class="svc s3 reveal">
+        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/12/IMG_5833.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>Tech Bros!</h3>
+          <p>Discreet, low-cost thought partners for Technology Directors.</p>
+          <span class="more">Learn more →</span>
+        </div>
+      </a>
+      <a href="services.html#products" class="svc s4 reveal">
+        <div class="bg" style="background-image:url('assets/photo-expo-booth.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>Software Discounts</h3>
+          <p>Deep discounts on top-tier software, passed directly to schools.</p>
+          <span class="more">See partners →</span>
+        </div>
+      </a>
+      <a href="stem-lab.html" class="svc s6 reveal">
+        <div class="bg" style="background-image:url('assets/stem-van.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>Mobile STEM Lab</h3>
+          <p>We bring hands-on STEM classes to homeschool families across the island. First class free!</p>
+          <span class="more">Meet the van →</span>
+        </div>
+      </a>
+      <a href="conference.html" class="svc s5 reveal">
+        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg')"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <h3>EdTech Conference</h3>
+          <p>Our annual bilingual spring gathering — 40+ speakers.</p>
+          <span class="more">Get details →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOW -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow" style="color:#8ce8ac">How it works</div>
+      <h2>Four steps to transformation.</h2>
+      <p>Free or at a small subsidized cost, depending on scope — because budget should never be the barrier.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><span class="ico">🤝</span><h3>Partnership established</h3><p>A school looking to improve partners with TMS. We learn your culture, goals, and context.</p></div>
+      <div class="step reveal"><span class="ico">🔍</span><h3>Needs assessed</h3><p>A full technology audit sets agreed-upon guarantees, desired outcomes, and timelines.</p></div>
+      <div class="step reveal"><span class="ico">🧞</span><h3>Tech Plan created with TPG</h3><p>Your technology plan is built with our essential partner, Tech Plan Genie — collaboratively with your team.</p></div>
+      <div class="step reveal"><span class="ico">🚀</span><h3>Deployment &amp; follow-through</h3><p>We make sure your school meets its technology plan — delivering high-quality professional development, technology enhancements, and more.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNER -->
+<section id="partner" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="partner-band reveal">
+      <div class="partner-copy">
+        <div class="eyebrow">Official partner</div>
+        <h2>Powered by Tech Plan Genie.</h2>
+        <p>Tech My School exclusively uses Tech Plan Genie as the planning template source for all of our services. Every ITP, roadmap, and deployment we deliver is built on the AI-powered school technology planning platform — our official partner.</p>
+        <a class="btn btn-teal" href="https://www.techplangenie.com" target="_blank" rel="noopener">Visit techplangenie.com <span class="arrow">→</span></a>
+      </div>
+      <div class="partner-visual">
+        <img src="assets/tpg-logo.jpg" alt="Tech Plan Genie — AI-powered school technology planning" loading="lazy">
+        <div class="chips">
+          <span>Official TMS partner</span>
+          <span>Exclusive template source</span>
+          <span>AI-powered</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE PARTNERS MARQUEE -->
+<section class="pm" id="corporate-partners">
+  <div class="wrap">
+    <div class="section-head reveal" style="margin-bottom:28px">
+      <div class="eyebrow">Corporate partnerships</div>
+      <h2>The companies in our corner.</h2>
+      <p>From Fortune 500s to EdTech startups, we work with 40+ companies to bring better technology — and better prices — to schools.</p>
+    </div>
+  </div>
+  <div class="marquee" aria-label="Tech My School corporate partners">
+    <div class="track">
+      <span class="p-item logo"><img src="assets/partners/depr.png" alt="Departamento de Educación, Gobierno de Puerto Rico"></span><span class="p-item logo"><img src="assets/partners/carnegie-mellon.png" alt="Carnegie Mellon CS Academy"></span><span class="p-item logo"><img src="assets/partners/adobe.png" alt="Adobe"></span><span class="p-item logo"><img src="assets/partners/scholastic.png" alt="Scholastic"></span><span class="p-item logo"><img src="assets/partners/magic-school.png" alt="MagicSchool AI"></span><span class="p-item logo"><img src="assets/partners/wayground.png" alt="Wayground (formerly Quizizz)"></span><span class="p-item logo"><img src="assets/partners/seesaw.png" alt="Seesaw"></span><span class="p-item logo"><img src="assets/partners/toddle.png" alt="Toddle"></span><span class="p-item logo"><img src="assets/partners/codecombat.png" alt="CodeCombat"></span><span class="p-item logo"><img src="assets/partners/kais-education.png" alt="Kai's Education"></span><span class="p-item logo"><img src="assets/partners/facts.png" alt="FACTS, a Nelnet company"></span><span class="p-item logo"><img src="assets/partners/flint.png" alt="Flint"></span><span class="p-item logo"><img src="assets/partners/snorkl.png" alt="Snorkl"></span><span class="p-item logo"><img src="assets/partners/kami.png" alt="Kami"></span><span class="p-item logo"><img src="assets/partners/book-creator.png" alt="Book Creator"></span><span class="p-item logo"><img src="assets/partners/goreact.png" alt="GoReact"></span><span class="p-item logo"><img src="assets/partners/quizalize.png" alt="Quizalize"></span><span class="p-item logo"><img src="assets/partners/summit-k12.png" alt="Summit K12"></span><span class="p-item logo"><img src="assets/partners/trekai.png" alt="TrekAI"></span><span class="p-item">WeWillWrite</span><span class="p-item logo"><img src="assets/partners/knowt.png" alt="Knowt"></span>
+      <span class="p-item logo"><img src="assets/partners/depr.png" alt="Departamento de Educación, Gobierno de Puerto Rico"></span><span class="p-item logo"><img src="assets/partners/carnegie-mellon.png" alt="Carnegie Mellon CS Academy"></span><span class="p-item logo"><img src="assets/partners/adobe.png" alt="Adobe"></span><span class="p-item logo"><img src="assets/partners/scholastic.png" alt="Scholastic"></span><span class="p-item logo"><img src="assets/partners/magic-school.png" alt="MagicSchool AI"></span><span class="p-item logo"><img src="assets/partners/wayground.png" alt="Wayground (formerly Quizizz)"></span><span class="p-item logo"><img src="assets/partners/seesaw.png" alt="Seesaw"></span><span class="p-item logo"><img src="assets/partners/toddle.png" alt="Toddle"></span><span class="p-item logo"><img src="assets/partners/codecombat.png" alt="CodeCombat"></span><span class="p-item logo"><img src="assets/partners/kais-education.png" alt="Kai's Education"></span><span class="p-item logo"><img src="assets/partners/facts.png" alt="FACTS, a Nelnet company"></span><span class="p-item logo"><img src="assets/partners/flint.png" alt="Flint"></span><span class="p-item logo"><img src="assets/partners/snorkl.png" alt="Snorkl"></span><span class="p-item logo"><img src="assets/partners/kami.png" alt="Kami"></span><span class="p-item logo"><img src="assets/partners/book-creator.png" alt="Book Creator"></span><span class="p-item logo"><img src="assets/partners/goreact.png" alt="GoReact"></span><span class="p-item logo"><img src="assets/partners/quizalize.png" alt="Quizalize"></span><span class="p-item logo"><img src="assets/partners/summit-k12.png" alt="Summit K12"></span><span class="p-item logo"><img src="assets/partners/trekai.png" alt="TrekAI"></span><span class="p-item">WeWillWrite</span><span class="p-item logo"><img src="assets/partners/knowt.png" alt="Knowt"></span>
+    </div>
+  </div>
+  <div class="marquee rev" aria-hidden="true">
+    <div class="track">
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item">PracAI</span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item">Reframe XR</span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item">Eduvy</span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item">PracAI</span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item">Reframe XR</span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item">Eduvy</span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery-band" id="gallery" style="padding-top:96px">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our work in the wild</div>
+      <h2>Real schools. Real classrooms. Real impact.</h2>
+    </div>
+    <!-- Live Instagram feed (Behold). Shown when the feed loads; the curated gallery below is the fallback. -->
+    <div id="igFeed" hidden>
+      <div class="ig-grid reveal in" id="igGrid"></div>
+      <div class="ig-follow"><a class="btn btn-teal" href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener">Follow @techmyschool <span class="arrow">→</span></a></div>
+    </div>
+    <div class="gal reveal" id="igFallback">
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener" class="tall"><img src="assets/photo-teachers-chromebooks.jpg" alt="Teachers with donated Chromebooks" loading="lazy"></a>
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener"><img src="assets/photo-stem-dash.jpg" alt="Students learning with Dash robots" loading="lazy"></a>
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener"><img src="assets/photo-macbooks.jpg" alt="MacBook donation at East Point Academy" loading="lazy"></a>
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener" class="wide"><img src="https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg" alt="EdTech Conference" loading="lazy"></a>
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener"><img src="assets/photo-activpanel.jpg" alt="Delivering interactive panels to schools" loading="lazy"></a>
+      <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener" class="ig-cta">
+        <span class="big">@techmyschool</span>
+        <span>Follow our daily impact on Instagram →</span>
+      </a>
+    </div>
+  </div>
+</section>
+<script>
+// Live Instagram feed via Behold (free: behold.so). Paste the feed URL below to activate;
+// leave empty and the curated gallery above stays as-is.
+const BEHOLD_FEED_URL = "https://feeds.behold.so/UzAb9BJ6YxuLwhzOII9F";
+if(BEHOLD_FEED_URL){
+  fetch(BEHOLD_FEED_URL).then(r=>r.ok?r.json():Promise.reject()).then(data=>{
+    const posts=(data.posts||data||[]).slice(0,12);
+    if(!posts.length) return;
+    const grid=document.getElementById('igGrid');
+    grid.innerHTML=posts.map(p=>{
+      const sz=p.sizes&&(p.sizes.medium||p.sizes.small||p.sizes.large);
+      const img=sz?sz.mediaUrl:(p.mediaType==='VIDEO'?(p.thumbnailUrl||p.mediaUrl):p.mediaUrl);
+      const cap=(p.prunedCaption||p.caption||'Instagram post').replace(/"/g,'&quot;').slice(0,100);
+      const vid=p.mediaType==='VIDEO'?'<span class="vid">▶</span>':'';
+      return `<a href="${p.permalink}" target="_blank" rel="noopener" aria-label="${cap}">${vid}<img src="${img}" alt="${cap}" loading="lazy"></a>`;
+    }).join('');
+    document.getElementById('igFeed').hidden=false;
+    document.getElementById('igFallback').style.display='none';
+  }).catch(()=>{/* feed unavailable — curated gallery stays */});
+}
+</script>
+
+<!-- CONFERENCE -->
+<section id="conference" style="padding-top:0">
+  <div class="wrap">
+    <div class="conf reveal">
+      <div class="bg"></div>
+      <div class="scrim"></div>
+      <div class="body">
+        <img src="assets/conference-logo.jpg" alt="Spring Educators Conference" style="width:92px;height:92px;border-radius:50%;background:#fff;box-shadow:0 8px 26px rgba(0,0,0,.35);margin-bottom:18px">
+        <div class="eyebrow" style="color:#8ce8ac">Annual conference</div>
+        <h2>The Spring Educators EdTech Conference</h2>
+        <p>Every spring, educators from Puerto Rico and beyond gather to discover the latest in EdTech, instructional practice, and 21st-century learning.</p>
+        <div class="meta">
+          <span>📅 April 12–13, 2027</span>
+          <span>📍 Río Grande, PR</span>
+          <span>🌎 English &amp; Español</span>
+          <span>🎤 40+ speakers</span>
+        </div>
+        <a class="btn btn-teal" href="conference.html">See the conference <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section id="donate" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Support the mission</div>
+      <h2>Their future is in your hands.</h2>
+      <p>We serve schools all year long — not just during donation season — and our work is transparent and visible daily. Every gift is fully tax-deductible.</p>
+    </div>
+    <div class="tiers">
+      <div class="tier blue reveal">
+        <div class="band"></div>
+        <h3>Blue Parrot</h3>
+        <div class="range">$1 – $999</div>
+        <p>The lifeblood of the organization. Blue Parrot donors help us sustain operations serving thousands of students across Puerto Rico.</p>
+      </div>
+      <div class="tier gold featured reveal">
+        <div class="band"></div>
+        <h3>Golden Parrot</h3>
+        <div class="range">$1,000 – $5,000</div>
+        <p>Choose where your money goes — fund the project you feel most passionate about and see your impact firsthand.</p>
+      </div>
+      <div class="tier plat reveal">
+        <div class="band"></div>
+        <h3>Platinum Parrot</h3>
+        <div class="range">$5,001 – $10,000+</div>
+        <p>Help drive the direction of the nonprofit with generational impact on students and the island. Act 60 qualified.</p>
+      </div>
+    </div>
+    <div class="donate-cta reveal">
+      <div class="bg"></div>
+      <div class="scrim"></div>
+      <div class="body">
+        <div>
+          <h3>Ready to make an impact?</h3>
+          <p>PayPal · Cash App · GiveButter · ATH Móvil · DonaPR — or ask about Puerto Rico's Act 60 program.</p>
+        </div>
+        <a class="btn btn-white" href="https://www.paypal.com/donate/?hosted_button_id=9U9P783U5GLAE" target="_blank" rel="noopener">Donate now <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER + FOOTER -->
+<div class="wrap">
+  <div class="newsletter reveal">
+    <div>
+      <h2>Get the latest from the flock.</h2>
+      <p>News from our schools, conference updates, and free resources — no spam, ever.</p>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:flex-end">
+      <a class="btn btn-teal" href="https://docs.google.com/forms/d/e/1FAIpQLScAnVFOw1e4IeKX6o25mZsMKkBjiVawqlbCyhMIzgD-7--WKQ/viewform" target="_blank" rel="noopener">Join the mailing list <span class="arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="Tech My School">
+        <p>Empowering schools through technology. A 501(c)(3) nonprofit · EIN: 66-0996264. Donations are fully tax-deductible.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/techmyschool/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+          <a href="https://www.facebook.com/Techmyschool" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+          <a href="https://www.linkedin.com/company/techmyschool/" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+          <a href="https://twitter.com/techmyschool" target="_blank" rel="noopener" aria-label="X">X</a>
+        </div>
+      </div>
+      <div>
+        <h4>About</h4>
+        <ul><li><a href="about.html#story">Our Story</a></li><li><a href="about.html#mission">Mission &amp; Values</a></li><li><a href="team.html">Our Team</a></li><li><a href="about.html#schools">Schools Served</a></li><li><a href="about.html#faqs">FAQs</a></li></ul>
+      </div>
+      <div>
+        <h4>Programs</h4>
+        <ul><li><a href="services.html#itp">The ITP</a></li><li><a href="services.html#pd">Professional Development</a></li><li><a href="stem-lab.html">Mobile STEM Lab</a></li><li><a href="services.html#products">Products</a></li><li><a href="services.html#partners">Partners</a></li><li><a href="conference.html">Conference</a></li></ul>
+      </div>
+      <div>
+        <h4>More</h4>
+        <ul><li><a href="resources.html">Resources</a></li><li><a href="donate.html">Donate</a></li><li><a href="donate.html#act60">Act 60</a></li><li><a href="contact.html">Contact</a></li><li><a href="https://connect.techmyschool.org" target="_blank" rel="noopener">Teacher Login ↗</a></li><li><a href="https://www.techplangenie.com" target="_blank" rel="noopener">Tech Plan Genie ↗</a></li></ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Tech My School · P.O. Box 1986, Luquillo, PR 00773</span>
+      <span><a href="legal.html#privacy">Privacy</a> · <a href="legal.html#cookies">Cookies</a> · <a href="legal.html#trademark">Trademark</a> · <a href="legal.html#accessibility">Accessibility</a></span>
+      <span>(858) 899-7787 · info@techmyschool.org</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header=document.getElementById('header');
+  addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>10),{passive:true});
+  const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script>
+document.querySelectorAll('.has-menu > a').forEach(a=>{
+  a.addEventListener('click',e=>{
+    if(matchMedia('(hover: none)').matches && innerWidth>720){
+      const li=a.parentElement;
+      if(!li.classList.contains('open')){e.preventDefault();document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'));li.classList.add('open');}
+    }
+  });
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.has-menu'))document.querySelectorAll('.has-menu.open').forEach(x=>x.classList.remove('open'))});
+</script>
+<script>
+// Count-up hero stats
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const nums=document.querySelectorAll('.hero-stat .num[data-count]');
+  const run=el=>{
+    const t=+el.dataset.count,p=el.dataset.prefix||'',sf=el.dataset.suffix||'',dur=1800,st=performance.now();
+    const step=now=>{
+      const k=Math.min(1,(now-st)/dur), e=1-Math.pow(1-k,3);
+      el.innerHTML=p+Math.round(t*e).toLocaleString('en-US')+'<em>'+sf+'</em>';
+      if(k<1)requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  };
+  setTimeout(()=>nums.forEach(run), 4750); // sync with stats reveal after intro
+})();
+
+// Continuous hero slideshow (Ken Burns crossfade)
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const slides=[...document.querySelectorAll('.hero .slide')];
+  if(slides.length<2) return;
+  let i=0;
+  setInterval(()=>{
+    slides[i].classList.remove('active');
+    i=(i+1)%slides.length;
+    slides[i].classList.add('active');
+  },6000);
+})();
+
+// Rotating headline word
+(function(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const el=document.getElementById('rotWord');
+  if(!el) return;
+  const words=['technology','innovation','service','community','partnership','accountability','donations','opportunity'];
+  let i=0;
+  setInterval(()=>{
+    el.classList.add('hide');
+    setTimeout(()=>{
+      i=(i+1)%words.length;
+      el.textContent=words[i];
+      el.classList.remove('hide');
+      el.classList.add('enter');
+      requestAnimationFrame(()=>requestAnimationFrame(()=>el.classList.remove('enter')));
+    },460);
+  },3400);
+})();
+</script>
+<script>
+// Opening reveal — plays on load, click to skip, honors reduced motion
+(function(){
+  const intro=document.getElementById('intro');
+  if(!intro) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+    intro.remove();
+    document.querySelectorAll('.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.aud-nav,.hero-stats').forEach(e=>{e.style.animationDelay='0s'});
+    return;
+  }
+  document.body.classList.add('intro-lock');
+  let ended=false;
+  const end=()=>{
+    if(ended) return; ended=true;
+    intro.classList.add('done');
+    document.body.classList.remove('intro-lock');
+    setTimeout(()=>intro.remove(),1000);
+  };
+  setTimeout(end,4000);
+  intro.addEventListener('click',()=>{
+    document.querySelectorAll('.hero-badge,.hero h1,.hero p.lede,.hero-ctas,.aud-nav,.hero-stats').forEach(e=>{e.style.animationDelay='.2s'});
+    end();
+  });
+})();
+</script>
+</body>
+</html>

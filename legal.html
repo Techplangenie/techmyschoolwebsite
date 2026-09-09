@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Policies — Tech My School</title>
+<link rel="icon" type="image/png" href="assets/logo-circle.png">
+<meta name="description" content="Privacy, cookie, trademark, and accessibility policies for Tech My School Inc.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#3a3a3a;--navy-deep:#0e3320;--teal:#00b050;--teal-dark:#00913f;--green:#029ec5;--green-soft:#e2f4f9;--teal-soft:#e4f7eb;--paper:#f8fafb;--ink:#1c2b39;--ink-soft:#54697c;--card:#fff;--radius:18px;--radius-lg:26px;--maxw:1200px;--shadow:0 2px 20px rgba(40,40,40,.09)}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Roboto Slab',serif;line-height:1.18;letter-spacing:-.01em}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:100px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;transition:transform .2s,box-shadow .2s;cursor:pointer;border:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-teal{background:var(--teal);color:#fff}
+  header{position:fixed;top:0;left:0;right:0;z-index:100;transition:.3s;background:rgba(255,255,255,.92);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(40,40,40,.1)}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:var(--maxw);margin:0 auto}
+  .logo img{height:52px;width:auto}
+  .logo .white-bg{border-radius:12px;padding:6px 12px;display:inline-block}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none}
+  .nav-links a{font-family:'Montserrat',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);position:relative;padding:4px 0}
+  .nav-links a:not(.btn)::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2.5px;background:var(--teal);transition:width .25s}
+  .nav-links a:not(.btn):hover::after{width:100%}
+  .nav-links .btn{padding:11px 24px;font-size:14.5px}
+  .hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;z-index:110}
+  .hamburger span{display:block;width:24px;height:2.5px;background:var(--navy);margin:5px 0;border-radius:2px}
+  .page-head{padding:150px 0 40px}
+  .page-head h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--navy);margin-bottom:10px}
+  .page-head p{color:var(--ink-soft);font-size:16px}
+  .toc{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+  .toc a{background:var(--card);border-radius:100px;padding:9px 20px;font-size:13.5px;font-weight:700;font-family:'Montserrat',sans-serif;color:var(--navy);box-shadow:var(--shadow);transition:.2s}
+  .toc a:hover{background:var(--teal);color:#fff}
+  .policy{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:48px 52px;max-width:900px;margin:0 auto 28px;scroll-margin-top:110px}
+  .policy h2{font-size:26px;color:var(--navy);margin-bottom:6px}
+  .policy .updated{font-size:13px;color:var(--ink-soft);margin-bottom:22px}
+  .policy h3{font-size:17px;color:var(--navy);margin:22px 0 8px}
+  .policy p{font-size:15.5px;color:var(--ink-soft);margin-bottom:12px}
+  .policy ul{margin:0 0 12px 20px;color:var(--ink-soft);font-size:15.5px}
+  .policy li{margin-bottom:6px}
+  .policy a{color:var(--teal);font-weight:600}
+  footer{background:var(--navy-deep);color:#fff;padding:48px 0 32px;border-radius:44px 44px 0 0;margin-top:64px}
+  .foot-bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.6)}
+  .foot-bottom a{color:rgba(255,255,255,.75)}
+  @media(max-width:720px){
+    .nav-links{position:fixed;inset:0;top:0;background:var(--navy-deep);flex-direction:column;justify-content:center;gap:30px;transform:translateX(100%);transition:transform .3s}
+    .nav-links.open{transform:none}
+    .nav-links a:not(.btn){color:#fff!important;font-size:18px}
+    .hamburger{display:block}
+    .policy{padding:32px 24px}
+  }
+</style>
+<style>
+/* ===== Brand bubbles (playful shapes) ===== */
+.how,.values,.stages,.act60,.grants,.how-band,.pricing{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+</style>
+</head>
+<body>
+
+<header id="header" class="scrolled">
+  <nav class="nav">
+    <a href="index.html" class="logo"><span class="white-bg"><img src="assets/logo.png" alt="Tech My School"></span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="conference.html">Conference</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="donate.html" class="btn btn-teal">Donate</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<div class="wrap page-head">
+  <h1>Our policies.</h1>
+  <p>How we handle your information, your visit, our brand, and everyone's access.</p>
+  <div class="toc">
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#cookies">Cookie Policy</a>
+    <a href="#trademark">Trademark Policy</a>
+    <a href="#accessibility">Accessibility Statement</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+<section class="policy" id="privacy">
+  <h2>Privacy Policy</h2>
+  <div class="updated">Tech My School Inc. · Last reviewed September 2026</div>
+  <p>Tech My School Inc. is a registered 501(c)(3) nonprofit based in Puerto Rico. We are committed to protecting the privacy of our donors, supporters, and users of our website and services. This policy explains how we collect, use, and protect personal information.</p>
+  <h3>Information we collect</h3>
+  <p>We may collect information from you when you visit our website, interact with our social media accounts, or make a donation. This information may include your name, email address, postal address, phone number, credit card information, and any other information you choose to provide us.</p>
+  <h3>How we use your information</h3>
+  <p>We use your information to process donations, provide services to you, and communicate with you about our organization's work. We may also use your information to send you updates about our programs, events, and initiatives. We do not sell, trade, or otherwise transfer your personal information to outside parties without your consent.</p>
+  <h3>Protection of your information</h3>
+  <p>We take appropriate measures to protect your personal information from unauthorized access, use, disclosure, alteration, or destruction. We use industry-standard encryption technologies to protect sensitive data such as credit card information. We also limit access to your personal information to only those employees, volunteers, and contractors who need to know the information to perform their job responsibilities.</p>
+  <h3>Third-party links</h3>
+  <p>Our website may contain links to other websites, including social media platforms. We are not responsible for the privacy practices or content of these websites. We encourage you to read the privacy policies of any website you visit.</p>
+  <h3>Your rights</h3>
+  <p>You have the right to access, correct, or delete your personal information. You also have the right to opt out of receiving communications from us. To exercise these rights or to ask any questions about our privacy policy, please contact us at <a href="mailto:info@techmyschool.org">info@techmyschool.org</a>.</p>
+  <h3>Changes to this policy</h3>
+  <p>We reserve the right to make changes to this privacy policy at any time. Any updates or changes to the policy will be posted on our website. Thank you for trusting Tech My School Inc. with your personal information. If you have any questions or concerns, please do not hesitate to contact us.</p>
+</section>
+
+<section class="policy" id="cookies">
+  <h2>Cookie Policy</h2>
+  <div class="updated">Last updated September 2026</div>
+  <p>We keep things simple: techmyschool.org does not set advertising or cross-site tracking cookies of its own.</p>
+  <h3>What may be set when you visit</h3>
+  <ul>
+    <li><strong>Embedded services.</strong> Some pages embed third-party content — for example a Google Map on our Contact page and fonts served by Google Fonts. These providers may set their own cookies or collect technical data under their own policies.</li>
+    <li><strong>Outbound services.</strong> When you follow links to donate (PayPal and other platforms), book a meeting (Calendly), fill out a form (Google Forms), or log in to courses (LearnWorlds), those sites operate under their own cookie and privacy policies.</li>
+  </ul>
+  <h3>Analytics</h3>
+  <p>If we adopt website analytics in the future, we will update this policy to describe what is collected and how to opt out.</p>
+  <h3>Managing cookies</h3>
+  <p>You can control and delete cookies through your browser settings. Blocking third-party cookies will not prevent you from using our website.</p>
+  <p>Questions? Contact <a href="mailto:info@techmyschool.org">info@techmyschool.org</a>.</p>
+</section>
+
+<section class="policy" id="trademark">
+  <h2>Trademark Policy</h2>
+  <div class="updated">Last updated September 2026</div>
+  <p>The Tech My School name, the techmyschool.org wordmark, the origami parrot logo, the Spring Educators Conference badge, and related program names (including the Mobile STEM Lab and TECH BROS!) are property of Tech My School Inc.</p>
+  <h3>Acceptable use</h3>
+  <ul>
+    <li>Partner schools, sponsors, and press may reference Tech My School factually — for example, to state that a partnership or donation exists — using our name in plain text.</li>
+    <li>Use of our logos or badges in marketing materials, websites, or merchandise requires prior written permission.</li>
+    <li>Our marks may not be used in any way that suggests endorsement, sponsorship, or affiliation that does not exist, or that could confuse or mislead.</li>
+  </ul>
+  <h3>Requesting permission</h3>
+  <p>Email <a href="mailto:info@techmyschool.org?subject=Trademark%20Permission">info@techmyschool.org</a> with a short description of the intended use. We respond to most requests quickly — we love seeing our partners celebrate the work.</p>
+</section>
+
+<section class="policy" id="accessibility">
+  <h2>Accessibility Statement</h2>
+  <div class="updated">Last updated September 2026</div>
+  <p>A more equitable learning experience for all students starts with an accessible website. Tech My School is committed to making techmyschool.org usable by everyone, including people who rely on assistive technologies.</p>
+  <h3>What we do</h3>
+  <ul>
+    <li>We aim to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA.</li>
+    <li>Pages use semantic HTML, descriptive alternative text on images, and sufficient color contrast.</li>
+    <li>The site is navigable by keyboard, and animations are disabled automatically for visitors with a reduced-motion preference.</li>
+    <li>Content is written in plain language, and our programs themselves are offered bilingually (English &amp; Español).</li>
+  </ul>
+  <h3>Ongoing effort</h3>
+  <p>Accessibility is a continuous process. We review the site as we add content and welcome feedback whenever something isn't working for you.</p>
+  <h3>Tell us</h3>
+  <p>If you encounter an accessibility barrier on this website, please contact <a href="mailto:info@techmyschool.org?subject=Accessibility">info@techmyschool.org</a> or call <a href="tel:+18588997787">(858) 899-7787</a>, and we will do our best to fix it or provide the information in an alternate format.</p>
+</section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© 2026 Tech My School · P.O. Box 1986, Luquillo, PR 00773 · EIN: 66-0996264</span>
+      <span><a href="index.html">techmyschool.org</a> · <a href="mailto:info@techmyschool.org">info@techmyschool.org</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const burger=document.getElementById('hamburger'),links=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</body>
+</html>
