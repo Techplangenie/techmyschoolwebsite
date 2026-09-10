@@ -55,7 +55,13 @@
   .page-hero h1{font-size:clamp(36px,5.5vw,60px);font-weight:800;margin-bottom:10px}
   .page-hero p{font-size:clamp(16px,2vw,19px);color:rgba(255,255,255,.9);max-width:56ch}
   .res-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-  .res{background:var(--card);border-radius:var(--radius-lg);padding:36px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .res{background:var(--card);border-radius:var(--radius-lg);padding:32px;box-shadow:var(--shadow);display:grid;grid-template-columns:170px 1fr;gap:28px;align-items:start}
+  .res .cover{margin:0;border-radius:14px;overflow:hidden;box-shadow:0 10px 28px rgba(14,51,32,.22);transition:transform .3s}
+  .res .cover:hover{transform:translateY(-4px)}
+  .res .cover img{width:100%;display:block}
+  .res .body{display:flex;flex-direction:column;height:100%}
+  @media(max-width:1080px){.res{grid-template-columns:140px 1fr;gap:22px}}
+  @media(max-width:560px){.res{grid-template-columns:1fr;justify-items:center;text-align:center}.res .cover{max-width:210px}.res .tag{align-self:center}}
   .res .tag{align-self:flex-start;background:var(--teal-soft);color:#00913f;border-radius:100px;padding:5px 14px;font-size:12px;font-weight:700;font-family:'Montserrat',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
   .res h3{font-size:21px;color:var(--navy);margin-bottom:10px}
   .res p{color:var(--ink-soft);font-size:15px;flex:1;margin-bottom:22px}
@@ -209,16 +215,22 @@
     </div>
     <div class="res-grid">
       <div class="res reveal">
+        <a class="cover" href="https://publuu.com/flip-book/934439/2049088" target="_blank" rel="noopener"><img src="assets/guide-pr-schools.jpg" alt="Cover of The Parent's Guidebook to Puerto Rican Schools, 2026-2027 edition" loading="lazy"></a>
+        <div class="body">
         <span class="tag">Free</span>
         <h3>The Parent's Guidebook to Puerto Rican Schools</h3>
         <p>Covers the entire island in six distinct sections — the top schools by region, cultural places to visit, top activities for kids, educational apps, and more.</p>
         <a class="btn btn-teal" href="https://publuu.com/flip-book/934439/2049088" target="_blank" rel="noopener">Read the guide <span class="arrow">→</span></a>
+        </div>
       </div>
       <div class="res reveal">
+        <a class="cover" href="https://publuu.com/flip-book/934439/2049078" target="_blank" rel="noopener"><img src="assets/guide-homeschooling.jpg" alt="Cover of The Parent's Guidebook to Homeschooling in Puerto Rico, 2026-2027 edition" loading="lazy"></a>
+        <div class="body">
         <span class="tag">Free</span>
         <h3>The Parent's Guidebook to Homeschooling in Puerto Rico</h3>
         <p>Everything to start your educational adventure — legal information about homeschooling, essential educational materials, and the top applications broken down by subject.</p>
         <a class="btn btn-teal" href="https://publuu.com/flip-book/934439/2049078" target="_blank" rel="noopener">Read the guide <span class="arrow">→</span></a>
+        </div>
       </div>
     </div>
     <div class="courses-band reveal">
