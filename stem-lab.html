@@ -110,7 +110,14 @@
   .split img{border-radius:var(--radius-lg);width:100%;height:420px;object-fit:cover;box-shadow:var(--shadow)}
   .tech-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
   .tech-chips span{background:var(--card);border-radius:100px;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)}
-  .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:28px}
+  .pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:28px}
+  .price.free{background:linear-gradient(160deg,#0e3320,#12492c);color:#fff;position:relative}
+  .price.free h3{color:#8ce8ac}
+  .price.free .amt{color:#fff}
+  .price.free .per{color:rgba(255,255,255,.7)}
+  .price.free p{color:rgba(255,255,255,.85)}
+  .price.free::after{content:"Always free";position:absolute;top:-14px;left:24px;background:#f2b632;color:#3a2c05;font-size:12px;font-weight:800;padding:5px 14px;border-radius:100px;font-family:'Montserrat',sans-serif}
+  @media(max-width:1080px){.pricing-grid{grid-template-columns:1fr 1fr}}
   .price{background:var(--card);border-radius:var(--radius-lg);padding:34px;box-shadow:var(--shadow);display:flex;flex-direction:column}
   .price h3{font-size:17px;color:var(--teal-dark);margin-bottom:10px}
   .price .amt{font-family:'Montserrat',sans-serif;font-weight:800;font-size:40px;color:var(--navy)}
@@ -360,10 +367,16 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow">Pricing</div>
-      <h2>Simple subscriptions. First class free.</h2>
+      <h2>Free for public schools. Simple subscriptions for everyone else.</h2>
     </div>
     <div class="free-band reveal">🎉 The first class is always free to whoever wants to try it out!</div>
     <div class="pricing-grid">
+      <div class="price free reveal">
+        <h3>Public schools</h3>
+        <div class="amt">$0</div>
+        <div class="per">no cost, ever</div>
+        <p>Students at the participating public schools near each of our stops learn with us free of charge — same educators, same equipment, same curriculum. It's how we serve the island.</p>
+      </div>
       <div class="price reveal">
         <h3>Monthly</h3>
         <div class="amt">$399</div>
