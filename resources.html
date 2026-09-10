@@ -89,6 +89,26 @@
   .esports-split img{border-radius:var(--radius-lg);width:100%;height:420px;object-fit:cover;box-shadow:var(--shadow)}
   .es-feats{display:flex;gap:10px;flex-wrap:wrap;margin:16px 0 24px}
   .es-feats span{background:var(--teal-soft);color:var(--teal-dark);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:700;font-family:'Montserrat',sans-serif}
+  .es-season{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 18px}
+  .es-season span{border-radius:100px;padding:8px 18px;font-size:13px;font-weight:700;font-family:'Montserrat',sans-serif}
+  .es-season .s1{background:var(--navy-deep);color:#8ce8ac}
+  .es-season .s2{background:rgba(2,158,197,.12);color:#02718d}
+  .es-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:56px 0 44px}
+  .es-facts>div{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;border-top:4px solid var(--teal)}
+  .es-facts>div:nth-child(2){border-top-color:#029ec5}
+  .es-facts>div:nth-child(3){border-top-color:#f2b632}
+  .es-facts>div:nth-child(4){border-top-color:var(--navy-deep)}
+  .es-facts .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:19px;color:var(--navy);margin-bottom:4px}
+  .es-facts .t{font-size:13.8px;color:var(--ink-soft)}
+  .es-lead{font-family:'Roboto Slab',serif;font-size:22px;color:var(--navy);margin-bottom:20px}
+  .es-logos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .es-logo{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;text-align:center;transition:transform .25s}
+  .es-logo:hover{transform:translateY(-4px)}
+  .es-logo img{width:84px;height:84px;object-fit:contain;margin:0 auto 12px;border-radius:12px}
+  .es-logo .nm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);line-height:1.3}
+  .es-logo .loc{font-size:12.5px;color:var(--ink-soft);margin-top:3px}
+  @media(max-width:900px){.es-facts,.es-logos{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.es-facts{grid-template-columns:1fr}}
   .es-schools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
   .es-schools span{background:var(--card);border-radius:100px;padding:7px 16px;font-size:12.5px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)}
   footer{background:var(--navy-deep);color:#fff;padding:64px 0 32px;border-radius:44px 44px 0 0;margin-top:88px}
@@ -285,27 +305,40 @@
     <div class="reveal">
       <div class="eyebrow">Esports</div>
       <h2>An esports league that builds bridges.</h2>
-      <p>At Tech My School we find it very important to build bridges and community through sport. Our annual esports league and World Cup Tournament brings schools together no matter their location — they play every Friday at 3pm.</p>
+      <p>At Tech My School we believe in building community through sport. Our league brings schools together from across the island to compete all season — and every match is played in person, with a coach on site.</p>
+      <div class="es-season">
+        <span class="s1">Season 1 · Rocket League</span>
+        <span class="s2">Season 2 · EA Sports FC 27</span>
+      </div>
+      <p style="font-weight:600;color:var(--navy);margin-bottom:10px">What we provide, free to the school:</p>
       <div class="es-feats">
         <span>High-speed internet</span>
         <span>TV &amp; Xbox equipment</span>
         <span>Game subscriptions</span>
         <span>League management</span>
       </div>
-      <p style="font-weight:600;color:var(--navy);margin-bottom:10px">Competing schools:</p>
-      <div class="es-schools">
-        <span>Emanuel Centro Educativo</span>
-        <span>Robertson's Private School</span>
-        <span>Little Brains Academy</span>
-        <span>Paradiso Prep Arecibo</span>
-        <span>East Point Academy</span>
-        <span>Paradiso Prep Río Piedras</span>
-        <span>Athena Bilingual Academy</span>
-        <span>Christian Day School</span>
-      </div>
-      <a class="btn btn-teal" href="mailto:info@techmyschool.org?subject=Esports%20League">Get your school in the league <span class="arrow">→</span></a>
+      <a class="btn btn-teal" href="mailto:carlosjimenez@techmyschool.org?subject=Esports%20League">Get your school in the league <span class="arrow">→</span></a>
     </div>
     <img class="reveal" src="assets/photo-esports-awards.jpg" alt="TMS Esports League championship awards" loading="lazy">
+  </div>
+  <div class="wrap">
+    <div class="es-facts reveal">
+      <div><div class="n">8 schools</div><div class="t">Round robin — every school plays every other school.</div></div>
+      <div><div class="n">3v3, best of three</div><div class="t">A three-game series each week, scored by games won.</div></div>
+      <div><div class="n">Rosters of 4–6</div><div class="t">Every player on the roster gets into a game.</div></div>
+      <div><div class="n">Top 4 playoffs</div><div class="t">Single elimination, with the final at VPA School in Bayamón.</div></div>
+    </div>
+    <p class="es-lead reveal">Competing schools — 2026-27 season</p>
+    <div class="es-logos reveal">
+      <div class="es-logo"><img src="assets/esports/paradiso.png" alt="Paradiso Preparatory logo" loading="lazy"><div class="nm">Paradiso Preparatory</div><div class="loc">Arecibo</div></div>
+      <div class="es-logo"><img src="assets/esports/paradiso.png" alt="Paradiso Preparatory logo" loading="lazy"><div class="nm">Paradiso Preparatory</div><div class="loc">Río Piedras</div></div>
+      <div class="es-logo"><img src="assets/esports/east-point.png" alt="East Point Academy logo" loading="lazy"><div class="nm">East Point Academy</div></div>
+      <div class="es-logo"><img src="assets/esports/emanuel.png" alt="Emanuel Centro Educativo logo" loading="lazy"><div class="nm">Emanuel Centro Educativo</div><div class="loc">Canóvanas</div></div>
+      <div class="es-logo"><img src="assets/esports/ciem.png" alt="CIEM Private School logo" loading="lazy"><div class="nm">CIEM Private School</div></div>
+      <div class="es-logo"><img src="assets/esports/christian-day.png" alt="Christian Day School logo" loading="lazy"><div class="nm">Christian Day School</div><div class="loc">Caparra Terrace</div></div>
+      <div class="es-logo"><img src="assets/esports/vpa.png" alt="VPA School logo" loading="lazy"><div class="nm">VPA School</div><div class="loc">Bayamón</div></div>
+      <div class="es-logo"><img src="assets/esports/hea.png" alt="HEA Academy logo" loading="lazy"><div class="nm">HEA Academy</div></div>
+    </div>
   </div>
 </section>
 
