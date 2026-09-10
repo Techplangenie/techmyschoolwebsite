@@ -145,6 +145,57 @@
   .keynote .kn-role{display:inline-block;background:var(--green);color:#fff;border-radius:100px;padding:7px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px}
   .keynote p{color:rgba(255,255,255,.85);font-size:17px;max-width:60ch}
   @media(max-width:820px){.keynote .kn{grid-template-columns:1fr;text-align:center;justify-items:center}}
+
+  /* WHAT TO EXPECT */
+  .expect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .xp{background:var(--card);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .25s}
+  .xp:hover{transform:translateY(-4px)}
+  .xp .ico{font-size:28px;display:block;margin-bottom:12px}
+  .xp h3{font-size:17px;color:var(--navy);margin-bottom:8px}
+  .xp p{font-size:14px;color:var(--ink-soft)}
+  .participate{margin-top:48px}
+  .participate > h3{font-family:'Roboto Slab',serif;font-size:22px;color:var(--navy);margin-bottom:18px}
+  .part-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .part{display:block;background:var(--teal-soft);border-radius:var(--radius);padding:26px;border-top:4px solid var(--teal);box-shadow:var(--shadow);transition:transform .25s}
+  .part:nth-child(2){background:rgba(2,158,197,.10);border-top-color:#029ec5}
+  .part:nth-child(3){background:rgba(242,182,50,.12);border-top-color:#f2b632}
+  .part:hover{transform:translateY(-4px)}
+  .part .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy-deep);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;margin-bottom:14px}
+  .part strong{display:block;font-family:'Roboto Slab',serif;font-size:17px;color:var(--navy);margin-bottom:6px}
+  .part span.d{font-size:14px;color:var(--ink-soft)}
+  /* CREDENTIAL STRIP */
+  .creds{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:26px 34px}
+  .creds .lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+  .creds img{height:52px;width:auto;object-fit:contain}
+  /* TECH DISRUPTORS */
+  .td-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:td}
+  .td{background:var(--card);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);counter-increment:td;border-top:4px solid var(--teal)}
+  .td:nth-child(2){border-top-color:#029ec5}
+  .td:nth-child(3){border-top-color:#f2b632}
+  .td:nth-child(4){border-top-color:var(--navy-deep)}
+  .td::before{content:"0" counter(td);font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;color:var(--teal);display:block;margin-bottom:10px}
+  .td .when{display:inline-block;background:var(--teal-soft);color:var(--teal-dark);border-radius:100px;padding:4px 12px;font-size:12px;font-weight:700;font-family:'Montserrat',sans-serif;margin-bottom:10px}
+  .td h3{font-size:16.5px;color:var(--navy);margin-bottom:8px}
+  .td p{font-size:13.8px;color:var(--ink-soft)}
+  /* FLOCK */
+  .flock{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .flock .section-head h2{color:#fff}
+  .flock .section-head p{color:rgba(255,255,255,.75)}
+  .flock .eyebrow{color:#8ce8ac}
+  .flock-tag{display:inline-block;background:var(--green);color:#fff;border-radius:100px;padding:7px 18px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:13.5px;margin-bottom:18px}
+  .fl-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:34px}
+  .fl{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:24px 22px}
+  .fl .ico{font-size:26px;display:block;margin-bottom:10px}
+  .fl h3{font-size:16px;margin-bottom:7px;color:#8ce8ac}
+  .fl p{font-size:13.5px;color:rgba(255,255,255,.72)}
+  .fl-chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:32px}
+  .fl-chips span{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:100px;padding:8px 18px;font-size:13.5px;color:rgba(255,255,255,.88)}
+  .prize{background:rgba(242,182,50,.14);border:1.5px solid #f2b632;border-radius:var(--radius-lg);padding:30px 34px;display:flex;align-items:center;gap:26px;flex-wrap:wrap}
+  .prize .trophy{font-size:44px}
+  .prize h3{font-size:20px;color:#ffd166;margin-bottom:8px}
+  .prize p{font-size:15px;color:rgba(255,255,255,.85);max-width:70ch}
+  @media(max-width:980px){.expect-grid,.td-grid,.fl-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:720px){.expect-grid,.part-grid,.td-grid,.fl-grid{grid-template-columns:1fr}}
   /* VENUE */
   .venue{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:center}
   .venue iframe{width:100%;height:380px;border:0;border-radius:var(--radius-lg);box-shadow:var(--shadow)}
@@ -219,10 +270,10 @@
 </style>
 <style>
 /* ===== Brand bubbles (playful shapes) ===== */
-.how,.values,.stages,.act60,.grants,.how-band,.pricing,.keynote{position:relative;overflow:hidden}
-.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap,.keynote>.wrap{position:relative;z-index:1}
-.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before,.keynote::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
-.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after,.keynote::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+.how,.values,.stages,.act60,.grants,.how-band,.pricing,.keynote,.flock{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap,.flock>.wrap,.keynote>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before,.flock::before,.keynote::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after,.flock::after,.keynote::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
 </style>
 </head>
 <body>
@@ -319,6 +370,47 @@
         <div class="kn-role">Professor of Educational Technology &amp; Computer Science Education, University of Florida · Director, CSEveryone Center for Computer Science Education</div>
         <p>We're thrilled to announce that Dr. Maya Israel will keynote the 4th Annual Spring Educators Conference. A national leader in K-12 computer science and AI education, her work focuses on teacher professional learning and making computing accessible to every student — kicking off the event with an innovative look into the future of education.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- WHAT TO EXPECT -->
+<section id="expect">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:820px">
+      <div class="eyebrow">Spring 2027</div>
+      <h2>Empowering educators to transform classrooms and lead in the digital age.</h2>
+      <p>A dynamic two-day event bringing together educators, leaders, and innovators to explore the future of teaching with technology and AI.</p>
+    </div>
+    <div class="expect-grid">
+      <div class="xp reveal"><span class="ico">🎤</span><h3>Keynotes &amp; leadership panels</h3><p>Big-picture sessions from national voices in EdTech, plus panels with the leaders running schools here on the island.</p></div>
+      <div class="xp reveal"><span class="ico">🛠️</span><h3>Hands-on breakout sessions</h3><p>Practical, classroom-ready workshops in English and Spanish — you leave with something you can use Monday morning.</p></div>
+      <div class="xp reveal"><span class="ico">🏆</span><h3>Tech Disruptors Competition</h3><p>Educators showcase how they have creatively disrupted the traditional classroom, with finalists presenting live on stage.</p></div>
+      <div class="xp reveal"><span class="ico">🎁</span><h3>Raffles &amp; giveaways</h3><p>Devices, software licenses, and classroom tech given away throughout both days, courtesy of our partners.</p></div>
+      <div class="xp reveal"><span class="ico">🏪</span><h3>Exhibitor booths</h3><p>Meet the companies behind the tools — MagicSchool and many more — and try what is new before you buy.</p></div>
+      <div class="xp reveal"><span class="ico">🤝</span><h3>Networking &amp; collaboration</h3><p>Two days at a resort with hundreds of educators who share your challenges. The hallway conversations are half the value.</p></div>
+    </div>
+    <div class="participate reveal">
+      <h3>Three ways to take part</h3>
+      <div class="part-grid">
+        <a class="part" href="#register"><span class="n">1</span><strong>Get your ticket</strong><span class="d">Register as an individual, or bring your whole school or institution.</span></a>
+        <a class="part" href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener"><span class="n">2</span><strong>Submit a proposal</strong><span class="d">Present your own session or workshop in English or Spanish.</span></a>
+        <a class="part" href="#disruptors"><span class="n">3</span><strong>Join Tech Disruptors</strong><span class="d">Enter the competition and showcase your innovation on stage.</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="creds reveal">
+      <span class="lbl">Accredited &amp; endorsed</span>
+      <img src="assets/partners/cais.png" alt="Caribbean Association of Independent Schools" loading="lazy">
+      <img src="assets/partners/wasc.png" alt="WASC Accrediting Commission for Schools" loading="lazy">
+      <img src="assets/partners/depr.png" alt="Departamento de Educación de Puerto Rico" loading="lazy">
+      <img src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie" loading="lazy">
     </div>
   </div>
 </section>
@@ -424,15 +516,58 @@
 </section>
 
 <!-- TECH DISRUPTORS -->
-<section style="padding-top:0">
+<section id="disruptors" style="padding-top:0">
   <div class="wrap">
-    <div class="reveal" style="background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:44px 48px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap">
-      <div style="max-width:62ch">
-        <div class="eyebrow">Tech Disruptors competition</div>
-        <h2 style="font-size:clamp(24px,3.5vw,34px);font-weight:800;color:var(--navy);margin-bottom:10px">Disrupt your classroom. Win on stage.</h2>
-        <p style="color:var(--ink-soft);font-size:15.5px">Educators showcase how they creatively disrupt traditional classroom models with cutting-edge technology — a problem-based project, a short video, and a shot at presenting live at the conference with prizes across five categories.</p>
+    <div class="section-head reveal" style="max-width:800px">
+      <div class="eyebrow">Tech Disruptors competition</div>
+      <h2>Disrupt your classroom. Win on stage.</h2>
+      <p>Educators design a project-based learning project that shows how technology can transform the traditional classroom — then finalists present it live at the conference in front of their peers.</p>
+    </div>
+    <div class="td-grid">
+      <div class="td reveal"><span class="when">Open now</span><h3>Brainstorm your project</h3><p>Design a project that showcases how you creatively disrupt the traditional classroom model using cutting-edge technology tools.</p></div>
+      <div class="td reveal"><span class="when">By Jan 29, 2027</span><h3>Submit your entry</h3><p>Go over all of the requirements and the rubric first, then send in your project before the deadline.</p></div>
+      <div class="td reveal"><span class="when">Mid-February</span><h3>Finalists announced</h3><p>Selected finalists are notified by email — we announce them on our social media pages too.</p></div>
+      <div class="td reveal"><span class="when">April 12–13, 2027</span><h3>Present &amp; win</h3><p>Finalists present at the Spring Conference, and winners are selected live at the event.</p></div>
+    </div>
+    <div class="agenda-dl reveal" style="margin-top:28px">
+      <a class="btn btn-green" href="mailto:darlenecolon@techmyschool.org?subject=Tech%20Disruptors%202027">Ask about Tech Disruptors <span class="arrow">→</span></a>
+      <span class="note">Open to educators at any school. Ask us for the guidebook and rubric.</span>
+    </div>
+  </div>
+</section>
+
+<!-- FLOCK INNOVATORS -->
+<section class="flock" id="flock">
+  <div class="wrap">
+    <div class="section-head reveal" style="max-width:820px">
+      <div class="eyebrow">New · Student track</div>
+      <h2>Flock Innovators Challenge</h2>
+      <div class="flock-tag">Creativity. Technology. Real impact. Join the Flock!</div>
+      <p>A school club where students ages 9 and up investigate a real need at their school and design a solution using technology. Students research, build a prototype, and present their idea — the strongest proposals advance to a final presentation before a panel of judges.</p>
+    </div>
+    <div class="fl-grid">
+      <div class="fl reveal"><span class="ico">💡</span><h3>1. Research</h3><p>Identify a real need in their school, then research it and consult their community.</p></div>
+      <div class="fl reveal"><span class="ico">🔍</span><h3>2. Design</h3><p>Develop a technology-based solution, then create, test, and improve a prototype.</p></div>
+      <div class="fl reveal"><span class="ico">🎬</span><h3>3. Present</h3><p>Submit the project, a portfolio, and a presentation video documenting the work.</p></div>
+      <div class="fl reveal"><span class="ico">🏆</span><h3>4. Compete</h3><p>Finalists present to a panel of judges and the winning project is announced.</p></div>
+    </div>
+    <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:#8ce8ac;margin-bottom:12px">What students can build</p>
+    <div class="fl-chips reveal">
+      <span>Digital citizenship &amp; online safety</span>
+      <span>Robotics, coding &amp; artificial intelligence</span>
+      <span>Podcasts, student news &amp; student voice</span>
+      <span>Sustainability, inclusion &amp; school well-being</span>
+    </div>
+    <div class="prize reveal">
+      <span class="trophy">🏆</span>
+      <div>
+        <h3>Grand prize: a sponsored educational experience in Orlando, Florida</h3>
+        <p>The winning project earns round-trip airfare, hotel accommodations, admission to Universal Orlando Resort, and a visit to Telemundo Orlando.</p>
       </div>
-      <a class="btn btn-green" href="mailto:darlenecolon@techmyschool.org?subject=Tech%20Disruptors">Ask about the next edition <span class="arrow">→</span></a>
+    </div>
+    <div class="agenda-dl reveal" style="margin-top:30px">
+      <a class="btn btn-teal" href="contact.html">Start a club at your school <span class="arrow">→</span></a>
+      <span class="note" style="color:rgba(255,255,255,.7)">The challenge runs as a school club — we handle curriculum orientation and launch.</span>
     </div>
   </div>
 </section>
@@ -501,6 +636,8 @@
         <ul>
           <li><a href="#schedule">Schedule</a></li>
           <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#disruptors">Tech Disruptors</a></li>
+          <li><a href="#flock">Flock Innovators Challenge</a></li>
           <li><a href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener">Apply to present</a></li>
           <li><a href="https://forms.gle/CNJDzcXDNvoSFM218" target="_blank" rel="noopener">Sponsor / Exhibit</a></li>
           <li><a href="stem-lab.html">Mobile STEM Lab</a></li>
