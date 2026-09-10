@@ -62,9 +62,30 @@
   .stages{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
   .stages .section-head h2{color:#fff}
   .stages .section-head p{color:rgba(255,255,255,.72)}
-  .stage-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:stage}
+  .stage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:stage}
   .stage{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:26px 22px;counter-increment:stage}
   .stage::before{content:"0" counter(stage);font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;color:var(--navy-deep);background:#8ce8ac;display:inline-grid;place-items:center;padding:5px 12px;border-radius:100px;margin-bottom:16px}
+  .stage .sico{display:block;font-size:28px;margin-bottom:10px}
+  .prod .pico{display:block;font-size:30px;margin-bottom:10px}
+  .pdshots{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+  .pdshots figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/9;box-shadow:0 10px 30px rgba(14,51,32,.12)}
+  .pdshots img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .pdshots figure:hover img{transform:scale(1.04)}
+  .pdshots figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(to top,rgba(10,40,24,.78),transparent)}
+  @media(max-width:720px){.pdshots{grid-template-columns:1fr}}
+  /* PARTNERS MARQUEE */
+  .pm{padding-top:0}
+  .pm .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:10px 0}
+  .pm .track{display:flex;gap:14px;width:max-content;animation:pmScroll 70s linear infinite}
+  .pm .rev .track{animation-direction:reverse;animation-duration:78s}
+  .pm .marquee:hover .track{animation-play-state:paused}
+  @keyframes pmScroll{to{transform:translateX(-50%)}}
+  .p-item{display:inline-flex;align-items:center;gap:10px;background:var(--card);border-radius:14px;padding:14px 24px;box-shadow:var(--shadow);white-space:nowrap;font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+  .p-item img{height:34px;width:auto;display:block}
+  .p-item.logo{padding:10px 20px}
+  .p-item.logo img{border-radius:6px}
+  .p-item.logo img.tall{height:52px}
+  @media (prefers-reduced-motion: reduce){.pm .track{animation:none;flex-wrap:wrap;width:auto}}
   .stage h3{font-size:16.5px;margin-bottom:8px}
   .stage p{font-size:13.5px;color:rgba(255,255,255,.72)}
   .pd-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -225,9 +246,9 @@
         <span>Student Empowerment</span>
       </div>
       <a class="btn btn-teal" href="https://calendly.com/techmyschool/itpmeeting" target="_blank" rel="noopener">Get started <span class="arrow">→</span></a>
-      <a href="https://www.techplangenie.com" target="_blank" rel="noopener" style="display:inline-block;margin-left:18px;vertical-align:middle"><img src="assets/tpg-wordmark.png" alt="Tech Plan Genie" style="width:150px;mix-blend-mode:multiply"></a>
+      <a href="https://www.techplangenie.com" target="_blank" rel="noopener" style="display:inline-block;margin-left:18px;vertical-align:middle"><img src="assets/tpg-wordmark.png" alt="Tech Plan Genie" style="width:150px;height:auto;object-fit:contain;box-shadow:none;border-radius:0;mix-blend-mode:multiply"></a>
     </div>
-    <img class="reveal" src="https://techmyschool.org/wp-content/uploads/2024/11/IMG_9897-1.jpg" alt="Presenting an Individualized Technology Plan" loading="lazy">
+    <img class="reveal" src="assets/photo-pd-group.jpg" alt="The Tech My School team working alongside school educators" loading="lazy">
   </div>
 </section>
 
@@ -236,14 +257,13 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow" style="color:#8ce8ac">The process</div>
-      <h2>Five stages, one transformation.</h2>
+      <h2>Four steps, one transformation.</h2>
     </div>
     <div class="stage-grid">
-      <div class="stage reveal"><h3>ITA</h3><p>Individualized Technology Analysis — a comprehensive audit with a 170-point checklist, surveys, and three rubrics.</p></div>
-      <div class="stage reveal"><h3>ITP Development</h3><p>Building your technology plan with Gantt charts, SWOT analysis, and PD offerings.</p></div>
-      <div class="stage reveal"><h3>ITP Agreement</h3><p>Leadership reviews and approves the proposed plan together.</p></div>
-      <div class="stage reveal"><h3>Tech Roadmap</h3><p>A four-stage strategic roadmap with benchmarks and vision.</p></div>
-      <div class="stage reveal"><h3>Deployment</h3><p>Implementation support — PD, policy creation, and mission alignment.</p></div>
+      <div class="stage reveal"><span class="sico">🤝</span><h3>Partnership established</h3><p>A school looking to improve partners with TMS. We learn your culture, goals, and context.</p></div>
+      <div class="stage reveal"><span class="sico">🔍</span><h3>Needs assessed</h3><p>A full technology audit sets agreed-upon guarantees, desired outcomes, and timelines.</p></div>
+      <div class="stage reveal"><span class="sico">🧞</span><h3>Tech Plan created with TPG</h3><p>Your technology plan is built with our essential partner, Tech Plan Genie — collaboratively with your team.</p></div>
+      <div class="stage reveal"><span class="sico">🚀</span><h3>Deployment &amp; follow-through</h3><p>We make sure your school meets its technology plan — high-quality PD, technology enhancements, and more.</p></div>
     </div>
   </div>
 </section>
@@ -272,6 +292,9 @@
       <div class="pd reveal"><div class="ico">🔐</div><h3>Data Protection &amp; Policy</h3><p>Network configuration, firewalls, management systems.</p></div>
       <div class="pd reveal"><div class="ico">💻</div><h3>Device Support</h3><p>Purchases, policy creation, implementation, repairs, loss prevention.</p></div>
     </div>
+    <div class="pdshots reveal">
+      <figure><img src="assets/photo-pd-flock.jpg" alt="A TMS facilitator presenting the Flock Innovators Challenge to teachers" loading="lazy"><figcaption>Teacher training in action — introducing the Flock Innovators Challenge</figcaption></figure>
+      <figure><img src="assets/photo-ozobots.jpg" alt="Students learning to code with Ozobot robots and coding cards" loading="lazy"><figcaption>Students coding with Ozobots in an after-school program</figcaption></figure>
     <p class="reveal" style="margin-top:26px;font-size:15px;color:var(--ink-soft)"><strong style="color:var(--navy)">Flexible plans:</strong> Starter (a single 60-minute session, at cost) · Quad Packs (a PD every quarter) · Monthly (we take the lead, guided by your ITP). Asynchronous, webinar, conference, or in your building — always tailored to your school.</p>
   </div>
 </section>
@@ -286,45 +309,45 @@
     <div class="prod-grid">
       <div class="prod reveal">
         <span class="tag paid">Custom quote</span>
-        <h3>Tech Plan Deployment</h3>
+        <span class="pico">🛠️</span><h3>Tech Plan Deployment</h3>
         <p>What good is a technology plan if it isn't deployed? We create a custom package for your school and see it through.</p>
         <a class="more" href="contact.html">Get a quote →</a>
       </div>
       <div class="prod reveal">
         <span class="tag paid">Subscription</span>
-        <h3>TECH BROS!</h3>
+        <span class="pico">🕶️</span><h3>TECH BROS!</h3>
         <div class="price"><s>$750</s>$597</div>
         <p>An incognito EdTech thought partner for leaders — all the tips, tricks, support, and mentorship you need to perform your best.</p>
         <a class="more" href="contact.html">Get started →</a>
       </div>
       <div class="prod reveal">
         <span class="tag paid">From $300</span>
-        <h3>EdTech Conference</h3>
+        <span class="pico">🎤</span><h3>EdTech Conference</h3>
         <p>The largest EdTech community in the Caribbean gathers each spring — 40+ speakers at a world-class resort.</p>
         <a class="more" href="conference.html">Join us →</a>
       </div>
       <div class="prod reveal">
         <span class="tag">Free</span>
-        <h3>Guidebooks</h3>
+        <span class="pico">📚</span><h3>Guidebooks</h3>
         <p>Free EdTech guidebooks for the community — covering both traditional schooling and homeschooling strategies.</p>
         <a class="more" href="resources.html#guides">Browse guides →</a>
       </div>
       <div class="prod reveal">
         <span class="tag">Free &amp; paid</span>
-        <h3>Asynchronous Courses</h3>
+        <span class="pico">💻</span><h3>Asynchronous Courses</h3>
         <p>Self-paced online courses to build technology readiness for educators, on your schedule.</p>
         <a class="more" href="https://connect.techmyschool.org" target="_blank" rel="noopener">Explore courses →</a>
       </div>
       <div class="prod reveal">
         <span class="tag">New · First class free</span>
-        <h3>Mobile STEM Lab</h3>
+        <span class="pico">🚐</span><h3>Mobile STEM Lab</h3>
         <div class="price">From $399/mo</div>
         <p>Our van brings hands-on, bilingual STEM classes to homeschool families and public schools across the island — 2 educators, real tech, real experiments.</p>
         <a class="more" href="stem-lab.html">Meet the van →</a>
       </div>
       <div class="prod reveal">
         <span class="tag">Partner perk</span>
-        <h3>Software Discounts</h3>
+        <span class="pico">💸</span><h3>Software Discounts</h3>
         <p>We leverage partnerships with major tech companies to pass deep discounts on top-tier software directly to schools.</p>
         <a class="more" href="contact.html">Ask about discounts →</a>
       </div>
@@ -333,47 +356,24 @@
 </section>
 
 <!-- PARTNERS -->
-<section id="partners" style="padding-top:0">
+<section class="pm" id="partners" style="padding-top:0">
   <div class="wrap">
-    <div class="section-head reveal">
+    <div class="section-head reveal" style="margin-bottom:28px">
       <div class="eyebrow">Our partner ecosystem</div>
       <h2>The companies behind our deep discounts.</h2>
       <p>We resell, partner, and collaborate with the leaders in EdTech — and pass the savings straight to schools.</p>
     </div>
-    <div class="reveal" style="margin-bottom:22px">
-      <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:10px">Reselling partners</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Tech Plan Genie</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Flint AI</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Wayground (Quizizz)</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Kai's Education</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">CodeCombat</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">NWEA MAP Growth</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Toddle</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">Curriculum Genie</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">FACTS</span>
-        <span style="background:var(--card);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:var(--shadow)">WattSmart</span>
-        </div>
+  </div>
+  <div class="marquee" aria-label="Tech My School corporate partners">
+    <div class="track">
+      <span class="p-item logo"><img src="assets/partners/depr.png" alt="Departamento de Educación, Gobierno de Puerto Rico"></span><span class="p-item logo"><img src="assets/partners/carnegie-mellon.png" alt="Carnegie Mellon CS Academy"></span><span class="p-item logo"><img src="assets/partners/adobe.png" alt="Adobe"></span><span class="p-item logo"><img src="assets/partners/scholastic.png" alt="Scholastic"></span><span class="p-item logo"><img src="assets/partners/magic-school.png" alt="MagicSchool AI"></span><span class="p-item logo"><img src="assets/partners/wayground.png" alt="Wayground (formerly Quizizz)"></span><span class="p-item logo"><img src="assets/partners/seesaw.png" alt="Seesaw"></span><span class="p-item logo"><img src="assets/partners/toddle.png" alt="Toddle"></span><span class="p-item logo"><img src="assets/partners/codecombat.png" alt="CodeCombat"></span><span class="p-item logo"><img src="assets/partners/kais-education.png" alt="Kai's Education"></span><span class="p-item logo"><img src="assets/partners/facts.png" alt="FACTS, a Nelnet company"></span><span class="p-item logo"><img src="assets/partners/flint.png" alt="Flint"></span><span class="p-item logo"><img src="assets/partners/snorkl.png" alt="Snorkl"></span><span class="p-item logo"><img src="assets/partners/kami.png" alt="Kami"></span><span class="p-item logo"><img src="assets/partners/book-creator.png" alt="Book Creator"></span><span class="p-item logo"><img src="assets/partners/goreact.png" alt="GoReact"></span><span class="p-item logo"><img src="assets/partners/quizalize.png" alt="Quizalize"></span><span class="p-item logo"><img src="assets/partners/summit-k12.png" alt="Summit K12"></span><span class="p-item logo"><img src="assets/partners/trekai.png" alt="TrekAI"></span><span class="p-item logo"><img src="assets/partners/wewillwrite.png" alt="We Will Write"></span><span class="p-item logo"><img src="assets/partners/knowt.png" alt="Knowt"></span>
+      <span class="p-item logo"><img src="assets/partners/depr.png" alt="Departamento de Educación, Gobierno de Puerto Rico"></span><span class="p-item logo"><img src="assets/partners/carnegie-mellon.png" alt="Carnegie Mellon CS Academy"></span><span class="p-item logo"><img src="assets/partners/adobe.png" alt="Adobe"></span><span class="p-item logo"><img src="assets/partners/scholastic.png" alt="Scholastic"></span><span class="p-item logo"><img src="assets/partners/magic-school.png" alt="MagicSchool AI"></span><span class="p-item logo"><img src="assets/partners/wayground.png" alt="Wayground (formerly Quizizz)"></span><span class="p-item logo"><img src="assets/partners/seesaw.png" alt="Seesaw"></span><span class="p-item logo"><img src="assets/partners/toddle.png" alt="Toddle"></span><span class="p-item logo"><img src="assets/partners/codecombat.png" alt="CodeCombat"></span><span class="p-item logo"><img src="assets/partners/kais-education.png" alt="Kai's Education"></span><span class="p-item logo"><img src="assets/partners/facts.png" alt="FACTS, a Nelnet company"></span><span class="p-item logo"><img src="assets/partners/flint.png" alt="Flint"></span><span class="p-item logo"><img src="assets/partners/snorkl.png" alt="Snorkl"></span><span class="p-item logo"><img src="assets/partners/kami.png" alt="Kami"></span><span class="p-item logo"><img src="assets/partners/book-creator.png" alt="Book Creator"></span><span class="p-item logo"><img src="assets/partners/goreact.png" alt="GoReact"></span><span class="p-item logo"><img src="assets/partners/quizalize.png" alt="Quizalize"></span><span class="p-item logo"><img src="assets/partners/summit-k12.png" alt="Summit K12"></span><span class="p-item logo"><img src="assets/partners/trekai.png" alt="TrekAI"></span><span class="p-item logo"><img src="assets/partners/wewillwrite.png" alt="We Will Write"></span><span class="p-item logo"><img src="assets/partners/knowt.png" alt="Knowt"></span>
     </div>
-    <div class="reveal">
-      <p style="font-family:'Montserrat',sans-serif;font-weight:700;font-size:14px;color:var(--navy);margin-bottom:10px">Mission &amp; umbrella partners</p>
-      <div style="display:flex;gap:8px;flex-wrap:wrap">
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Carnegie Mellon CS</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Adobe</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Seesaw</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">BrainPop</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">GetEpic!</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">ReadTheory</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Typing.com</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Reading.com</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Pathbooks</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Snorkl</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Eduvy</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">OpenEDG</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Qball</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Epiphany</span>
-        <span style="background:var(--teal-soft);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:600;color:var(--teal-dark)">Data Capture Solutions</span>
-        </div>
+  </div>
+  <div class="marquee rev" aria-hidden="true">
+    <div class="track">
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item logo"><img src="assets/partners/eduvy.png" alt="Eduvy"></span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item logo"><img src="assets/partners/eduvy.png" alt="Eduvy"></span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
     </div>
   </div>
 </section>
