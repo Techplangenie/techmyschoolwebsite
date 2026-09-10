@@ -165,7 +165,9 @@
   .part:nth-child(2){background:rgba(2,158,197,.10);border-top-color:#029ec5}
   .part:nth-child(3){background:rgba(242,182,50,.12);border-top-color:#f2b632}
   .part:hover{transform:translateY(-4px)}
-  .part .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy-deep);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;margin-bottom:14px}
+  .part .head{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+  .part .n{display:inline-grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--navy-deep);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:13px;flex:none}
+  .part .pico{font-size:26px;line-height:1}
   .part strong{display:block;font-family:'Roboto Slab',serif;font-size:17px;color:var(--navy);margin-bottom:6px}
   .part span.d{font-size:14px;color:var(--ink-soft)}
   /* CREDENTIAL STRIP */
@@ -451,9 +453,9 @@
     <div class="participate reveal">
       <h3>Three ways to take part</h3>
       <div class="part-grid">
-        <a class="part" href="#register"><span class="n">1</span><strong>Get your ticket</strong><span class="d">Register as an individual, or bring your whole school or institution.</span></a>
-        <a class="part" href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener"><span class="n">2</span><strong>Submit a proposal</strong><span class="d">Present your own session or workshop in English or Spanish.</span></a>
-        <a class="part" href="#disruptors"><span class="n">3</span><strong>Join Tech Disruptors</strong><span class="d">Enter the competition and showcase your innovation on stage.</span></a>
+        <a class="part" href="#register"><span class="head"><span class="n">1</span><span class="pico">🎟️</span></span><strong>Get your ticket</strong><span class="d">Register as an individual, or bring your whole school or institution.</span></a>
+        <a class="part" href="https://forms.gle/dfuSbToR8rkNwfjHA" target="_blank" rel="noopener"><span class="head"><span class="n">2</span><span class="pico">🎤</span></span><strong>Submit a proposal</strong><span class="d">Present your own session or workshop in English or Spanish.</span></a>
+        <a class="part" href="#disruptors"><span class="head"><span class="n">3</span><span class="pico">🏆</span></span><strong>Join Tech Disruptors</strong><span class="d">Enter the competition and showcase your innovation on stage.</span></a>
       </div>
     </div>
   </div>
