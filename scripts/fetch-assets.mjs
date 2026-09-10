@@ -14,6 +14,10 @@ const MAP = {
   "https://techmyschool.org/wp-content/uploads/2024/11/yeidy.jpeg": "assets/educator-work.jpg",
   "https://techmyschool.org/wp-content/uploads/2024/12/IMG_5833.jpg": "assets/esports.jpg",
   "https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg": "assets/conference-2026.jpg",
+  // Testimonial photos (from the old homepage)
+  "https://techmyschool.org/wp-content/uploads/2024/11/WhatsApp-Image-2023-04-19-at-10_23_29-PM.jpeg": "assets/testi-carol.jpeg",
+  "https://techmyschool.org/wp-content/uploads/2024/11/IMG_4064_HEIC.png": "assets/testi-vanessa.png",
+  "https://techmyschool.org/wp-content/uploads/2024/11/Screenshot-2024-08-21-at-9_58_08%E2%80%AFAM.png": "assets/testi-keller.png",
   // Team headshots (from the old /our-team/ page)
   "https://techmyschool.org/wp-content/uploads/2024/11/Robert-Cobbs.webp": "assets/team/robert-cobbs.webp",
   "https://techmyschool.org/wp-content/uploads/2024/11/Calen-Kinnaly.webp": "assets/team/calen-kinnaly.webp",

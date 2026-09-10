@@ -142,6 +142,29 @@
   .step h3{font-size:18.5px;margin-bottom:10px;clear:none}
   .step p{font-size:14.5px;color:rgba(255,255,255,.72)}
 
+  /* STAKES */
+  .stakes{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
+  .stakes .section-head h2{color:#fff}
+  .stakes .section-head p{color:rgba(255,255,255,.78)}
+  .stakes .eyebrow{color:#8ce8ac}
+  .stat-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0 30px}
+  .stat-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px 28px}
+  .stat-tile .big{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);color:#8ce8ac;line-height:1.1}
+  .stat-tile .what{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;margin-top:8px}
+  .stat-tile p{font-size:13.8px;color:rgba(255,255,255,.72);margin-top:6px}
+  .stakes .close{font-size:clamp(17px,2.2vw,21px);font-weight:600;max-width:62ch}
+  .stakes .close strong{color:#8ce8ac}
+  @media(max-width:820px){.stat-tiles{grid-template-columns:1fr}}
+  /* TESTIMONIALS */
+  .testi-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .testi-card{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:32px 34px;display:flex;flex-direction:column;position:relative}
+  .testi-card::before{content:"\201C";position:absolute;top:8px;right:22px;font-family:'Roboto Slab',serif;font-size:76px;line-height:1;color:var(--teal-soft)}
+  .testi-card p{font-size:16.5px;color:var(--ink);font-style:italic;flex:1;position:relative;z-index:1}
+  .testi-who{display:flex;align-items:center;gap:14px;margin-top:22px}
+  .testi-who img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid #fff;box-shadow:0 3px 10px rgba(40,40,40,.18)}
+  .testi-who .nm{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;color:var(--navy)}
+  .testi-who .rl{font-size:13px;color:var(--teal);font-weight:600}
+  @media(max-width:820px){.testi-grid{grid-template-columns:1fr}}
   /* PARTNERS MARQUEE */
   .pm{padding-top:0}
   .pm .marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);padding:10px 0}
@@ -323,10 +346,10 @@
 </style>
 <style>
 /* ===== Brand bubbles (playful shapes) ===== */
-.how,.values,.stages,.act60,.grants,.how-band,.pricing{position:relative;overflow:hidden}
-.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap{position:relative;z-index:1}
-.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
-.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
+.how,.values,.stages,.act60,.grants,.how-band,.pricing,.stakes{position:relative;overflow:hidden}
+.how>.wrap,.values>.wrap,.stages>.wrap,.act60>.wrap,.grants>.wrap,.how-band>.wrap,.pricing>.wrap,.stakes>.wrap{position:relative;z-index:1}
+.how::before,.values::before,.stages::before,.act60::before,.grants::before,.how-band::before,.pricing::before,.stakes::before{content:"";position:absolute;top:-56px;right:7%;width:150px;height:150px;border-radius:50%;background:rgba(2,158,197,.4);pointer-events:none}
+.how::after,.values::after,.stages::after,.act60::after,.grants::after,.how-band::after,.pricing::after,.stakes::after{content:"";position:absolute;bottom:-130px;left:-70px;width:320px;height:320px;border-radius:50%;background:rgba(0,176,80,.28);pointer-events:none}
 </style>
 <style>
 /* ===== Opening reveal ===== */
@@ -489,6 +512,24 @@ body.intro-lock{overflow:hidden}
   </div>
 </section>
 
+<!-- THE STAKES -->
+<section class="stakes" id="stakes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why this matters</div>
+      <h2>Education is the foundation of everything.</h2>
+      <p>Every industry — medicine, engineering, agriculture, the arts — is built by people a school prepared first. When education fails, everything downstream fails with it. And in Puerto Rico, it is failing.</p>
+    </div>
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><div class="big">378 vs 470</div><div class="what">Puerto Rico vs. the U.S. mainland</div><p>PISA math scores. Reading and science trail by nearly 90 points too — a gap of several grade levels.</p></div>
+      <div class="stat-tile"><div class="big">Below Mexico</div><div class="what">And every country the OECD measured</div><p>Puerto Rico scored last among all 35+ jurisdictions in the OECD's published comparison — 30 points behind Mexico.</p></div>
+      <div class="stat-tile"><div class="big">Last in America</div><div class="what">Lowest-scoring U.S. jurisdiction</div><p>3.2 million American citizens live here — and their kids are getting the weakest public education in the nation.</p></div>
+    </div>
+    <p class="reveal" style="font-size:12.5px;color:rgba(255,255,255,.45);margin:-14px 0 26px">Source: OECD Programme for International Student Assessment (PISA), 2015 results.</p>
+    <p class="close reveal">These are <strong>American kids</strong>. They deserve America's best — and that gap is exactly why Tech My School exists.</p>
+  </div>
+</section>
+
 <!-- MISSION -->
 <section id="about">
   <div class="wrap mission">
@@ -590,6 +631,22 @@ body.intro-lock{overflow:hidden}
       <div class="step reveal"><span class="ico">🔍</span><h3>Needs assessed</h3><p>A full technology audit sets agreed-upon guarantees, desired outcomes, and timelines.</p></div>
       <div class="step reveal"><span class="ico">🧞</span><h3>Tech Plan created with TPG</h3><p>Your technology plan is built with our essential partner, Tech Plan Genie — collaboratively with your team.</p></div>
       <div class="step reveal"><span class="ico">🚀</span><h3>Deployment &amp; follow-through</h3><p>We make sure your school meets its technology plan — delivering high-quality professional development, technology enhancements, and more.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What people say</div>
+      <h2>Loved by teachers, students &amp; school leaders.</h2>
+    </div>
+    <div class="testi-grid reveal">
+      <div class="testi-card"><p>"I've learned so much working with the Tech My School team."</p><div class="testi-who"><img src="https://techmyschool.org/wp-content/uploads/2024/11/WhatsApp-Image-2023-04-19-at-10_23_29-PM.jpeg" alt="Carol Diaz" loading="lazy"><div><div class="nm">Carol Diaz</div><div class="rl">Teacher</div></div></div></div>
+      <div class="testi-card"><p>"I can't believe I am actually coding. Tech My School makes it so fun and easy to learn."</p><div class="testi-who"><img src="https://techmyschool.org/wp-content/uploads/2024/11/IMG_4064_HEIC.png" alt="Vanessa Sanchez" loading="lazy"><div><div class="nm">Vanessa Sanchez</div><div class="rl">Student</div></div></div></div>
+      <div class="testi-card"><p>"Tech My School is wonderfully efficient. They are clearly best in class."</p><div class="testi-who"><img src="https://techmyschool.org/wp-content/uploads/2024/11/Screenshot-2024-08-21-at-9_58_08%E2%80%AFAM.png" alt="Daniel Keller" loading="lazy"><div><div class="nm">Daniel Keller</div><div class="rl">Principal</div></div></div></div>
+      <div class="testi-card"><p>"Tech My School has been such an important partner at our school. We are so grateful for their generosity."</p><div class="testi-who"><img src="https://techmyschool.org/wp-content/uploads/2024/11/yeidy.jpeg" alt="Yeidy Robertson" loading="lazy"><div><div class="nm">Yeidy Robertson</div><div class="rl">Director</div></div></div></div>
     </div>
   </div>
 </section>
