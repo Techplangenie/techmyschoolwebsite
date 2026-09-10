@@ -148,8 +148,13 @@
   .stakes .section-head p{color:rgba(255,255,255,.78)}
   .stakes .eyebrow{color:#8ce8ac}
   .stat-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:38px 0 30px}
-  .stat-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px 28px}
-  .stat-tile .big{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(30px,3.6vw,44px);color:#8ce8ac;line-height:1.1}
+  .stat-tile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:30px 28px;border-top:4px solid #8ce8ac}
+  .stat-tile:nth-child(2){border-top-color:#7ee2fb;background:rgba(2,158,197,.12)}
+  .stat-tile:nth-child(2) .big{color:#7ee2fb}
+  .stat-tile:nth-child(3){border-top-color:#ffd166;background:rgba(242,182,50,.10)}
+  .stat-tile:nth-child(3) .big{color:#ffd166}
+  .stat-tile .tico{font-size:30px;line-height:1;display:block;margin-bottom:14px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.3))}
+  .stat-tile .big{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,2.6vw,34px);color:#8ce8ac;line-height:1.15;min-height:2.3em;display:flex;align-items:flex-end}
   .stat-tile .what{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15px;margin-top:8px}
   .stat-tile p{font-size:13.8px;color:rgba(255,255,255,.72);margin-top:6px}
   .stakes .close{font-size:clamp(17px,2.2vw,21px);font-weight:600;max-width:62ch}
@@ -512,24 +517,6 @@ body.intro-lock{overflow:hidden}
   </div>
 </section>
 
-<!-- THE STAKES -->
-<section class="stakes" id="stakes">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow">Why this matters</div>
-      <h2>Education is the foundation of everything.</h2>
-      <p>Every industry — medicine, engineering, agriculture, the arts — is built by people a school prepared first. When education fails, everything downstream fails with it. And in Puerto Rico, it is failing.</p>
-    </div>
-    <div class="stat-tiles reveal">
-      <div class="stat-tile"><div class="big">378 vs 470</div><div class="what">Puerto Rico vs. the U.S. mainland</div><p>PISA math scores. Reading and science trail by nearly 90 points too — a gap of several grade levels.</p></div>
-      <div class="stat-tile"><div class="big">Below Mexico</div><div class="what">And every country the OECD measured</div><p>Puerto Rico scored last among all 35+ jurisdictions in the OECD's published comparison — 30 points behind Mexico.</p></div>
-      <div class="stat-tile"><div class="big">Last in America</div><div class="what">Lowest-scoring U.S. jurisdiction</div><p>3.2 million American citizens live here — and their kids are getting the weakest public education in the nation.</p></div>
-    </div>
-    <p class="reveal" style="font-size:12.5px;color:rgba(255,255,255,.45);margin:-14px 0 26px">Source: OECD Programme for International Student Assessment (PISA), 2015 results.</p>
-    <p class="close reveal">These are <strong>American kids</strong>. They deserve America's best — and that gap is exactly why Tech My School exists.</p>
-  </div>
-</section>
-
 <!-- MISSION -->
 <section id="about">
   <div class="wrap mission">
@@ -547,10 +534,29 @@ body.intro-lock{overflow:hidden}
     </div>
     <div class="photo-stack reveal">
       <img class="main" src="assets/photo-team-robinson.jpg" alt="The Tech My School team on site at a partner school" loading="lazy">
-      <img class="float" src="assets/photo-teachers-chromebooks.jpg" alt="Teachers celebrating donated Chromebooks" loading="lazy">
+      <img class="float" src="assets/photo-vr-girl.jpg" alt="A student explores virtual reality during a Tech My School class" loading="lazy">
     </div>
   </div>
 </section>
+
+<!-- THE STAKES -->
+<section class="stakes" id="stakes">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Why we do it</div>
+      <h2>Education is the foundation of everything.</h2>
+      <p>Every industry — medicine, engineering, agriculture, the arts — is built on the classrooms that came first. Education shapes an economy's future, and in Puerto Rico the data shows a system in urgent need of support.</p>
+    </div>
+    <div class="stat-tiles reveal">
+      <div class="stat-tile"><span class="tico">📉</span><div class="big">92 Points Behind</div><div class="what">Puerto Rico vs. the U.S. mainland</div><p>On the international PISA exam, Puerto Rico's students scored 378 in math to the mainland's 470 — a gap of several grade levels, with reading and science trailing similarly.</p></div>
+      <div class="stat-tile"><span class="tico">🌍</span><div class="big">Below Mexico</div><div class="what">And every OECD country measured</div><p>Puerto Rico placed last among the 35+ school systems in the OECD's published comparison, 30 points behind Mexico.</p></div>
+      <div class="stat-tile"><span class="tico">🇺🇸</span><div class="big">Last in America</div><div class="what">Lowest-scoring U.S. jurisdiction</div><p>Home to 3.2 million U.S. citizens, Puerto Rico records the lowest public-education outcomes of any state or territory.</p></div>
+    </div>
+    <p class="reveal" style="font-size:12.5px;color:rgba(255,255,255,.45);margin:-14px 0 26px">Source: OECD Programme for International Student Assessment (PISA), 2015 results.</p>
+    <p class="close reveal">These are <strong>American children</strong>, and they deserve the same opportunity as any student on the mainland. Closing that gap is why Tech My School exists.</p>
+  </div>
+</section>
+
 
 <!-- SERVICES -->
 <section id="services" style="padding-top:0">
@@ -561,7 +567,7 @@ body.intro-lock{overflow:hidden}
     </div>
     <div class="svc-grid">
       <a href="services.html#itp" class="svc s1 reveal">
-        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/11/IMG_9897-1.jpg')"></div>
+        <div class="bg" style="background-image:url('assets/svc-techplans.jpg');background-position:center 35%"></div>
         <div class="scrim"></div>
         <div class="body">
           <h3>Tech Plans</h3>
@@ -570,8 +576,8 @@ body.intro-lock{overflow:hidden}
         </div>
       </a>
       <a href="https://connect.techmyschool.org" target="_blank" rel="noopener" class="svc s2 reveal">
-        <div class="bg" style="background-image:url('assets/photo-pd-coaching.jpg')"></div>
-        <div class="scrim"></div>
+        <div class="bg" style="background-image:url('assets/svc-courses.jpg');background-position:center top"></div>
+        <div class="scrim" style="background:linear-gradient(to top,rgba(10,40,24,.95) 0%,rgba(10,40,24,.72) 55%,rgba(10,40,24,.5) 100%)"></div>
         <div class="body">
           <h3>Online Courses</h3>
           <p>Free and paid EdTech courses for teachers and parents — self-paced, on your schedule, at connect.techmyschool.org.</p>
@@ -579,7 +585,7 @@ body.intro-lock{overflow:hidden}
         </div>
       </a>
       <a href="services.html#products" class="svc s3 reveal">
-        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2024/12/IMG_5833.jpg')"></div>
+        <div class="bg" style="background-image:url('assets/svc-techbros.jpg');background-position:center 30%"></div>
         <div class="scrim"></div>
         <div class="body">
           <h3>Tech Bros!</h3>
@@ -588,7 +594,7 @@ body.intro-lock{overflow:hidden}
         </div>
       </a>
       <a href="services.html#products" class="svc s4 reveal">
-        <div class="bg" style="background-image:url('assets/photo-expo-booth.jpg')"></div>
+        <div class="bg" style="background-image:url('assets/svc-tpg.jpg');background-size:contain;background-repeat:no-repeat;background-color:#fff;background-position:center 25%"></div>
         <div class="scrim"></div>
         <div class="body">
           <h3>Software Discounts</h3>
@@ -606,7 +612,7 @@ body.intro-lock{overflow:hidden}
         </div>
       </a>
       <a href="conference.html" class="svc s5 reveal">
-        <div class="bg" style="background-image:url('https://techmyschool.org/wp-content/uploads/2025/03/2025-03-15-846.jpg')"></div>
+        <div class="bg" style="background-image:url('assets/svc-conference.jpg')"></div>
         <div class="scrim"></div>
         <div class="body">
           <h3>EdTech Conference</h3>
@@ -690,8 +696,8 @@ body.intro-lock{overflow:hidden}
   </div>
   <div class="marquee rev" aria-hidden="true">
     <div class="track">
-      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item">PracAI</span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item">Reframe XR</span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item">Eduvy</span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
-      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item">PracAI</span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item">Reframe XR</span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item">Eduvy</span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item logo"><img src="assets/partners/eduvy.png" alt="Eduvy"></span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
+      <span class="p-item logo"><img class="tall" src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie"></span><span class="p-item logo"><img src="assets/partners/wasc.png" alt="WASC — Accrediting Commission for Schools"></span><span class="p-item logo"><img src="assets/partners/boston-scientific.png" alt="Boston Scientific Foundation"></span><span class="p-item logo"><img src="assets/partners/atlantic-university.png" alt="Atlantic University"></span><span class="p-item logo"><img src="assets/partners/edp-university.png" alt="EDP University"></span><span class="p-item logo"><img src="assets/partners/unib.png" alt="UNiB — Universidad Internacional Iberoamericana"></span><span class="p-item logo"><img src="assets/partners/epiphany.png" alt="Epiphany Manhattan Academy"></span><span class="p-item logo"><img src="assets/partners/curriculum-genie.png" alt="Curriculum Genie"></span><span class="p-item">Oomka</span><span class="p-item logo"><img src="assets/partners/openedg.png" alt="OpenEDG"></span><span class="p-item logo"><img src="assets/partners/pathbooks.png" alt="Pathbooks"></span><span class="p-item logo"><img src="assets/partners/pr-advantage.png" alt="Puerto Rico Advantage"></span><span class="p-item logo"><img src="assets/partners/relief-roster.png" alt="Relief Roster"></span><span class="p-item logo"><img src="assets/partners/data-capture.png" alt="Data Capture Solutions"></span><span class="p-item logo"><img src="assets/partners/eduvy.png" alt="Eduvy"></span><span class="p-item logo"><img src="assets/partners/timekettle.png" alt="Timekettle"></span><span class="p-item logo"><img src="assets/partners/wattsmart.png" alt="Wattsmart"></span><span class="p-item logo"><img src="assets/partners/typing-com.png" alt="Typing.com"></span><span class="p-item logo"><img src="assets/partners/reading-com.png" alt="Reading.com"></span><span class="p-item logo"><img src="assets/partners/3dux-design.png" alt="3DuxDesign"></span><span class="p-item logo"><img src="assets/partners/humy.png" alt="Humy.ai"></span>
     </div>
   </div>
 </section>
