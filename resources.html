@@ -74,6 +74,11 @@
   .grants{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
   .grants .section-head h2{color:#fff}
   .grants .section-head p{color:rgba(255,255,255,.72)}
+  .grant-intro{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;margin-bottom:44px}
+  .grant-intro h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:#fff;margin-bottom:14px}
+  .grant-intro p{font-size:17px;color:rgba(255,255,255,.75);max-width:52ch}
+  .grant-intro img{width:100%;max-width:340px;justify-self:end;border-radius:var(--radius-lg);box-shadow:0 18px 46px rgba(0,0,0,.4)}
+  @media(max-width:860px){.grant-intro{grid-template-columns:1fr;gap:26px}.grant-intro img{justify-self:start;max-width:280px}}
   .grant-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
   .grant{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius);padding:32px;display:flex;flex-direction:column}
   .grant h3{color:#8ce8ac;font-size:19px;margin-bottom:10px}
@@ -250,10 +255,13 @@
 <!-- GRANTS -->
 <section class="grants" id="grants" style="padding:80px 0">
   <div class="wrap">
-    <div class="section-head reveal">
-      <div class="eyebrow" style="color:#8ce8ac">Grants</div>
-      <h2>Classroom headsets for educators.</h2>
-      <p>In partnership with Eduvy, we're covering the cost of thousands of high-quality headsets for classrooms in Puerto Rico and throughout the United States.</p>
+    <div class="grant-intro reveal">
+      <div>
+        <div class="eyebrow" style="color:#8ce8ac">Grants</div>
+        <h2>Classroom headsets for educators.</h2>
+        <p>In partnership with Eduvy, we're covering the cost of thousands of high-quality headsets for classrooms in Puerto Rico and throughout the United States.</p>
+      </div>
+      <img src="assets/grant-headphones.jpg" alt="Free 4 Schools — Eduvy headphones grant from Tech My School" loading="lazy">
     </div>
     <div class="grant-grid reveal">
       <div class="grant">
