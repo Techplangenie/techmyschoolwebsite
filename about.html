@@ -301,6 +301,30 @@
   </div>
 </section>
 
+<!-- ON THE GROUND -->
+<style>
+  .otg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .otg-grid figure{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;aspect-ratio:16/10;box-shadow:0 10px 30px rgba(14,51,32,.12)}
+  .otg-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+  .otg-grid figure:hover img{transform:scale(1.05)}
+  .otg-grid figcaption{position:absolute;left:0;right:0;bottom:0;padding:28px 18px 14px;color:#fff;font-size:14px;font-weight:600;background:linear-gradient(to top,rgba(10,40,24,.78),transparent)}
+  @media(max-width:720px){.otg-grid{grid-template-columns:1fr}}
+</style>
+<section id="on-the-ground" style="padding-top:0">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">On the ground</div>
+      <h2>What the work actually looks like.</h2>
+    </div>
+    <div class="otg-grid reveal">
+      <figure><img src="assets/photo-depr-meeting.jpg" alt="TMS meeting with the Puerto Rico Department of Education" loading="lazy"><figcaption>Partnering with the Departamento de Educación de Puerto Rico</figcaption></figure>
+      <figure><img src="assets/photo-media-studio.jpg" alt="Students learning video production in a green-screen media studio" loading="lazy"><figcaption>Students behind the scenes in a school media studio</figcaption></figure>
+      <figure><img src="assets/photo-lab-build.jpg" alt="TMS team and volunteers building out a classroom space" loading="lazy"><figcaption>Rolling up our sleeves — building out learning spaces</figcaption></figure>
+      <figure><img src="assets/photo-esports-team.jpg" alt="Student esports team in Tech My School jerseys" loading="lazy"><figcaption>School esports teams repping techmyschool.org</figcaption></figure>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ -->
 <section id="faqs" style="padding-top:0">
   <div class="wrap">
