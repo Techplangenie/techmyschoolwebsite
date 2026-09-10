@@ -201,6 +201,32 @@
   .prize p{font-size:15px;color:rgba(255,255,255,.85);max-width:70ch}
   @media(max-width:980px){.expect-grid,.td-grid,.fl-grid{grid-template-columns:1fr 1fr}}
   @media(max-width:720px){.expect-grid,.part-grid,.td-grid,.fl-grid{grid-template-columns:1fr}}
+  .td-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;margin-bottom:38px}
+  .td-intro h2{font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--navy);margin-bottom:14px}
+  .td-intro p{font-size:16.5px;color:var(--ink-soft)}
+  .td-intro figure{margin:0}
+  .td-intro img{width:100%;border-radius:var(--radius-lg);aspect-ratio:16/10;object-fit:cover;object-position:center 38%;box-shadow:0 16px 44px rgba(14,51,32,.18)}
+  .td-intro figcaption{font-size:13.5px;color:var(--ink-soft);margin-top:10px;text-align:center}
+  .td-prize{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:34px}
+  .td-prize>div{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 24px;border-left:4px solid var(--teal)}
+  .td-prize>div:nth-child(2){border-left-color:#029ec5}
+  .td-prize>div:nth-child(3){border-left-color:#f2b632}
+  .td-prize .n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:27px;color:var(--teal-dark);line-height:1.15}
+  .td-prize .t{font-size:14px;color:var(--ink-soft);margin-top:4px}
+  .cat-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .cat{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 20px;border-top:4px solid var(--teal);transition:transform .25s}
+  .cat:hover{transform:translateY(-4px)}
+  .cat:nth-child(2){border-top-color:#029ec5}
+  .cat:nth-child(3){border-top-color:#f2b632}
+  .cat:nth-child(4){border-top-color:var(--navy-deep)}
+  .cat:nth-child(5){border-top-color:#8ce8ac}
+  .cat .ico{font-size:26px;display:block;margin-bottom:10px}
+  .cat h3{font-size:16px;color:var(--navy);margin-bottom:4px}
+  .cat .award{font-size:12.5px;font-weight:700;font-family:'Montserrat',sans-serif;color:var(--teal-dark);text-transform:uppercase;letter-spacing:.05em;margin-bottom:9px;display:block}
+  .cat p{font-size:13.5px;color:var(--ink-soft)}
+  @media(max-width:1080px){.cat-grid{grid-template-columns:repeat(3,1fr)}}
+  @media(max-width:860px){.td-intro{grid-template-columns:1fr;gap:28px}.td-prize{grid-template-columns:1fr}}
+  @media(max-width:640px){.cat-grid{grid-template-columns:1fr}}
   /* SCENES GALLERY */
   .scenes{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:196px;gap:12px}
   .shot{padding:0;border:0;background:var(--teal-soft);border-radius:14px;overflow:hidden;cursor:zoom-in;position:relative;display:block}
@@ -539,10 +565,21 @@
 <!-- TECH DISRUPTORS -->
 <section id="disruptors" style="padding-top:0">
   <div class="wrap">
-    <div class="section-head reveal" style="max-width:800px">
-      <div class="eyebrow">Tech Disruptors competition</div>
-      <h2>Disrupt your classroom. Win on stage.</h2>
-      <p>Educators design a project-based learning project that shows how technology can transform the traditional classroom — then finalists present it live at the conference in front of their peers.</p>
+    <div class="td-intro reveal">
+      <div>
+        <div class="eyebrow">Tech Disruptors competition</div>
+        <h2>Disrupt your classroom. Win on stage.</h2>
+        <p>Educators design and implement a problem-based project that uses cutting-edge technology to hit real learning objectives. Ten finalists present at the conference, and winners are announced live on stage — with recognition, a trophy, and prize money on the line.</p>
+      </div>
+      <figure>
+        <img src="assets/conf/disruptor-winner.jpg" alt="A Tech Disruptor winner accepting a $1,000 check and award on stage" loading="lazy">
+        <figcaption>A 2026 Tech Disruptor winner accepting her award on stage.</figcaption>
+      </figure>
+    </div>
+    <div class="td-prize reveal">
+      <div><div class="n">10 finalists</div><div class="t">Selected from all entries to present live at the conference.</div></div>
+      <div><div class="n">5 winners</div><div class="t">One in each award category, announced on stage.</div></div>
+      <div><div class="n">$1,000 + trophy</div><div class="t">Prize money, an award plaque, and island-wide recognition.</div></div>
     </div>
     <div class="td-grid">
       <div class="td reveal"><span class="when">Open now</span><h3>Brainstorm your project</h3><p>Design a project that showcases how you creatively disrupt the traditional classroom model using cutting-edge technology tools.</p></div>
@@ -550,9 +587,17 @@
       <div class="td reveal"><span class="when">Mid-February</span><h3>Finalists announced</h3><p>Selected finalists are notified by email — we announce them on our social media pages too.</p></div>
       <div class="td reveal"><span class="when">April 12–13, 2027</span><h3>Present &amp; win</h3><p>Finalists present at the Spring Conference, and winners are selected live at the event.</p></div>
     </div>
-    <div class="agenda-dl reveal" style="margin-top:28px">
-      <a class="btn btn-green" href="mailto:darlenecolon@techmyschool.org?subject=Tech%20Disruptors%202027">Ask about Tech Disruptors <span class="arrow">→</span></a>
-      <span class="note">Open to educators at any school. Ask us for the guidebook and rubric.</span>
+    <h3 style="font-family:'Roboto Slab',serif;font-size:22px;color:var(--navy);margin:40px 0 18px">Five award categories</h3>
+    <div class="cat-grid">
+      <div class="cat reveal"><span class="ico">📊</span><h3>Data Wizard</h3><span class="award">Powering Personalized Learning Award</span><p>For the educator who uses data to tailor instruction so every student's needs are met with precision — like turning reading assessment data into differentiated reading groups.</p></div>
+      <div class="cat reveal"><span class="ico">🧭</span><h3>Tech Trailblazers</h3><span class="award">Everyday Excellence in Innovation Award</span><p>For seamlessly weaving technology into daily routines — like a series of virtual field trips that let students explore historical sites as part of the curriculum.</p></div>
+      <div class="cat reveal"><span class="ico">💡</span><h3>Young Entrepreneurs</h3><span class="award">Digital Innovators Award</span><p>For the classroom that builds entrepreneurial spirit through creative digital projects — like students designing digital posters and marketing a school fundraiser.</p></div>
+      <div class="cat reveal"><span class="ico">🤖</span><h3>AI Innovators</h3><span class="award">Classroom of the Future Award</span><p>For students who use AI to create, explore, and solve real problems — like generating interactive study guides with real-time feedback and personalized pathways.</p></div>
+      <div class="cat reveal"><span class="ico">🎨</span><h3>Digital Artist</h3><span class="award">Digital Arts Masterpiece Award</span><p>For outstanding student digital art and music — like kindergarteners composing custom theme songs for their class transitions.</p></div>
+    </div>
+    <div class="agenda-dl reveal" style="margin-top:30px">
+      <a class="btn btn-green" href="mailto:nataliamorales@techmyschool.org?subject=Tech%20Disruptors%202027">Ask about Tech Disruptors <span class="arrow">→</span></a>
+      <span class="note">Open to educators at any school. Ask project leader Natalia Morales for the guidebook and rubric.</span>
     </div>
   </div>
 </section>
