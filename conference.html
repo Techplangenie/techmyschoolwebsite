@@ -129,12 +129,17 @@
   .price-card li::before{content:"✓";color:var(--teal);font-weight:800;margin-right:10px}
 
   /* SPONSORS */
-  .sponsor-cta{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff}
+  .sponsor-cta{display:grid;grid-template-columns:1.08fr .92fr;border-radius:var(--radius-lg);overflow:hidden;color:#fff;box-shadow:0 16px 44px rgba(14,51,32,.18)}
+  .sponsor-cta .pane{position:relative;min-height:320px}
   .sponsor-cta .bg{position:absolute;inset:0;background:url('assets/photo-tech-disruptor.jpg') center 25%/cover}
-  .sponsor-cta .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(0,145,63,.94),rgba(10,40,24,.75))}
-  .sponsor-cta .body{position:relative;z-index:2;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
-  .sponsor-cta h3{font-size:26px;font-weight:800;margin-bottom:8px}
-  .sponsor-cta p{color:rgba(255,255,255,.85);font-size:15.5px;max-width:56ch}
+  .sponsor-cta .scrim{position:absolute;inset:0;background:linear-gradient(140deg,rgba(0,145,63,.95),rgba(10,40,24,.88))}
+  .sponsor-cta .body{position:relative;z-index:2;padding:46px 48px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:20px;height:100%}
+  .sponsor-cta h3{font-size:clamp(24px,3vw,30px);font-weight:800;margin-bottom:8px}
+  .sponsor-cta p{color:rgba(255,255,255,.86);font-size:15.5px;max-width:46ch}
+  .sponsor-cta .perks{display:flex;gap:8px;flex-wrap:wrap}
+  .sponsor-cta .perks span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:6px 14px;font-size:12.5px;font-weight:600}
+  .sponsor-cta>img{width:100%;height:100%;object-fit:cover;object-position:center 45%;display:block}
+  @media(max-width:860px){.sponsor-cta{grid-template-columns:1fr}.sponsor-cta>img{max-height:300px}}
 
   /* KEYNOTE */
   .keynote{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
@@ -164,9 +169,14 @@
   .part strong{display:block;font-family:'Roboto Slab',serif;font-size:17px;color:var(--navy);margin-bottom:6px}
   .part span.d{font-size:14px;color:var(--ink-soft)}
   /* CREDENTIAL STRIP */
-  .creds{display:flex;align-items:center;justify-content:center;gap:34px;flex-wrap:wrap;background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:26px 34px}
-  .creds .lbl{font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
-  .creds img{height:52px;width:auto;object-fit:contain}
+  .creds{background:var(--card);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:30px 34px;text-align:center}
+  .creds .lbl{display:block;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:22px}
+  .cred-row{display:flex;align-items:flex-end;justify-content:center;gap:44px;flex-wrap:wrap}
+  .cred-row figure{margin:0;max-width:190px}
+  .cred-row img{height:54px;width:auto;object-fit:contain;margin:0 auto 12px}
+  .cred-row figcaption{font-size:12.5px;color:var(--ink-soft);line-height:1.4}
+  .cred-row figure:first-child img{height:68px}
+  .cred-row figcaption b{display:block;font-family:'Montserrat',sans-serif;font-size:12.5px;color:var(--teal-dark)}
   /* TECH DISRUPTORS */
   .td-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:td}
   .td{background:var(--card);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow);counter-increment:td;border-top:4px solid var(--teal)}
@@ -453,11 +463,13 @@
 <section style="padding-top:0">
   <div class="wrap">
     <div class="creds reveal">
-      <span class="lbl">Accredited &amp; endorsed</span>
-      <img src="assets/partners/cais.png" alt="Caribbean Association of Independent Schools" loading="lazy">
-      <img src="assets/partners/wasc.png" alt="WASC Accrediting Commission for Schools" loading="lazy">
-      <img src="assets/partners/depr.png" alt="Departamento de Educación de Puerto Rico" loading="lazy">
-      <img src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie" loading="lazy">
+      <span class="lbl">In partnership with &amp; supported by</span>
+      <div class="cred-row">
+        <figure><img src="assets/partners/tech-plan-genie.png" alt="Tech Plan Genie" loading="lazy"><figcaption><b>Tech Plan Genie</b>Official partner — where every tech plan starts</figcaption></figure>
+        <figure><img src="assets/partners/wasc.png" alt="WASC Accrediting Commission for Schools" loading="lazy"><figcaption><b>WASC</b>Supplementary education program accreditation</figcaption></figure>
+        <figure><img src="assets/partners/depr.png" alt="Departamento de Educación de Puerto Rico" loading="lazy"><figcaption><b>Departamento de Educación</b>Memorandum of understanding</figcaption></figure>
+        <figure><img src="assets/partners/cais.png" alt="Caribbean Association of Independent Schools" loading="lazy"><figcaption><b>CAIS</b>Caribbean Association of Independent Schools</figcaption></figure>
+      </div>
     </div>
   </div>
 </section>
@@ -685,15 +697,24 @@
 <section>
   <div class="wrap">
     <div class="sponsor-cta reveal">
-      <div class="bg"></div>
-      <div class="scrim"></div>
-      <div class="body">
-        <div>
-          <h3>Sponsor, host a booth, or add value</h3>
-          <p>Put your company in front of hundreds of educators and decision-makers from schools across Puerto Rico and beyond.</p>
+      <div class="pane">
+        <div class="bg"></div>
+        <div class="scrim"></div>
+        <div class="body">
+          <div>
+            <h3>Sponsor, host a booth, or add value</h3>
+            <p>Put your company in front of hundreds of educators and decision-makers from schools across Puerto Rico and beyond — two full days, in the room where buying decisions get made.</p>
+          </div>
+          <div class="perks">
+            <span>Exhibitor booth</span>
+            <span>Demo your product</span>
+            <span>Logo on event materials</span>
+            <span>Raffle &amp; giveaway slots</span>
+          </div>
+          <a class="btn btn-white" href="https://forms.gle/CNJDzcXDNvoSFM218" target="_blank" rel="noopener">Become a sponsor <span class="arrow">→</span></a>
         </div>
-        <a class="btn btn-white" href="https://forms.gle/CNJDzcXDNvoSFM218" target="_blank" rel="noopener">Become a sponsor <span class="arrow">→</span></a>
       </div>
+      <img src="assets/conf/exhibitor-booth.jpg" alt="An exhibitor team at their booth in the conference hall" loading="lazy">
     </div>
   </div>
 </section>
