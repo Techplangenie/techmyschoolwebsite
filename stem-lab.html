@@ -80,11 +80,13 @@
   .loc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:30px}
   .loc{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);overflow:hidden;border-top:4px solid #8ce8ac;transition:transform .25s}
   .loc:hover{transform:translateY(-4px)}
-  .loc img{width:100%;height:150px;object-fit:cover;display:block}
+  .loc img{width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:center;display:block}
   .loc .body{padding:20px 22px 24px}
   .loc .when{font-family:'Montserrat',sans-serif;font-weight:800;font-size:12.5px;letter-spacing:.1em;text-transform:uppercase;color:#8ce8ac;margin-bottom:8px}
   .loc h3{font-size:18px;margin-bottom:6px}
   .loc p{font-size:13.8px;color:rgba(255,255,255,.72)}
+  .loc .dir{display:inline-block;margin-top:8px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:12.5px;color:#8ce8ac;border-bottom:1px solid rgba(140,232,172,.45)}
+  .loc .dir:hover{color:#fff;border-bottom-color:#fff}
   .loc:nth-child(2){border-top-color:#7ee2fb}.loc:nth-child(2) .when{color:#7ee2fb}
   .loc:nth-child(3){border-top-color:#ffd166}.loc:nth-child(3) .when{color:#ffd166}
   .loc:nth-child(4){border-top-color:#fff}.loc:nth-child(4) .when{color:#fff}
@@ -128,6 +130,11 @@
   .price.featured{outline:3px solid var(--green);position:relative}
   .price.featured::after{content:"Best value";position:absolute;top:-14px;right:20px;background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;font-family:'Montserrat',sans-serif}
   .free-band{background:var(--green-soft);border:2px solid var(--green);border-radius:var(--radius);padding:20px 28px;display:flex;align-items:center;gap:16px;font-weight:600;color:#1e7a2a;margin-bottom:28px}
+  .pp-slot{margin-top:20px;padding-top:16px;border-top:1px solid rgba(14,51,32,.10)}
+  .pp-slot .pp-note{font-size:12.5px;line-height:1.55;color:var(--ink-soft);margin-top:12px}
+  .pp-slot .btn{width:100%;text-align:center;justify-content:center}
+  .pay-trust{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--ink-soft);margin:-10px 0 26px}
+  .pay-trust b{font-family:'Montserrat',sans-serif;font-weight:700;color:var(--navy)}
   .donor-note{background:var(--teal-soft);border-radius:var(--radius);padding:24px 28px;font-size:15px;color:var(--navy)}
   .donor-note strong{font-family:'Montserrat',sans-serif}
   .cta-band{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff}
@@ -292,7 +299,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <div class="eyebrow" style="color:#8ce8ac">How it works</div>
-      <h2>Two age groups, four towns, every week.</h2>
+      <h2>Two age groups, four locations, every week.</h2>
       <p>Robotics · Coding · Science · Math · Engineering — 60-minute classes with 2 qualified teachers and 8–12 students per session. The van rolls in, the classroom pops up.</p>
     </div>
     <div class="day-classes dc-grid2 reveal">
@@ -300,10 +307,10 @@
       <div class="dc"><div class="when">⏰ 11:00–12:00</div><h3>Pioneers · ages 10–14</h3><p>Deeper problems, bigger builds, real engineering.</p></div>
     </div>
     <div class="loc-grid reveal">
-      <div class="loc"><img src="assets/stem/ocean-park.jpg" alt="Parque Dr. José Celso Barbosa in Ocean Park" loading="lazy"><div class="body"><div class="when">Tuesdays</div><h3>Ocean Park</h3><p>Parque Dr. José Celso Barbosa</p></div></div>
+      <div class="loc"><img src="assets/stem/ocean-park-new.jpg" alt="The Ocean Park coastline in San Juan" loading="lazy"><div class="body"><div class="when">Tuesdays</div><h3>Ocean Park</h3><p>Parque Dr. José Celso Barbosa</p></div></div>
       <div class="loc"><img src="assets/stem/dorado.jpg" alt="Parque del Avión in Dorado" loading="lazy"><div class="body"><div class="when">Wednesdays</div><h3>Dorado</h3><p>Parque del Avión</p></div></div>
-      <div class="loc"><img src="assets/stem/palmas.jpg" alt="Evolution Wellness Center in Palmas" loading="lazy"><div class="body"><div class="when">Thursdays</div><h3>Palmas</h3><p>Evolution Wellness Center</p></div></div>
-      <div class="loc"><img src="assets/stem/guaynabo.jpg" alt="The Guaynabo pop-up location" loading="lazy"><div class="body"><div class="when">Fridays</div><h3>Guaynabo</h3><p>Community park pavilion</p></div></div>
+      <div class="loc"><img src="assets/stem/palmas-new.jpg" alt="Aerial view of the Palmas del Mar golf course and coastline in Humacao" loading="lazy"><div class="body"><div class="when">Thursdays</div><h3>Palmas del Mar</h3><p>Evolution Wellness Center · Humacao</p></div></div>
+      <div class="loc"><img src="assets/stem/guaynabo-new.jpg" alt="Guaynabo, Puerto Rico" loading="lazy"><div class="body"><div class="when">Fridays</div><h3>Guaynabo</h3><p>Community park pavilion · Calle 2</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=9VJF%2BQ7M%20Bayam%C3%B3n%20Puerto%20Rico" target="_blank" rel="noopener">Get directions ↗</a></div></div>
     </div>
     <p class="reveal" style="font-size:15px;color:rgba(255,255,255,.8);margin:-8px 0 30px">Homeschool families can <a href="https://forms.gle/V9phbZvA8cMWZMKH9" target="_blank" rel="noopener" style="color:#8ce8ac;font-weight:700;text-decoration:underline">sign up for any location here</a> — the first class is always free.</p>
     <div class="pledge reveal">
@@ -382,26 +389,42 @@
       </div>
       <div class="price reveal">
         <h3>Monthly</h3>
-        <div class="amt">$399</div>
-        <div class="per">≈ $99 per class</div>
+        <div class="amt">$196</div>
+        <div class="per">$49 per class</div>
         <p>Four weekly classes a month, one theme per month — try a full unit.</p>
+        <div class="pp-slot">
+          <!-- PAYPAL: monthly -->
+          <a class="btn btn-teal" href="https://www.paypal.com/ncp/payment/TGC72MTKBKX72" target="_blank" rel="noopener">Pay $196 <span class="arrow">→</span></a>
+          <p class="pp-note">Covers one month. Choose the quantity at checkout to pay for several months at once — a single payment, not an auto-renewing charge.</p>
+        </div>
       </div>
       <div class="price reveal">
         <h3>Semester</h3>
-        <div class="amt">$1,999</div>
-        <div class="per">≈ $83 per class</div>
+        <div class="amt">$960</div>
+        <div class="per">$40 per class · Sept–Feb or March–Aug</div>
         <p>A full semester of stacking, hands-on units at a better rate.</p>
+        <div class="pp-slot">
+          <!-- PAYPAL: semester -->
+          <a class="btn btn-teal" href="https://www.paypal.com/ncp/payment/XW4797K2LG49J" target="_blank" rel="noopener">Pay $960 <span class="arrow">→</span></a>
+          <p class="pp-note">One semester, paid in full — Sept–Feb or March–Aug.</p>
+        </div>
       </div>
       <div class="price featured reveal">
         <h3>Yearly</h3>
-        <div class="amt">$3,499</div>
-        <div class="per">≈ $72 per class</div>
+        <div class="amt">$1,820</div>
+        <div class="per">$35 per class · best value</div>
         <p>The whole year — every theme, every grand finale experiment.</p>
+        <div class="pp-slot">
+          <!-- PAYPAL: yearly -->
+          <a class="btn btn-teal" href="https://www.paypal.com/ncp/payment/J7NVG566PKJBG" target="_blank" rel="noopener">Pay $1,820 <span class="arrow">→</span></a>
+          <p class="pp-note">The full year, paid in full — the lowest per-class rate we offer.</p>
+        </div>
       </div>
     </div>
+    <p class="pay-trust reveal">🔒 Payments are handled securely by <b>PayPal</b> — pay with PayPal, Venmo, or any debit or credit card. No PayPal account needed.</p>
     <div class="reveal" style="display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin-bottom:24px">
-      <a class="btn btn-teal" href="https://forms.gle/V9phbZvA8cMWZMKH9" target="_blank" rel="noopener">Sign up for a class <span class="arrow">→</span></a>
-      <span style="font-size:14.5px;color:var(--ink-soft)">Takes a minute — pick your location and age group, and we'll confirm your spot.</span>
+      <a class="btn btn-teal" href="https://forms.gle/V9phbZvA8cMWZMKH9" target="_blank" rel="noopener">Start with a free class <span class="arrow">→</span></a>
+      <span style="font-size:14.5px;color:var(--ink-soft)">Not ready to pay yet? Pick your location and age group — the first class is free, and we'll confirm your spot.</span>
     </div>
     <div class="donor-note reveal">
       <strong>Join the flock 🦜</strong> — donors get STEM Lab access as a thank-you: <strong>Blue Parrot</strong> donors receive 1 month, <strong>Gold Parrot</strong> a full semester, and <strong>Platinum Parrot</strong> a full year. <a href="donate.html" style="color:var(--teal);font-weight:700">See donor levels →</a>
