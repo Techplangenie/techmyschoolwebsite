@@ -1,0 +1,285 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/act-60-program",
+      "destination": "/donate.html#act60",
+      "permanent": true
+    },
+    {
+      "source": "/act-60-program/",
+      "destination": "/donate.html#act60",
+      "permanent": true
+    },
+    {
+      "source": "/conference",
+      "destination": "/conference.html",
+      "permanent": true
+    },
+    {
+      "source": "/conference/",
+      "destination": "/conference.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/donate",
+      "destination": "/donate.html",
+      "permanent": true
+    },
+    {
+      "source": "/donate/",
+      "destination": "/donate.html",
+      "permanent": true
+    },
+    {
+      "source": "/esports",
+      "destination": "/resources.html#esports",
+      "permanent": true
+    },
+    {
+      "source": "/esports/",
+      "destination": "/resources.html#esports",
+      "permanent": true
+    },
+    {
+      "source": "/faqs",
+      "destination": "/about.html#faqs",
+      "permanent": true
+    },
+    {
+      "source": "/faqs/",
+      "destination": "/about.html#faqs",
+      "permanent": true
+    },
+    {
+      "source": "/grants",
+      "destination": "/resources.html#grants",
+      "permanent": true
+    },
+    {
+      "source": "/grants/",
+      "destination": "/resources.html#grants",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/resources.html#guides",
+      "permanent": true
+    },
+    {
+      "source": "/guides/",
+      "destination": "/resources.html#guides",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/index.html#how",
+      "permanent": true
+    },
+    {
+      "source": "/how-it-works/",
+      "destination": "/index.html#how",
+      "permanent": true
+    },
+    {
+      "source": "/how-you-can-help",
+      "destination": "/donate.html#help",
+      "permanent": true
+    },
+    {
+      "source": "/how-you-can-help/",
+      "destination": "/donate.html#help",
+      "permanent": true
+    },
+    {
+      "source": "/media",
+      "destination": "/resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/media/",
+      "destination": "/resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-stem-lab",
+      "destination": "/stem-lab.html",
+      "permanent": true
+    },
+    {
+      "source": "/mobile-stem-lab/",
+      "destination": "/stem-lab.html",
+      "permanent": true
+    },
+    {
+      "source": "/my-account",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/my-account/",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-mission",
+      "destination": "/about.html#mission",
+      "permanent": true
+    },
+    {
+      "source": "/our-mission/",
+      "destination": "/about.html#mission",
+      "permanent": true
+    },
+    {
+      "source": "/our-philosophy",
+      "destination": "/about.html#mission",
+      "permanent": true
+    },
+    {
+      "source": "/our-philosophy/",
+      "destination": "/about.html#mission",
+      "permanent": true
+    },
+    {
+      "source": "/our-products",
+      "destination": "/services.html#products",
+      "permanent": true
+    },
+    {
+      "source": "/our-products/",
+      "destination": "/services.html#products",
+      "permanent": true
+    },
+    {
+      "source": "/our-services",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-story",
+      "destination": "/about.html#story",
+      "permanent": true
+    },
+    {
+      "source": "/our-story/",
+      "destination": "/about.html#story",
+      "permanent": true
+    },
+    {
+      "source": "/our-team",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-team/",
+      "destination": "/team.html",
+      "permanent": true
+    },
+    {
+      "source": "/partners",
+      "destination": "/index.html#corporate-partners",
+      "permanent": true
+    },
+    {
+      "source": "/partners/",
+      "destination": "/index.html#corporate-partners",
+      "permanent": true
+    },
+    {
+      "source": "/partners-old",
+      "destination": "/index.html#corporate-partners",
+      "permanent": true
+    },
+    {
+      "source": "/partners-old/",
+      "destination": "/index.html#corporate-partners",
+      "permanent": true
+    },
+    {
+      "source": "/resources",
+      "destination": "/resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/resources/",
+      "destination": "/resources.html",
+      "permanent": true
+    },
+    {
+      "source": "/stem-lab",
+      "destination": "/stem-lab.html",
+      "permanent": true
+    },
+    {
+      "source": "/stem-lab/",
+      "destination": "/stem-lab.html",
+      "permanent": true
+    },
+    {
+      "source": "/conference/tech-disruptors",
+      "destination": "/conference.html#disruptors",
+      "permanent": true
+    },
+    {
+      "source": "/conference/tech-disruptors/",
+      "destination": "/conference.html#disruptors",
+      "permanent": true
+    },
+    {
+      "source": "/about/schools-served",
+      "destination": "/about.html#schools",
+      "permanent": true
+    },
+    {
+      "source": "/about/schools-served/",
+      "destination": "/about.html#schools",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/professionaldevelopments",
+      "destination": "/services.html#pd",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/professionaldevelopments/",
+      "destination": "/services.html#pd",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/itp",
+      "destination": "/services.html#itp",
+      "permanent": true
+    },
+    {
+      "source": "/our-services/itp/",
+      "destination": "/services.html#itp",
+      "permanent": true
+    }
+  ]
+}
