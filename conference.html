@@ -87,7 +87,7 @@
   .hero{position:relative;min-height:88vh;display:flex;align-items:center;color:#fff;overflow:hidden}
   .hero .bg{position:absolute;inset:0;background:url('assets/conference-hero.jpg') center 42%/cover no-repeat}
   .hero .scrim{position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,40,24,.93) 0%,rgba(10,40,24,.78) 42%,rgba(10,40,24,.42) 72%,rgba(10,40,24,.3) 100%)}
-  .hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:70px}
+  .hero .wrap{position:relative;z-index:2;padding-top:130px;padding-bottom:140px}
   .conf-logo{width:150px;height:150px;border-radius:50%;background:#fff;box-shadow:0 10px 34px rgba(0,0,0,.35);margin-bottom:22px;display:block}
   .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:8px 18px;font-size:13.5px;font-weight:600;margin-bottom:24px;backdrop-filter:blur(6px)}
   .hero h1{font-size:clamp(36px,5.8vw,66px);font-weight:800;max-width:18ch;margin-bottom:18px;text-shadow:0 2px 24px rgba(0,0,0,.35)}
@@ -99,13 +99,18 @@
 
   /* COUNTDOWN */
   .countdown-band{margin-top:-70px;position:relative;z-index:5;padding:0}
-  .countdown{background:linear-gradient(115deg,#02769a 0%,#029ec5 55%,#12b6d8 100%);border-radius:var(--radius-lg);box-shadow:0 14px 44px rgba(2,118,154,.34);padding:36px 44px;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap;color:#fff}
-  .countdown .label{font-family:'Montserrat',sans-serif;font-weight:800;font-size:20px}
-  .countdown .label small{display:block;font-size:13px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px}
+  .countdown{background:linear-gradient(115deg,#02769a 0%,#029ec5 55%,#12b6d8 100%);border-radius:var(--radius-lg);box-shadow:0 14px 44px rgba(2,118,154,.34);padding:34px 40px;display:flex;align-items:center;gap:30px;flex-wrap:wrap;color:#fff}
+  .cd-info{flex:1 1 260px;min-width:240px}
+  .cd-info .cd-eyebrow{display:flex;align-items:center;gap:8px;font-family:'Montserrat',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.82);margin-bottom:8px}
+  .cd-info .cd-date{font-family:'Roboto Slab',serif;font-weight:700;font-size:clamp(26px,2.8vw,36px);line-height:1.08;margin-bottom:10px}
+  .cd-info .cd-where{display:flex;align-items:center;gap:8px;font-size:14.5px;color:rgba(255,255,255,.88)}
   .cd-units{display:flex;gap:14px}
-  .cd-unit{background:rgba(3,44,58,.30);border:1px solid rgba(255,255,255,.22);border-radius:16px;padding:16px 10px;min-width:86px;text-align:center}
-  .cd-unit .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(26px,3.5vw,40px);color:#8ce8ac;font-variant-numeric:tabular-nums}
-  .cd-unit .lbl{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.65);margin-top:4px}
+  .cd-unit{background:rgba(3,44,58,.30);border:1px solid rgba(255,255,255,.22);border-radius:18px;padding:20px 14px;min-width:104px;text-align:center}
+  .cd-unit .num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(32px,4vw,48px);line-height:1;color:#8ce8ac;font-variant-numeric:tabular-nums}
+  .cd-unit .lbl{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:8px}
+  .cd-cta{flex:0 0 auto;display:flex;flex-direction:column;align-items:stretch;gap:8px}
+  .cd-cta .btn{justify-content:center;box-shadow:0 8px 22px rgba(2,44,58,.28)}
+  .cd-cta .cd-note{font-size:12.5px;color:rgba(255,255,255,.8);text-align:center}
 
   /* PRESENTERS CTA */
   .present{display:grid;grid-template-columns:1.15fr 1fr;gap:56px;align-items:center}
@@ -297,6 +302,9 @@
     .venue{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
     .countdown{justify-content:center;text-align:center}
+    .cd-info{flex-basis:100%;text-align:center}
+    .cd-info .cd-eyebrow,.cd-info .cd-where{justify-content:center}
+    .cd-cta{flex-basis:100%}
   }
   @media(max-width:720px){
     section{padding:60px 0}
@@ -475,12 +483,20 @@
 <section class="countdown-band">
   <div class="wrap">
     <div class="countdown">
-      <div class="label"><small>Clock to kickoff</small>April 12, 2027</div>
+      <div class="cd-info">
+        <div class="cd-eyebrow">⏳ Clock to kickoff</div>
+        <div class="cd-date">April 12–13, 2027</div>
+        <div class="cd-where">📍 Wyndham Grand Rio Mar · Río Grande, PR</div>
+      </div>
       <div class="cd-units" id="cd">
         <div class="cd-unit"><div class="num" id="cd-d">—</div><div class="lbl">Days</div></div>
         <div class="cd-unit"><div class="num" id="cd-h">—</div><div class="lbl">Hours</div></div>
         <div class="cd-unit"><div class="num" id="cd-m">—</div><div class="lbl">Minutes</div></div>
         <div class="cd-unit"><div class="num" id="cd-s">—</div><div class="lbl">Seconds</div></div>
+      </div>
+      <div class="cd-cta">
+        <a class="btn btn-white" href="https://www.eventbrite.com/e/tech-my-school-spring-educators-conference-2027-tickets-2000870456397?aff=oddtdtcreator&amp;keep_tld=true" target="_blank" rel="noopener">Register now <span class="arrow">→</span></a>
+        <span class="cd-note">$300 one day · $500 both</span>
       </div>
     </div>
   </div>
