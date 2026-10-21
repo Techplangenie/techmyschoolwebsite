@@ -142,7 +142,9 @@
   .pricing{background:var(--navy-deep);color:#fff;border-radius:44px;margin:0 16px}
   .pricing .section-head h2{color:#fff}
   .pricing .section-head p{color:rgba(255,255,255,.72)}
-  .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1240px}
+  .price-card.depr .depr-logo{background:#fff;border-radius:14px;padding:16px 18px;margin-bottom:10px;display:flex;align-items:center;justify-content:center}
+  .price-card.depr .depr-logo img{width:100%;max-width:190px;height:auto}
   .price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:var(--radius-lg);padding:40px;display:flex;flex-direction:column}
   .price-card.best{background:rgba(0,176,80,.14);border-color:var(--teal);position:relative}
   .price-card.best::after{content:"Best value";position:absolute;top:-14px;right:22px;background:var(--green);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:100px;font-family:'Montserrat',sans-serif}
@@ -299,10 +301,11 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s, transform .6s}
   .reveal.in{opacity:1;transform:none}
 
+  @media(max-width:1100px){.price-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:760px){.price-grid{grid-template-columns:1fr}}
   @media(max-width:980px){
     .present{grid-template-columns:1fr}
     .days{grid-template-columns:1fr}
-    .price-grid{grid-template-columns:1fr}
     .venue{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
     .countdown{justify-content:center;text-align:center}
@@ -663,6 +666,17 @@
           <li>Awards, raffle &amp; closing celebration</li>
         </ul>
         <a class="btn btn-green" href="https://www.eventbrite.com/e/tech-my-school-spring-educators-conference-2027-tickets-2000870456397?aff=oddtdtcreator&amp;keep_tld=true" target="_blank" rel="noopener">Register here <span class="arrow">→</span></a>
+      </div>
+      <div class="price-card depr reveal">
+        <h3>Public school teachers</h3>
+        <div class="depr-logo"><img src="assets/partners/depr.png" alt="Departamento de Educación de Puerto Rico" loading="lazy"></div>
+        <div class="per">selected by DEPR central office</div>
+        <ul>
+          <li>For teachers in Puerto Rico public schools</li>
+          <li>Central office reviews and selects who attends</li>
+          <li>One short form — no ticket needed here</li>
+        </ul>
+        <a class="btn btn-white" href="https://forms.gle/aRVe5VhY9W6GeXy19" target="_blank" rel="noopener">Fill out the DEPR form <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
