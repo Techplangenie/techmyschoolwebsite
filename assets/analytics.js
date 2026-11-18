@@ -1,15 +1,11 @@
 /**
  * Tech My School — GA4 donation tracking.
  *
- * OWNER: paste the real GA4 Measurement ID below (GA4 → Admin →
- * Data streams → your web stream → Measurement ID). It looks like G-1A2BCD3EFG.
- * Leave the quotes. This is the only place the ID lives.
- *
- * Until that placeholder is replaced, events are queued on window.dataLayer
- * and gtag.js is not requested, so the live site does not set analytics cookies.
+ * Measurement ID for the https://www.techmyschool.org web stream
+ * (GA4 property 406565569). This is the only place the ID lives.
  */
 (function () {
-  var GA_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+  var GA_MEASUREMENT_ID = 'G-R86926WQDR';
 
   var measurementId = String(GA_MEASUREMENT_ID || '').replace(/^\s+|\s+$/g, '').toUpperCase();
   var measurementReady = /^G-[A-Z0-9]+$/.test(measurementId) && !/^G-X+$/.test(measurementId);
@@ -75,8 +71,7 @@
       window.gtag('event', 'donate_click', {
         link_url: linkUrl,
         page_path: pagePath(),
-        language: language(),
-        transport_type: 'beacon'
+        language: language()
       });
     } catch (e) {}
   }
@@ -111,8 +106,7 @@
 
       var payload = {
         page_path: pagePath(),
-        language: language(),
-        transport_type: 'beacon'
+        language: language()
       };
       var value = amount(params.get('amt') || params.get('amount') || params.get('value'));
       if (value !== null) {
