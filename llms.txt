@@ -1,0 +1,31 @@
+# Tech My School
+
+> Puerto Rico 501(c)(3) education nonprofit. We build technology plans for schools, train teachers, and donate technology so students have a more equitable learning experience.
+
+- Legal name: Tech My School Inc.
+- EIN: 66-0996264
+- Founded: 2021
+- Founder and President: Robert Cobbs
+- Address: P.O. Box 1986, Luquillo, PR 00773, USA
+- Phone: +1-858-899-7787
+- Email: info@techmyschool.org
+- Official site: https://www.techmyschool.org/
+- Spanish site: https://www.techmyschool.org/es/
+- Donate: https://www.techmyschool.org/donate.html
+- Act 60 information: https://www.techmyschool.org/act-60.html
+- Ley 60: https://www.techmyschool.org/es/ley-60.html
+- CECFL 2026 official list, item 376: https://cecflpr.org/assets/files/Listado_OSFL-Erradicacion_Infantil%28Ley60%29.pdf
+- GuideStar: https://www.guidestar.org/profile/66-0996264
+- Charity Navigator: https://www.charitynavigator.org/ein/660996264
+- IRS filings (ProPublica): https://projects.propublica.org/nonprofits/organizations/660996264
+
+## Impact (as stated on techmyschool.org)
+- 50+ schools served
+- 5,000+ students impacted
+- 500+ teachers trained monthly
+- 100+ professional development sessions a year
+- Schools in 21 Puerto Rico municipalities
+- More than $1 million in goods and services donated
+
+## Optional
+- Conference: 4th annual Spring Educators EdTech Conference, April 12–13, 2027, Wyndham Grand Rio Mar, Río Grande, Puerto Rico: https://www.techmyschool.org/conference.html
