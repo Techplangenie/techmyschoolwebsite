@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mobile STEM Lab — Tech My School</title>
-<link rel="icon" type="image/png" href="../assets/logo-circle.png">
+<link rel="icon" type="image/png" href="/assets/logo-circle.png">
 <meta name="description" content="El Mobile STEM Lab de Tech My School lleva clases STEM prácticas y bilingües a familias que educan en el hogar y a escuelas públicas de todo Puerto Rico. Primera clase gratis.">
 <link rel="alternate" hreflang="en" href="https://www.techmyschool.org/stem-lab.html">
 <link rel="alternate" hreflang="es" href="https://www.techmyschool.org/es/stem-lab.html">
@@ -15,15 +15,17 @@
 <meta property="og:title" content="Mobile STEM Lab — Tech My School">
 <meta property="og:description" content="El Mobile STEM Lab de Tech My School lleva clases STEM prácticas y bilingües a familias que educan en el hogar y a escuelas públicas de todo Puerto Rico. Primera clase gratis.">
 <meta property="og:url" content="https://www.techmyschool.org/es/stem-lab.html">
-<meta property="og:image" content="https://www.techmyschool.org/../assets/og-image.jpg">
+<meta property="og:image" content="https://www.techmyschool.org/assets/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Estudiantes con visores de realidad virtual en una sesión de Tech My School en un salón de Puerto Rico">
 <meta property="og:locale" content="es_PR">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@techmyschool">
 <meta name="twitter:title" content="Mobile STEM Lab — Tech My School">
 <meta name="twitter:description" content="El Mobile STEM Lab de Tech My School lleva clases STEM prácticas y bilingües a familias que educan en el hogar y a escuelas públicas de todo Puerto Rico. Primera clase gratis.">
-<meta name="twitter:image" content="https://www.techmyschool.org/../assets/og-image.jpg">
+<meta name="twitter:image" content="https://www.techmyschool.org/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Slab:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -68,7 +70,7 @@
   .hamburger span{display:block;width:24px;height:2.5px;background:var(--navy);margin:5px 0;border-radius:2px}
   header:not(.scrolled) .hamburger span{background:#fff}
   .page-hero{position:relative;min-height:62vh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-  .page-hero .photo{position:absolute;inset:0;z-index:0;background:url('../assets/stem-classroom.jpg') center 45%/cover no-repeat;filter:saturate(.5) contrast(1.04)}
+  .page-hero .photo{position:absolute;inset:0;z-index:0;background:url('/assets/stem-classroom.jpg') center 45%/cover no-repeat;filter:saturate(.5) contrast(1.04)}
   .page-hero .bg{position:absolute;inset:0;z-index:1;background:linear-gradient(115deg,rgba(13,48,30,.93) 0%,rgba(18,69,41,.91) 45%,rgba(10,107,87,.89) 100%)}
   .page-hero .scrim{position:absolute;inset:0;z-index:1;background:radial-gradient(120% 90% at 88% 60%, rgba(2,158,197,.22) 0%, rgba(2,158,197,0) 60%)}
   .page-hero .wrap{position:relative;z-index:3;padding-top:140px;padding-bottom:56px;width:100%}
@@ -158,7 +160,7 @@
   .donor-note{background:var(--teal-soft);border-radius:var(--radius);padding:24px 28px;font-size:15px;color:var(--navy)}
   .donor-note strong{font-family:'Montserrat',sans-serif}
   .cta-band{position:relative;border-radius:var(--radius-lg);overflow:hidden;color:#fff}
-  .cta-band .bg{position:absolute;inset:0;background:url('../assets/hero-community.jpg') center 30%/cover}
+  .cta-band .bg{position:absolute;inset:0;background:url('/assets/hero-community.jpg') center 30%/cover}
   .cta-band .scrim{position:absolute;inset:0;background:linear-gradient(95deg,rgba(0,145,63,.94),rgba(10,40,24,.75))}
   .cta-band .body{position:relative;z-index:2;padding:48px 52px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
   .cta-band h3{font-size:26px;font-weight:800;margin-bottom:8px}
@@ -249,7 +251,7 @@
     "@type": "AdministrativeArea",
     "name": "Puerto Rico"
   },
-  "url": "https://www.techmyschool.org/stem-lab.html",
+  "url": "https://www.techmyschool.org/es/stem-lab.html",
   "offers": [
     {
       "@type": "Offer",
@@ -278,12 +280,32 @@
   ]
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.techmyschool.org/es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Mobile STEM Lab",
+      "item": "https://www.techmyschool.org/es/stem-lab.html"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
 <header id="header">
   <nav class="nav">
-    <a href="index.html" class="logo"><span class="white-bg"><img src="../assets/logo.png" alt="Tech My School"></span></a>
+    <a href="index.html" class="logo"><span class="white-bg"><img src="/assets/logo.png" alt="Tech My School"></span></a>
     <ul class="nav-links" id="navLinks">
       <li class="has-menu">
         <a href="../about.html">Nosotros<span class="caret">▾</span></a>
@@ -328,7 +350,7 @@
   <div class="photo"></div>
   <div class="bg"></div>
   <div class="scrim"></div>
-  <img class="van-art" src="../assets/stem-van.png" alt="La van del Mobile STEM Lab de Tech My School" fetchpriority="high">
+  <img class="van-art" src="/assets/stem-van.png" alt="La van del Mobile STEM Lab de Tech My School" fetchpriority="high">
   <div class="wrap">
     <div class="eyebrow" style="color:#8ce8ac">Nuestro proyecto más nuevo</div>
     <h1>El Mobile <span class="accent">STEM Lab</span>.</h1>
@@ -377,10 +399,10 @@
       <div class="dc"><div class="when">⏰ 11:00–12:00</div><h3>Pioneers · 10 a 14 años</h3><p>Problemas más profundos, construcciones más grandes, ingeniería de verdad.</p></div>
     </div>
     <div class="loc-grid reveal">
-      <div class="loc"><img src="../assets/stem/ocean-park-new.jpg" alt="La costa de Ocean Park en San Juan" loading="lazy"><div class="body"><div class="when">Martes</div><h3>Ocean Park</h3><p>Parque Dr. José Celso Barbosa</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Parque%20Dr.%20Jose%20Celso%20Barbosa%2C%20Ocean%20Park%2C%20San%20Juan%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
-      <div class="loc"><img src="../assets/stem/dorado-new.jpg" alt="Vista aérea de la costa y el campo de golf de Dorado" loading="lazy"><div class="body"><div class="when">Miércoles</div><h3>Dorado</h3><p>Parque del Avión</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Parque%20del%20Avion%2C%20Dorado%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
-      <div class="loc"><img src="../assets/stem/palmas-marina.jpg" alt="Vista aérea de la marina de Palmas del Mar, Humacao" loading="lazy"><div class="body"><div class="when">Jueves</div><h3>Palmas del Mar</h3><p>Evolution Wellness Center · Humacao</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Evolution%20Wellness%20Center%2C%20Palmas%20del%20Mar%2C%20Humacao%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
-      <div class="loc"><img src="../assets/stem/guaynabo-new.jpg" alt="Guaynabo, Puerto Rico" loading="lazy"><div class="body"><div class="when">Viernes</div><h3>Guaynabo</h3><p>Gazebo del parque comunitario · Calle 2</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=9VJF%2BQ7M%20Bayam%C3%B3n%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
+      <div class="loc"><img src="/assets/stem/ocean-park-new.jpg" alt="La costa de Ocean Park en San Juan" loading="lazy"><div class="body"><div class="when">Martes</div><h3>Ocean Park</h3><p>Parque Dr. José Celso Barbosa</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Parque%20Dr.%20Jose%20Celso%20Barbosa%2C%20Ocean%20Park%2C%20San%20Juan%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
+      <div class="loc"><img src="/assets/stem/dorado-new.jpg" alt="Vista aérea de la costa y el campo de golf de Dorado" loading="lazy"><div class="body"><div class="when">Miércoles</div><h3>Dorado</h3><p>Parque del Avión</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Parque%20del%20Avion%2C%20Dorado%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
+      <div class="loc"><img src="/assets/stem/palmas-marina.jpg" alt="Vista aérea de la marina de Palmas del Mar, Humacao" loading="lazy"><div class="body"><div class="when">Jueves</div><h3>Palmas del Mar</h3><p>Evolution Wellness Center · Humacao</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=Evolution%20Wellness%20Center%2C%20Palmas%20del%20Mar%2C%20Humacao%2C%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
+      <div class="loc"><img src="/assets/stem/guaynabo-new.jpg" alt="Guaynabo, Puerto Rico" loading="lazy"><div class="body"><div class="when">Viernes</div><h3>Guaynabo</h3><p>Gazebo del parque comunitario · Calle 2</p><a class="dir" href="https://www.google.com/maps/search/?api=1&amp;query=9VJF%2BQ7M%20Bayam%C3%B3n%20Puerto%20Rico" target="_blank" rel="noopener">Cómo llegar ↗</a></div></div>
     </div>
     <p class="reveal" style="font-size:15px;color:rgba(255,255,255,.8);margin:-8px 0 30px">Las familias que educan en el hogar pueden <a href="https://forms.gle/V9phbZvA8cMWZMKH9" target="_blank" rel="noopener" style="color:#8ce8ac;font-weight:700;text-decoration:underline">inscribirse en cualquier lugar aquí</a> — la primera clase siempre es gratis.</p>
     <div class="pledge reveal">
@@ -438,7 +460,7 @@
       </div>
       <p style="margin-top:22px;font-size:14.5px"><strong>Opciones privadas</strong> (recopilando interés): clases en tu grupo o homeschool, visitas a domicilio para familias grandes, o un parque o playa cerca de ti.</p>
     </div>
-    <img class="reveal" src="../assets/stem-flyer.jpg" alt="Volante del Mobile STEM Lab 2026 con el itinerario semanal" loading="lazy" style="height:auto">
+    <img class="reveal" src="/assets/stem-flyer.jpg" alt="Volante del Mobile STEM Lab 2026 con el itinerario semanal" loading="lazy" style="height:auto">
   </div>
 </section>
 
@@ -497,7 +519,7 @@
       <span style="font-size:14.5px;color:var(--ink-soft)">¿Aún no quieres pagar? Escoge tu lugar y grupo de edad — la primera clase es gratis y te confirmamos el espacio.</span>
     </div>
     <div class="donor-note reveal">
-      <strong>Apadrina el espacio de un niño que no puede pagarlo 🦜</strong> — los precios de arriba son lo que paga una familia. Cubre el de un estudiante cuya familia no puede: <strong>$196</strong> un mes, <strong>$960</strong> un semestre, <strong>$1,820</strong> el año escolar. <strong>Donantes de Ley 60:</strong> tu requisito completo de $10,000 puede venir aquí — eso son cinco estudiantes en la van por un año entero. Los espacios apadrinados nunca van al propio hijo del donante, así que tu donativo sigue siendo totalmente deducible. <a href="donate.html#act60" style="color:var(--teal);font-weight:700">Cómo funciona la Ley 60 →</a>
+      <strong>Apadrina el espacio de un niño que no puede pagarlo 🦜</strong> — los precios de arriba son lo que paga una familia. Cubre el de un estudiante cuya familia no puede: <strong>$196</strong> un mes, <strong>$960</strong> un semestre, <strong>$1,820</strong> el año escolar. <strong>Donantes de Ley 60:</strong> tu requisito completo de $10,000 puede venir aquí — eso son cinco estudiantes en la van por un año entero. Los espacios apadrinados nunca van al propio hijo del donante, así que tu donativo sigue siendo totalmente deducible. <a href="/es/ley-60" style="color:var(--teal);font-weight:700">Cómo funciona la Ley 60 →</a>
     </div>
   </div>
 </section>
@@ -523,7 +545,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="../assets/logo.png" alt="Tech My School">
+        <img src="/assets/logo.png" alt="Tech My School">
         <p>Potenciando escuelas a través de la tecnología. Organización sin fines de lucro 501(c)(3) · EIN: 66-0996264. Los donativos son deducibles de impuestos.</p>
       </div>
       <div>
@@ -536,7 +558,7 @@
       </div>
       <div>
         <h4>Más</h4>
-        <ul><li><a href="../resources.html">Recursos</a></li><li><a href="donate.html">Donar</a></li><li><a href="donate.html#act60">Ley 60</a></li><li><a href="contact.html">Contacto</a></li><li><a href="https://connect.techmyschool.org" target="_blank" rel="noopener">Acceso para maestros ↗</a></li><li><a href="https://www.techplangenie.com" target="_blank" rel="noopener">Tech Plan Genie ↗</a></li></ul>
+        <ul><li><a href="../resources.html">Recursos</a></li><li><a href="donate.html">Donar</a></li><li><a href="/es/ley-60">Ley 60</a></li><li><a href="contact.html">Contacto</a></li><li><a href="https://connect.techmyschool.org" target="_blank" rel="noopener">Acceso para maestros ↗</a></li><li><a href="https://www.techplangenie.com" target="_blank" rel="noopener">Tech Plan Genie ↗</a></li></ul>
       </div>
     </div>
     <div class="foot-bottom">

@@ -12,13 +12,33 @@
       "permanent": true
     },
     {
+      "source": "/act-60",
+      "destination": "/act-60.html",
+      "permanent": true
+    },
+    {
+      "source": "/act-60/",
+      "destination": "/act-60.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/ley-60",
+      "destination": "/es/ley-60.html",
+      "permanent": true
+    },
+    {
+      "source": "/es/ley-60/",
+      "destination": "/es/ley-60.html",
+      "permanent": true
+    },
+    {
       "source": "/act-60-program",
-      "destination": "/donate.html#act60",
+      "destination": "/act-60.html",
       "permanent": true
     },
     {
       "source": "/act-60-program/",
-      "destination": "/donate.html#act60",
+      "destination": "/act-60.html",
       "permanent": true
     },
     {

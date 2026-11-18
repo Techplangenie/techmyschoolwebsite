@@ -1,0 +1,100 @@
+# Tech My School
+
+> Puerto Rico 501(c)(3) education nonprofit. We build technology plans for schools, train teachers, and donate technology so students have a more equitable learning experience.
+
+- Legal name: Tech My School Inc.
+- Common name: Tech My School
+- EIN: 66-0996264
+- Founded: 2021
+- Founder and President / CEO / Board member: Robert Cobbs
+- COO and Co-Founder: Irina Cobbs
+- IRS tax exemption issued: March 2022 (ProPublica Nonprofit Explorer)
+- Address: P.O. Box 1986, Luquillo, PR 00773, USA
+- Phone: +1-858-899-7787
+- Email: info@techmyschool.org
+- Official site: https://www.techmyschool.org/
+- Spanish site: https://www.techmyschool.org/es/
+- U.S. 501(c)(3). Listed as item 376 on the official 2026 CECFL list under the name Tech My School Inc., valid for donations from January 1, 2026 through December 31, 2026.
+
+## Mission
+To create a more equitable learning experience for all students by better leveraging technology in schools.
+
+## Programs
+- Individualized Technology Plans: Tech My School's flagship. A full audit of a school through the lens of technology, producing a strategic technology plan and roadmap built with its partner platform Tech Plan Genie, followed by professional development and deployment support. The organization describes hundreds of strategic plans for schools across Puerto Rico and the world.
+- Teacher professional development: training for educators. The site states 100+ professional development sessions a year.
+- Technology donations: technology and related goods and services given to schools. The site states more than $1 million in goods and services donated.
+- Mobile STEM Lab: a van that brings hands-on, bilingual, project-based STEM classes — robotics, coding, science, math, and engineering — to homeschool families and public schools across Puerto Rico. The site says the first class is free.
+- Spring Educators EdTech Conference: the 4th annual bilingual conference, April 12–13, 2027, at the Wyndham Grand Rio Mar, 6000 Boulevard Río Mar, Río Grande, Puerto Rico 00745. The live page says 40+ speakers. One day is $300 and both days are $500, via Eventbrite, as listed on the conference page.
+
+## Impact (as stated on techmyschool.org)
+- 50+ schools served
+- 5,000+ students impacted
+- 500+ teachers trained monthly
+- 100+ professional development sessions a year
+- Schools in 21 Puerto Rico municipalities
+- More than $1 million in goods and services donated
+
+## How to give
+- PayPal: https://www.paypal.com/donate/?hosted_button_id=9U9P783U5GLAE
+- Givebutter: https://givebutter.com/donatetechmyschool
+- Check: P.O. Box 1986, Luquillo, PR 00773
+- Other arrangements: info@techmyschool.org or (858) 899-7787
+- Donors should keep receipts. Tech My School provides formal year-end reporting, as stated on the donate page.
+- Whether a gift satisfies an Act 60 decree is for the donor's CPA or counsel. Tech My School can provide listing information, its EIN, and receipts. It does not advise on a personal tax situation.
+
+## Donor FAQ
+Q: What is Tech My School?
+A: Tech My School is a Puerto Rico-based 501(c)(3) education nonprofit, founded in 2021, that builds individualized technology plans, trains teachers, and donates technology so schools can offer a more equitable learning experience.
+
+Q: What is your EIN?
+A: 66-0996264.
+
+Q: Are you on the official CECFL list?
+A: Yes. Tech My School Inc. is item 376 on the official 2026 CECFL list of organizations qualified in connection with Section 6020.10 of Act 60-2019, valid for donations made January 1 through December 31, 2026.
+
+Q: Where are you located?
+A: Mailing address: P.O. Box 1986, Luquillo, PR 00773. The organization serves schools across Puerto Rico.
+
+Q: How do I donate?
+A: You can give online via PayPal or Givebutter, or mail a check to P.O. Box 1986, Luquillo, PR 00773. For other arrangements, email info@techmyschool.org or call (858) 899-7787.
+
+Q: Will I get a receipt?
+A: Yes. Keep your receipts for your records. Tech My School also provides formal year-end reporting, as stated on our donate page.
+
+Q: Who should I ask about whether a gift satisfies my Act 60 decree?
+A: Please review the official DDEC circular and the official CECFL list, and confirm the requirements that apply to your decree with your CPA or counsel. We can provide our listing information, EIN, and receipts; we cannot advise on your personal tax situation.
+
+## Official sources
+- CECFL 2026 official list, item 376: https://cecflpr.org/assets/files/Listado_OSFL-Erradicacion_Infantil%28Ley60%29.pdf
+- CECFL: https://cecflpr.org/
+- DDEC Circular Letter 2026-001: https://docs.pr.gov/files/DDEC/Aviso%20Público/Carta%20Circular%20DDEC%20NÚM.%202026-001%20(OIN)%20Donaciones%20IRI%20-%201.12.26.pdf
+- Puerto Rico Treasury nonprofit list: https://hacienda.pr.gov/comerciantes/sin-fines-de-lucro/lista-de-sin-fines-de-lucro
+- GuideStar: https://www.guidestar.org/profile/66-0996264
+- Charity Navigator: https://www.charitynavigator.org/ein/660996264
+- IRS filings (ProPublica): https://projects.propublica.org/nonprofits/organizations/660996264
+
+Puerto Rico's Department of Economic Development and Commerce (DDEC) published Circular Letter 2026-001 on the annual donation requirement for certain Act 60 decree holders. Read the official circular, and confirm the path that applies to your decree with your CPA or counsel.
+
+## Key pages
+- Home: https://www.techmyschool.org/
+- Spanish home: https://www.techmyschool.org/es/
+- About: https://www.techmyschool.org/about.html
+- Sobre nosotros: https://www.techmyschool.org/es/about.html
+- Services: https://www.techmyschool.org/services.html
+- Servicios: https://www.techmyschool.org/es/services.html
+- Mobile STEM Lab: https://www.techmyschool.org/stem-lab.html
+- Mobile STEM Lab (español): https://www.techmyschool.org/es/stem-lab.html
+- Conference: https://www.techmyschool.org/conference.html
+- Conferencia: https://www.techmyschool.org/es/conference.html
+- Resources: https://www.techmyschool.org/resources.html
+- Recursos: https://www.techmyschool.org/es/resources.html
+- Donate: https://www.techmyschool.org/donate.html
+- Donar: https://www.techmyschool.org/es/donate.html
+- Act 60: https://www.techmyschool.org/act-60.html
+- Ley 60: https://www.techmyschool.org/es/ley-60.html
+- Contact: https://www.techmyschool.org/contact.html
+- Contacto: https://www.techmyschool.org/es/contact.html
+- Team: https://www.techmyschool.org/team.html
+- Equipo: https://www.techmyschool.org/es/team.html
+- Policies: https://www.techmyschool.org/legal.html
+- Políticas: https://www.techmyschool.org/es/legal.html
