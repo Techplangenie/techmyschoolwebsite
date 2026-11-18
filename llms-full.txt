@@ -90,8 +90,8 @@ Puerto Rico's Department of Economic Development and Commerce (DDEC) published C
 - Recursos: https://www.techmyschool.org/es/resources.html
 - Donate: https://www.techmyschool.org/donate.html
 - Donar: https://www.techmyschool.org/es/donate.html
-- Act 60: https://www.techmyschool.org/act-60.html
-- Ley 60: https://www.techmyschool.org/es/ley-60.html
+- Act 60: https://www.techmyschool.org/act-60
+- Ley 60: https://www.techmyschool.org/es/ley-60
 - Contact: https://www.techmyschool.org/contact.html
 - Contacto: https://www.techmyschool.org/es/contact.html
 - Team: https://www.techmyschool.org/team.html
